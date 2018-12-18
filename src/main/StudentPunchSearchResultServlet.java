@@ -41,9 +41,6 @@ public class StudentPunchSearchResultServlet extends HttpServlet {
 		String formClassroom = request.getParameter("formClassroom");
 		String seki_no  = request.getRemoteUser();
 		List<String[]> resultStudentPunch = null;
-		System.out.println("StudentPunchSearchResultServlet:"+seki_no);
-		System.out.println("StudentPunchSearchResultServlet:"+formEntryDate);
-		System.out.println("StudentPunchSearchResultServlet:"+formClassroom);
 		StudentPunchSearchDAO spsdao = new StudentPunchSearchDAO();
 
 		try {
@@ -51,7 +48,6 @@ public class StudentPunchSearchResultServlet extends HttpServlet {
 		} catch (DatabaseException e) {
 			e.printStackTrace();
 		} catch (SystemException e) {
-			// TODO 自動生成された catch ブロック
 			e.printStackTrace();
 		}
 //		list<[SEKI_NO],[ENTRY_DATE],[LOBE_ID]>
@@ -62,10 +58,19 @@ public class StudentPunchSearchResultServlet extends HttpServlet {
 //		System.out.println("StudentPunchSearchResultServlet get:"+resultStudentPunch.get(0)[1]);
 //		System.out.println("StudentPunchSearchResultServlet get:"+resultStudentPunch.get(0)[2]);
 
-		request.setAttribute("resultStudentPunch", resultStudentPunch);
-		String view = "/WEB-INF/student_punch_search_result.jsp";
-		RequestDispatcher dispatcher = request.getRequestDispatcher(view);
-	    dispatcher.forward(request, response);
+//		指定した日時に打刻があれば
+		if(!resultStudentPunch.isEmpty()) {
+			request.setAttribute("resultStudentPunch", resultStudentPunch);
+			String view = "/WEB-INF/student_punch_search_result.jsp";
+			RequestDispatcher dispatcher = request.getRequestDispatcher(view);
+		    dispatcher.forward(request, response);
+//	    指定した日時に打刻がなければ
+		}else {
+			request.setAttribute("isError", "true");
+			String view = "/WEB-INF/student_punch_search.jsp";
+			RequestDispatcher dispatcher = request.getRequestDispatcher(view);
+		    dispatcher.forward(request, response);
+		}
 	}
 
 	/**
