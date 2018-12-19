@@ -16,6 +16,8 @@
     </web-resource-collection>
     <auth-constraint>
       <role-name>1</role-name>
+      <!-- 2追加した 12\18 -->
+      <role-name>2</role-name>
       <role-name>3</role-name>
     </auth-constraint>
   </security-constraint>
@@ -28,6 +30,10 @@
   </login-config>
   <security-role>
     <role-name>1</role-name>
+  </security-role>
+  <!-- 2追加した 12\18 -->
+  <security-role>
+    <role-name>2</role-name>
   </security-role>
   <security-role>
     <role-name>3</role-name>

@@ -23,7 +23,7 @@
 				</h1>
 				<!-- リンク -->
 				<div class="link">
-					<a href="javascript:history.back();">戻る</a>
+					<a href="ShowTopServlet;">トップへ戻る</a>
 					<a href="showLogoutServlet">ログアウト</a>
 				</div>
 				<p></p>

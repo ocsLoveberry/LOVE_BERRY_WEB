@@ -18,9 +18,9 @@ public class StudentPunchSearchDAO extends DAOBase {
 		String sql = null;
 
 		if(formClassroom.equals("all")) {
-			sql = "SELECT SEKI_NO, DATE_FORMAT( ENTRY_DATE, '%Y-%m-%d') AS ENTRY_DATE, LOBE_ID FROM TIME_TBL WHERE  SEKI_NO = " + seki_no  + " AND DATE_FORMAT(ENTRY_DATE, '%Y-%m-%d') = '"+ formEntryDate +"' ";
+			sql = "SELECT * FROM TIME_TBL WHERE  SEKI_NO = " + seki_no  + " AND DATE_FORMAT(ENTRY_DATE, '%Y-%m-%d') = '"+ formEntryDate +"' ";
 		}else {
-			sql = "SELECT SEKI_NO, DATE_FORMAT( ENTRY_DATE, '%Y-%m-%d') AS ENTRY_DATE, LOBE_ID FROM TIME_TBL WHERE  SEKI_NO = " + seki_no  + " AND DATE_FORMAT(ENTRY_DATE, '%Y-%m-%d') = '"+ formEntryDate +"' AND LOBE_ID = " + formClassroom;
+			sql = "SELECT * FROM TIME_TBL WHERE  SEKI_NO = " + seki_no  + " AND DATE_FORMAT(ENTRY_DATE, '%Y-%m-%d') = '"+ formEntryDate +"' AND LOBE_ID = " + formClassroom;
 		}
 
 		try {

@@ -44,6 +44,11 @@ public class ShowTopServlet extends HttpServlet {
 		    RequestDispatcher dispatcher = request.getRequestDispatcher(view);
 		    dispatcher.forward(request, response);
 
+		}else if(request.isUserInRole("2")) {
+			String view = "/WEB-INF/admin_top.jsp";
+			RequestDispatcher dispatcher = request.getRequestDispatcher(view);
+			dispatcher.forward(request, response);
+
 		}else if(request.isUserInRole("3")) {
 			String view = "/WEB-INF/student_top.jsp";
 		    RequestDispatcher dispatcher = request.getRequestDispatcher(view);
