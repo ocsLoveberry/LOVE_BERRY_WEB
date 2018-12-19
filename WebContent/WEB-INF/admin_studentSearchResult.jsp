@@ -7,6 +7,7 @@
 <title>学生検索</title>
 </head>
 <body>
-
+<b>学生検索</b><br>
+<%= request.getAttribute("student_name") %>
 </body>
 </html>

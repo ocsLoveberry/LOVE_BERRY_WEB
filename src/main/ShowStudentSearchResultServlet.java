@@ -1,0 +1,80 @@
+package main;
+
+import java.io.IOException;
+import java.util.ArrayList;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import javaBeans.OcsJohoData;
+import main.dao.Search_OCS_JOHO_TBL_DAO;
+import main.exception.DatabaseException;
+import main.exception.SystemException;
+
+/**
+ * Servlet implementation class ShowStudentPunchSearchServlet
+ */
+@WebServlet("/ShowStudentSearchResultServlet")
+public class ShowStudentSearchResultServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public ShowStudentSearchResultServlet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+
+//    ログインセッションの有無の確認
+//    打刻検索画面への遷移
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//		HttpSession session = request.getSession(false);
+//		if(session.getAttribute("seki_no") == null) {
+//			String view = "ShowTopServlet";
+//			RequestDispatcher dispatcher = request.getRequestDispatcher(view);
+//		    dispatcher.forward(request, response);
+//		}else {
+		String radio_Name_or_SekiNo = (String)request.getParameter("radio_Name_or_SekiNo");
+		String student_name = (String)request.getParameter("text_Student_name");
+		ArrayList<OcsJohoData> studentData = new ArrayList<>();
+
+		System.out.println("radio_Name_or_SekiNo:"+radio_Name_or_SekiNo);
+		System.out.println("student_name:"+student_name);
+		System.out.println(radio_Name_or_SekiNo.equals("select_Name"));
+//		氏名のラジオボタンが選ばれていれば
+		if(radio_Name_or_SekiNo.equals("select_Name")) {
+			Search_OCS_JOHO_TBL_DAO sojtd = new Search_OCS_JOHO_TBL_DAO();
+			try {
+				studentData = sojtd.search_OCS_JOHO_TBL_by_name(student_name);
+			} catch (DatabaseException e) {
+				e.printStackTrace();
+			} catch (SystemException e) {
+				e.printStackTrace();
+			}
+
+			request.setAttribute("studentData", studentData);
+		}
+		String view = "/WEB-INF/admin_studentSearchResult.jsp";
+	    RequestDispatcher dispatcher = request.getRequestDispatcher(view);
+	    dispatcher.forward(request, response);
+//		}
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}
