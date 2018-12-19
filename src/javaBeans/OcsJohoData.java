@@ -1,16 +1,16 @@
 package javaBeans;
 
-public class studentData {
+public class OcsJohoData {
 
 	private String name;
 	private String seki_no;
 	private String comment;
 
-	public studentData(){
+	public OcsJohoData(){
 
 	}
 
-	public studentData(String name,String seki_no,String comment){
+	public OcsJohoData(String name,String seki_no,String comment){
 		setName(name);
 		setSeki_no(seki_no);
 		setComment(comment);
