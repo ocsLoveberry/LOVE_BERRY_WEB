@@ -21,8 +21,8 @@
 			<th>名前</th>
 			<th>コメント</th>
 		</tr>
-		<tr>
 		<% for(OcsJohoData student: studentData){ %>
+		<tr>
 		<td>
 		<%= student.getSeki_no() %>
 		</td>
@@ -32,8 +32,8 @@
 		<td>
 		<%= student.getComment() %>
 		</td>
-		<%} %>
 		</tr>
+		<%} %>
 
 	</table>
 

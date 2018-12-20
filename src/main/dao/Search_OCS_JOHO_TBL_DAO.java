@@ -35,7 +35,8 @@ public class Search_OCS_JOHO_TBL_DAO extends DAOBase {
 	public ArrayList<OcsJohoData> search_OCS_JOHO_TBL_by_name(String name) throws DatabaseException, SystemException {
 		ArrayList<OcsJohoData> studentList;
 		studentList = new ArrayList<OcsJohoData>();
-		String sql = "select * from OCS_JOHO_TBL where NAME = '" + name +"'";
+//		学生(TYPE=3)かつnameが部分一致するで検索する
+		String sql = "select * from OCS_JOHO_TBL where TYPE = 3 AND NAME like '%" + name +"%'";
 		try {
 			this.open();
 			stmt = con.createStatement();
