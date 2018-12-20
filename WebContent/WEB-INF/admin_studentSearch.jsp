@@ -17,7 +17,7 @@
 <input type="text" name="text_Student_SekiNo" maxlength="6"><br>
 <input type="submit" value="検索">
 </form>
-<iframe name="example" width="500px" height="500px">
+<iframe name="example" width="1000px" height="700px">
 
 </iframe>
 </body>

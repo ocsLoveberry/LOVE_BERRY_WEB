@@ -36,6 +36,6 @@
 		<%} %>
 
 	</table>
-
+	<a href="showStudentDetailServlet">詳細画面のリンク</a>
 </body>
 </html>
