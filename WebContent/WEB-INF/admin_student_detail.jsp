@@ -84,12 +84,18 @@
 	<table>
 		<tr>
 			<th>FelicaID</th>
-			<th>登録日時</th>
+			<!-- <th>登録日時</th> -->
 		</tr>
+
 		<tr>
-			<td>testIDfeFIjIEIEJIE</td>
-			<td>2018-12-20 10:20:30</td>
+			<td><%= studentDetail.getStudentFelicaID1()%></td>
+			<!--<td> //studentDetail.getStudentFelicaEntryDate() %></td>-->
 		</tr>
+		<% if(studentDetail.getStudentFelicaID2() != null){%>
+		<tr>
+			<td><%= studentDetail.getStudentFelicaID2() %></td>
+		</tr>
+		<% } %>
 	</table>
 </body>
 </html>
