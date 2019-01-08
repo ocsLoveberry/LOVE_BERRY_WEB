@@ -35,11 +35,11 @@ public class ShowLobeSearchResultServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String checked = request.getParameter("classRoomNameOrLobeName");
-		String classRoomName = request.getParameter("ClassroomName");
+		String classRoomName = request.getParameter("classRoomName");
+		System.out.println(classRoomName);
 		String lobeName = request.getParameter("lobeName");
 		ArrayList<lobeBean> lobeList = new ArrayList<>();
 		Search_LOBE_TBL_DAO sltdao = new Search_LOBE_TBL_DAO();
-
 		try {
 			if(checked.equals("checkedClassroom")) {
 				lobeList = sltdao.search_LOBE_TBL_by_classroomName(classRoomName);
