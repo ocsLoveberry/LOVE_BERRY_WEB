@@ -8,9 +8,9 @@
 </head>
 <body>
 <form action=ShowLobeSearchResultServlet method="post">
-<input type="radio" name="classroom_or_LOBEID" value="checkedClassroom" checked="checked">
+<input type="radio" name="classRoomNameOrLobeName" value="checkedClassroom" checked="checked">
 教室名：
-<select name="ClassroomName">
+<select name="classRoomName">
 			<optgroup label="<---1階教室--->"></optgroup>
 			<option value="101">101教室</option>
 			<optgroup label="<---2階教室--->"></optgroup>
@@ -39,7 +39,7 @@
 			<option value="603">603教室</option>
 			<option value="604">604教室</option>
 			</select>
-<input type="radio" name="classroom_or_LOBEID" value="checkedLobeID">
+<input type="radio" name="classRoomNameOrLobeName" value="checkedLobeID">
 LOBE名：<input type="text" name="lobeName">
 <br>
 <input type="submit" value="検索">

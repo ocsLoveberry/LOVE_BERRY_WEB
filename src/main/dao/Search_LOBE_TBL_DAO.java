@@ -34,17 +34,19 @@ public class Search_LOBE_TBL_DAO extends DAOBase {
 		return lobeList;
 	}
 
-	public ArrayList<lobeBean> search_OCS_JOHO_TBL_by_name(String name) throws DatabaseException, SystemException {
-		ArrayList<lobeBean> studentList;
-		studentList = new ArrayList<lobeBean>();
+	public ArrayList<lobeBean> search_OCS_JOHO_TBL_by_lobeID(String lobeID) throws DatabaseException, SystemException {
+		ArrayList<lobeBean> lobeList;
+		lobeList = new ArrayList<lobeBean>();
 //		学生(TYPE=3)かつnameが部分一致するで検索する
-		String sql = "select * from OCS_JOHO_TBL where TYPE = 3 AND NAME like '%" + name +"%'";
+		String sql = "select * from LOBE_TBL where LOBE_ID = '" + lobeID + "'";
 		try {
 			this.open();
 			stmt = con.createStatement();
 			ResultSet rs = stmt.executeQuery(sql);
 			while(rs.next()) {
-//				studentList.add(new OcsJohoData(rs.getString("SEKI_NO"),rs.getString("NAME"),rs.getString("MESSAGE")));
+				lobeList.add(new lobeBean(rs.getString("LOBE_ID"),rs.getString("ROOM_CD")));
+				System.out.println(rs.getString("LOBE_ID"));
+				System.out.println(rs.getString("ROOM_CD"));
 			}
 		} catch (SQLException e) {
 			throw new DatabaseException(ExceptionParameters.DATABASE_CONNECTION_EXCEPTION_MASSAGE, e);
@@ -54,6 +56,6 @@ public class Search_LOBE_TBL_DAO extends DAOBase {
 			this.close(stmt);
 		}
 
-		return studentList;
+		return lobeList;
 	}
 }
