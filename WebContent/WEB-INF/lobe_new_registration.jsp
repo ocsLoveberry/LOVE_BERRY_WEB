@@ -12,5 +12,6 @@
 設置教室名：<input type="text" name="installation_location">
 <input type="submit" value="送信">
 </form>
+<a href="ShowTopServlet">戻る</a>
 </body>
 </html>

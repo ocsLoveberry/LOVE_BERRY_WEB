@@ -47,5 +47,6 @@ LOBE名：<input type="text" name="lobeName">
 <form action="ShowLobeNewRegistration">
 <input type="submit" value="新規登録">
 </form>
+<a href="ShowTopServlet">戻る</a>
 </body>
 </html>

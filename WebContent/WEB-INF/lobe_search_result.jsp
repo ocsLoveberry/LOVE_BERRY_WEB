@@ -23,5 +23,6 @@
 </tr>
 <%} %>
 </table>
+<a href="ShowTopServlet">戻る</a>
 </body>
 </html>
