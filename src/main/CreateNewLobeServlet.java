@@ -43,10 +43,7 @@ public class CreateNewLobeServlet extends HttpServlet {
 			// TODO 自動生成された catch ブロック
 			e.printStackTrace();
 		}
-//		挿入成功♡ならば
-		if(result == 1) {
-			LoveBerryDispatcher.dispatch(request, response, "lobe_search.jsp");
-		}
+			LoveBerryDispatcher.dispatch(request, response, "WEB-INF/lobe_search.jsp");
 	}
 
 	/**
