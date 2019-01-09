@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action=ShowLobeSearchResultServlet method="post">
+<form name="lobeForm" action=ShowLobeSearchResultServlet method="post">
 <input type="radio" name="classRoomNameOrLobeName" value="checkedClassroom" checked="checked">
 教室名：
 <select name="classRoomName">
@@ -43,7 +43,9 @@
 LOBE名：<input type="text" name="lobeName">
 <br>
 <input type="submit" value="検索">
-<input type="button" value="新規登録" onclick="showCreateNewLOBEServlet">
+</form>
+<form action="ShowLobeNewRegistration">
+<input type="submit" value="新規登録">
 </form>
 </body>
 </html>
