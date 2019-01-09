@@ -43,16 +43,17 @@ public class showStudentDetailServlet extends HttpServlet {
 //		}else {
 
 //		学生詳細情報を表示するためのデータベースの処理を書いたプログラム呼び出す
-			studentDetailDAO sdDAO = new studentDetailDAO();
-			try {
-				request.setAttribute("studentDetail", sdDAO.getStudentDetail("154102"));
-			} catch (DatabaseException e) {
-				// TODO 自動生成された catch ブロック
-				e.printStackTrace();
-			} catch (SystemException e) {
-				// TODO 自動生成された catch ブロック
-				e.printStackTrace();
-			}
+		String seki_no = (String)request.getParameter("seki_no");
+		studentDetailDAO sdDAO = new studentDetailDAO();
+		try {
+			request.setAttribute("studentDetail", sdDAO.getStudentDetail(seki_no));
+		} catch (DatabaseException e) {
+			// TODO 自動生成された catch ブロック
+			e.printStackTrace();
+		} catch (SystemException e) {
+			// TODO 自動生成された catch ブロック
+			e.printStackTrace();
+		}
 //		学生詳細情報画面を表示させる
 		String view = "/WEB-INF/admin_student_detail.jsp";
 	    RequestDispatcher dispatcher = request.getRequestDispatcher(view);

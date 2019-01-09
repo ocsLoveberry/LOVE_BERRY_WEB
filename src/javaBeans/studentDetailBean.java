@@ -11,25 +11,35 @@ public class studentDetailBean {
 	private String[] subject1;
 	private String[] subject2;
 	private String[] subject3;
-	private String studentFelicaID;
-
+	private String studentFelicaID1;
+	private String studentFelicaID2;
+//	private String studentFelicaEntryDate;
 
 	public studentDetailBean(String seki_no, String name, String department, String major, String studentClass,
-			String admissionYear, String message) {
+			String admissionYear, String message, String studentFelicaID1, String studentFelicaID2) {
 		super();
+		try {
 		this.seki_no = seki_no;
 		this.name = name;
-		if(department.equals("R")) {
+		if (department.equals("R")) {
 			department = "大学併修科";
 		}
 		this.department = department;
-		if(major.equals("r_system")) {
+		if (major.equals("r_system")) {
 			major = "システム情報学科";
 		}
 		this.major = major;
 		this.studentClass = studentClass.substring(0, 4);
 		this.admissionYear = admissionYear;
 		this.message = message;
+		this.studentFelicaID1 = studentFelicaID1;
+		this.setStudentFelicaID2(studentFelicaID2);
+//		this.studentFelicaEntryDate = studentFelicaEntryDate;
+		}catch(Exception e) {
+			e.printStackTrace();
+
+		}
+
 	}
 
 	public String getSeki_no() {
@@ -112,11 +122,27 @@ public class studentDetailBean {
 		this.subject3 = subject3;
 	}
 
-	public String getStudentFelicaID() {
-		return studentFelicaID;
+	public String getStudentFelicaID1() {
+		return studentFelicaID1;
 	}
 
-	public void setStudentFelicaID(String studentFelicaID) {
-		this.studentFelicaID = studentFelicaID;
+	public void setStudentFelicaID1(String studentFelicaID1) {
+		this.studentFelicaID1 = studentFelicaID1;
 	}
+
+	public String getStudentFelicaID2() {
+		return studentFelicaID2;
+	}
+
+	public void setStudentFelicaID2(String studentFelicaID2) {
+		this.studentFelicaID2 = studentFelicaID2;
+	}
+
+//	public String getStudentFelicaEntryDate() {
+//		return studentFelicaEntryDate;
+//	}
+//
+//	public void setStudentFelicaEntryDate(String studentFelicaEntryDate) {
+//		this.studentFelicaEntryDate = studentFelicaEntryDate;
+//	}
 }
