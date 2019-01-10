@@ -12,30 +12,38 @@
 <title>Insert title here</title>
 </head>
 <body>
-	DBの値を一覧表示！
 	<br>
-
-	<table>
-		<tr>
-			<th>学籍番号</th>
-			<th>名前</th>
-			<th>コメント</th>
-		</tr>
-		<% for(OcsJohoData student: studentData){ %>
-		<tr>
-		<td>
-		<%= student.getSeki_no() %>
-		</td>
-		<td>
-		<%= student.getName() %>
-		</td>
-		<td>
-		<%= student.getComment() %>
-		</td>
-		</tr>
-		<%} %>
-
-	</table>
-	<a href="showStudentDetailServlet">詳細画面のリンク</a>
+	<% if(!studentData.isEmpty()){ %>
+	<form action="showStudentDetailServlet" method="post">
+		<table>
+			<tr>
+				<th>学籍番号</th>
+				<th>名前</th>
+				<th>コメント</th>
+				<th>選択</th>
+			</tr>
+			<% for(OcsJohoData student: studentData){ %>
+			<tr>
+			<td>
+			 <%= student.getSeki_no() %>
+			</td>
+			<td>
+			<%= student.getName() %>
+			</td>
+			<td>
+			<%= student.getComment() %>
+			</td>
+			<td>
+			<input type="radio" name="seki_no" value="<%= student.getSeki_no() %>">
+			</td>
+			</tr>
+			<%} %>
+		</table>
+		<input type="submit" value="詳細表示">
+	</form>
+		<%
+		 }else{
+			out.println("検索に一致する生徒が見つかりませんでした");
+		}%>
 </body>
 </html>
