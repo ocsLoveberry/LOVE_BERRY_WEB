@@ -35,9 +35,10 @@ public class studentDetailBean {
 		this.studentFelicaID1 = studentFelicaID1;
 		this.setStudentFelicaID2(studentFelicaID2);
 //		this.studentFelicaEntryDate = studentFelicaEntryDate;
+		}catch(NullPointerException e) {
+//		gakka,senko,classは教員nullなのでここは何もしない
 		}catch(Exception e) {
 			e.printStackTrace();
-
 		}
 
 	}
