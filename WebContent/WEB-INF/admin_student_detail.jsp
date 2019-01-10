@@ -96,11 +96,16 @@ try{
 		<tr>
 			<td>
 			<%
-			if(studentDetail.getStudentFelicaID1().isEmpty()){
+			try{
+				if(studentDetail.getStudentFelicaID1().isEmpty()){
+					String message = "登録済みFelica情報なし";
+					out.println(message);
+				}else{
+					out.println(studentDetail.getStudentFelicaID1());
+				}
+			}catch(NullPointerException e){
 				String message = "登録済みFelica情報なし";
 				out.println(message);
-			}else{
-				out.println(studentDetail.getStudentFelicaID1());
 			}
 			%></td>
 			<!--<td> //studentDetail.getStudentFelicaEntryDate() %></td>-->
