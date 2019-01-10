@@ -2,8 +2,14 @@
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%  ArrayList<studentDetailBean> studentDetailList = (ArrayList<studentDetailBean>)request.getAttribute("studentDetail");
-	studentDetailBean studentDetail = studentDetailList.get(0);
+<%
+studentDetailBean studentDetail = null;
+try{
+	ArrayList<studentDetailBean> studentDetailList = (ArrayList<studentDetailBean>)request.getAttribute("studentDetail");
+	studentDetail = studentDetailList.get(0);
+	}catch(Exception e){
+		e.printStackTrace();
+	}
 %>
 <!DOCTYPE html>
 <html>
@@ -88,7 +94,13 @@
 		</tr>
 
 		<tr>
-			<td><%= studentDetail.getStudentFelicaID1()%></td>
+			<td>
+			<%
+			if(studentDetail.getStudentFelicaID1().isEmpty()){
+				String message = "登録済みFelica情報なし";
+				out.println(message);
+			}
+			%></td>
 			<!--<td> //studentDetail.getStudentFelicaEntryDate() %></td>-->
 		</tr>
 		<% if(studentDetail.getStudentFelicaID2() != null){%>
