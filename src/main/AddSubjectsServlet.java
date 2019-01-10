@@ -44,8 +44,7 @@ public class AddSubjectsServlet extends HttpServlet {
 			if(subjects_cd.equals("no_choice")) {
 				//ほんとはアラートとか欲しいかも
 				String view = "ShowAddSubjectsServlet";
-				RequestDispatcher dispatcher = request.getRequestDispatcher(view);
-			    dispatcher.forward(request, response);
+				LoveBerryDispatcher.dispatch(request, response, view);
 			}else {
 				AddClassSubjectsDAO acsDAO = new AddClassSubjectsDAO();
 				String class_cd = session.getAttribute("Class").toString();
