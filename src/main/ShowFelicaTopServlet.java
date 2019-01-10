@@ -34,7 +34,9 @@ public class ShowFelicaTopServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		FelicaTableDAO ftdao = new FelicaTableDAO();
 		ArrayList<FelicaData> felicaData = ftdao.selectAllFelicaTable();
-		LoveBerryDispatcher.dispatch(request, response, "WEB-INF/felica_top.jsp");
+		request.setAttribute("felicaData", felicaData);
+		String view = "WEB-INF/felica_top.jsp";
+		LoveBerryDispatcher.dispatch(request, response, view);
 	}
 
 	/**

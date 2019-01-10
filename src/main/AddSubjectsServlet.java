@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import Dispatcher.LoveBerryDispatcher;
 import main.dao.AddClassSubjectsDAO;
 import main.dao.Subjects_cd_TO_nameDAO;
 import main.exception.DatabaseException;
@@ -36,8 +37,7 @@ public class AddSubjectsServlet extends HttpServlet {
 		HttpSession session = request.getSession(false);
 		if(session.getAttribute("seki_no") == null) {
 			String view = "ShowTopServlet";
-			RequestDispatcher dispatcher = request.getRequestDispatcher(view);
-		    dispatcher.forward(request, response);
+			LoveBerryDispatcher.dispatch(request, response, view);
 		}else {
 			String subjects_cd = request.getParameter("subjects_cd");
 			//ラジオボタン未選択時の処理

@@ -2,12 +2,13 @@ package main;
 
 import java.io.IOException;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import Dispatcher.LoveBerryDispatcher;
 
 /**
  * Servlet implementation class ShowLobeNewRegistration
@@ -28,9 +29,7 @@ public class ShowLobeNewRegistration extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String view = "/WEB-INF/lobe_new_registration.jsp";
-	    RequestDispatcher dispatcher = request.getRequestDispatcher(view);
-	    dispatcher.forward(request, response);
+		LoveBerryDispatcher.dispatch(request, response, "/WEB-INF/lobe_new_registration.jsp");
 	}
 
 	/**

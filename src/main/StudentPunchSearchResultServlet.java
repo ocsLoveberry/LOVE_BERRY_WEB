@@ -7,13 +7,13 @@ package main;
 import java.io.IOException;
 import java.util.List;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import Dispatcher.LoveBerryDispatcher;
 import main.dao.StudentPunchSearchDAO;
 import main.exception.DatabaseException;
 import main.exception.SystemException;
@@ -61,15 +61,11 @@ public class StudentPunchSearchResultServlet extends HttpServlet {
 //		指定した日時に打刻があれば
 		if(!resultStudentPunch.isEmpty()) {
 			request.setAttribute("resultStudentPunch", resultStudentPunch);
-			String view = "/WEB-INF/student_punch_search_result.jsp";
-			RequestDispatcher dispatcher = request.getRequestDispatcher(view);
-		    dispatcher.forward(request, response);
+			LoveBerryDispatcher.dispatch(request, response, "/WEB-INF/student_punch_search_result.jsp");
 //	    指定した日時に打刻がなければ
 		}else {
 			request.setAttribute("isError", "true");
-			String view = "/WEB-INF/student_punch_search.jsp";
-			RequestDispatcher dispatcher = request.getRequestDispatcher(view);
-		    dispatcher.forward(request, response);
+			LoveBerryDispatcher.dispatch(request, response, "/WEB-INF/student_punch_search.jsp");
 		}
 	}
 

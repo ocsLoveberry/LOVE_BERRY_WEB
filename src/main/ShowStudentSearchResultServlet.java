@@ -3,13 +3,13 @@ package main;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import Dispatcher.LoveBerryDispatcher;
 import javaBeans.OcsJohoData;
 import main.dao.Search_OCS_JOHO_TBL_DAO;
 import main.exception.DatabaseException;
@@ -78,9 +78,7 @@ public class ShowStudentSearchResultServlet extends HttpServlet {
 		System.out.println("studentData.isEmpty():" + studentData.isEmpty());
 //		ArrayList<OcsJohoData> を reqestに登録する
 		request.setAttribute("studentData", studentData);
-		String view = "/WEB-INF/admin_studentSearchResult.jsp";
-	    RequestDispatcher dispatcher = request.getRequestDispatcher(view);
-	    dispatcher.forward(request, response);
+		LoveBerryDispatcher.dispatch(request, response, "/WEB-INF/admin_studentSearchResult.jsp");
 //		}
 	}
 

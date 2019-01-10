@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import Dispatcher.LoveBerryDispatcher;
 import main.dao.SerchTokutei_cdDAO;
 import main.dao.Subjects_cd_TO_nameDAO;
 import main.exception.DatabaseException;
@@ -77,9 +78,7 @@ public class UpdatePageServlet extends HttpServlet {
 				e.printStackTrace();
 			}
 
-			String view = "/WEB-INF/create_jugyo.jsp";
-			RequestDispatcher dispatcher = request.getRequestDispatcher(view);
-		    dispatcher.forward(request, response);
+			LoveBerryDispatcher.dispatch(request, response, "/WEB-INF/create_jugyo.jsp");
 		}
 	}
 

@@ -2,13 +2,13 @@ package main;
 
 import java.io.IOException;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import Dispatcher.LoveBerryDispatcher;
 import main.dao.studentDetailDAO;
 import main.exception.DatabaseException;
 import main.exception.SystemException;
@@ -55,9 +55,7 @@ public class showStudentDetailServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 //		学生詳細情報画面を表示させる
-		String view = "/WEB-INF/admin_student_detail.jsp";
-	    RequestDispatcher dispatcher = request.getRequestDispatcher(view);
-	    dispatcher.forward(request, response);
+		LoveBerryDispatcher.dispatch(request, response, "/WEB-INF/admin_student_detail.jsp");
 //		}
 	}
 

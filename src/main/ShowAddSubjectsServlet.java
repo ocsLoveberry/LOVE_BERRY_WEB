@@ -2,13 +2,14 @@ package main;
 
 import java.io.IOException;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+import Dispatcher.LoveBerryDispatcher;
 
 /**
  * Servlet implementation class ShowAddSubjectsServlet
@@ -31,13 +32,9 @@ public class ShowAddSubjectsServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession(false);
 		if(session.getAttribute("seki_no") == null) {
-			String view = "ShowTopServlet";
-			RequestDispatcher dispatcher = request.getRequestDispatcher(view);
-		    dispatcher.forward(request, response);
+			LoveBerryDispatcher.dispatch(request, response, "ShowTopServlet");
 		}else {
-			String view = "/WEB-INF/add_subjects.jsp";
-		    RequestDispatcher dispatcher = request.getRequestDispatcher(view);
-		    dispatcher.forward(request, response);
+			LoveBerryDispatcher.dispatch(request, response, "/WEB-INF/add_subjects.jsp");
 		}
 	}
 

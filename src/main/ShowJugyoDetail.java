@@ -3,7 +3,6 @@ package main;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -11,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import Dispatcher.LoveBerryDispatcher;
 import main.dao.SerchJugyoDetailDAO;
 import main.dao.Subjects_cd_TO_nameDAO;
 import main.exception.DatabaseException;
@@ -40,9 +40,7 @@ public class ShowJugyoDetail extends HttpServlet {
 		String class_cd = "R4A1_system";
 		session.setAttribute("Class",class_cd);
 		if(session.getAttribute("seki_no") == null) {
-			String view = "ShowTopServlet";
-			RequestDispatcher dispatcher = request.getRequestDispatcher(view);
-		    dispatcher.forward(request, response);
+			LoveBerryDispatcher.dispatch(request, response, "ShowTopServlet");
 		}else {
 			//request.getAttribute?かなんかで受け取った前提
 			session.setAttribute("tokutei_cd", tokutei_cd);
@@ -71,9 +69,7 @@ public class ShowJugyoDetail extends HttpServlet {
 				e.printStackTrace();
 			}
 			session.setAttribute("subjects_name",subjects_name);
-			String view = "/WEB-INF/jugyo_detail.jsp";
-			RequestDispatcher dispatcher = request.getRequestDispatcher(view);
-		    dispatcher.forward(request, response);
+			LoveBerryDispatcher.dispatch(request, response, "/WEB-INF/jugyo_detail.jsp");
 		}
 	}
 

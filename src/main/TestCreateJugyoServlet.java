@@ -2,13 +2,14 @@ package main;
 
 import java.io.IOException;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+import Dispatcher.LoveBerryDispatcher;
 
 /**
  * Servlet implementation class TestCreateJugyoServlet
@@ -43,9 +44,7 @@ public class TestCreateJugyoServlet extends HttpServlet {
 		}
 		session.setAttribute("year",year);
 
-		String view = "/WEB-INF/test_create_jugyo.jsp";
-		RequestDispatcher dispatcher = request.getRequestDispatcher(view);
-	    dispatcher.forward(request, response);
+		LoveBerryDispatcher.dispatch(request, response, "/WEB-INF/test_create_jugyo.jsp");
 	}
 
 	/**

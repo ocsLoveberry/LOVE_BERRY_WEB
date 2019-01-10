@@ -2,13 +2,14 @@ package main;
 
 import java.io.IOException;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+import Dispatcher.LoveBerryDispatcher;
 
 /**
  * Servlet implementation class CheckAddSubjectsServlet
@@ -34,14 +35,10 @@ public class CheckAddSubjectsServlet extends HttpServlet {
 		String room_cd3 = request.getParameter("room_cd3");
 		HttpSession session = request.getSession(false);
 		if(session.getAttribute("seki_no") == null) {
-			String view = "ShowTopServlet";
-			RequestDispatcher dispatcher = request.getRequestDispatcher(view);
-		    dispatcher.forward(request, response);
+			LoveBerryDispatcher.dispatch(request, response, "ShowTopServlet");
 		}else {
 			if(room_cd1.equals("nothing") && room_cd2.equals("nothing") && room_cd3.equals("nothing") || room_cd1.equals(room_cd2) && !room_cd1.equals("nothing") || room_cd1.equals(room_cd3) && !room_cd1.equals("nothing") || room_cd2.equals(room_cd3) && !room_cd2.equals("nothing")) {
-				String view = "ShowCreateJugyoServlet";
-				RequestDispatcher dispatcher = request.getRequestDispatcher(view);
-			    dispatcher.forward(request, response);
+				LoveBerryDispatcher.dispatch(request, response, "ShowCreateJugyoServlet");
 			}else {
 				if(!room_cd1.equals("nothing")) {
 					session.setAttribute("room_cd1",room_cd1);
@@ -53,9 +50,7 @@ public class CheckAddSubjectsServlet extends HttpServlet {
 					session.setAttribute("room_cd3",room_cd3);
 				}
 				//確認ページに飛ばしたい
-				String view = "/WEB-INF/check_add_subjects.jsp";
-				RequestDispatcher dispatcher = request.getRequestDispatcher(view);
-			    dispatcher.forward(request, response);
+				LoveBerryDispatcher.dispatch(request, response, "/WEB-INF/check_add_subjects.jsp");
 			}
 		}
 

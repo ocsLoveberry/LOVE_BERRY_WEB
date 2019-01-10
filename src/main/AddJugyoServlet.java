@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Enumeration;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -12,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import Dispatcher.LoveBerryDispatcher;
 import main.dao.AddJikanwariTblDAO;
 import main.dao.AddJugyoDAO;
 import main.dao.CheckJikanwari;
@@ -41,9 +41,7 @@ public class AddJugyoServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession(false);
 		if(session.getAttribute("seki_no") == null) {
-			String view = "ShowTopServlet";
-			RequestDispatcher dispatcher = request.getRequestDispatcher(view);
-		    dispatcher.forward(request, response);
+			LoveBerryDispatcher.dispatch(request, response, "ShowTopServlet");
 		}else {
 			String branch = request.getParameter("result").toString();
 			//修正ボタンか、登録ボタンか
@@ -57,9 +55,7 @@ public class AddJugyoServlet extends HttpServlet {
 						session.removeAttribute(key);
 					}
 				}
-				String view = "ShowCreateJugyoServlet";
-				RequestDispatcher dispatcher = request.getRequestDispatcher(view);
-			    dispatcher.forward(request, response);
+				LoveBerryDispatcher.dispatch(request, response, "ShowCreateJugyoServlet");
 			}else{
 				AddJugyoDAO ajDAO = new AddJugyoDAO();
 				String subjects_cd = session.getAttribute("subjects_cd").toString();
@@ -132,9 +128,7 @@ public class AddJugyoServlet extends HttpServlet {
 					// TODO 自動生成された catch ブロック
 					e.printStackTrace();
 				}
-				String view = "ShowTopServlet";
-				RequestDispatcher dispatcher = request.getRequestDispatcher(view);
-			    dispatcher.forward(request, response);
+				LoveBerryDispatcher.dispatch(request, response, "ShowTopServlet");
 			}
 		}
 	}

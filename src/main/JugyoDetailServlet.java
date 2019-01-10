@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import Dispatcher.LoveBerryDispatcher;
+
 /**
  * Servlet implementation class JugyoDetailServlet
  */
@@ -40,9 +42,7 @@ public class JugyoDetailServlet extends HttpServlet {
 			//修正ボタンか、OKボタンか
 			if(branch.equals("revise")) {
 				//修正ボタン
-				String view = "/WEB-INF/revise_jugyo.jsp";
-				RequestDispatcher dispatcher = request.getRequestDispatcher(view);
-			    dispatcher.forward(request, response);
+				LoveBerryDispatcher.dispatch(request, response, "/WEB-INF/revise_jugyo.jsp");
 			}else{
 				//OKボタン
 				Enumeration e = session.getAttributeNames();
@@ -52,9 +52,7 @@ public class JugyoDetailServlet extends HttpServlet {
 						session.removeAttribute(key);
 					}
 				}
-				String view = "CreateJikanwariServlet";
-				RequestDispatcher dispatcher = request.getRequestDispatcher(view);
-			    dispatcher.forward(request, response);
+				LoveBerryDispatcher.dispatch(request, response, "CreateJikanwariServlet");
 			}
 		}
 	}

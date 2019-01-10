@@ -17,8 +17,7 @@ public class LoveBerryDispatcher {
 	 */
 	private LoveBerryDispatcher() {}
 
-	public static void dispatch(HttpServletRequest request,HttpServletResponse response,String target) {
-		String view = target;
+	public static void dispatch(HttpServletRequest request,HttpServletResponse response,String view) {
 	    RequestDispatcher dispatcher = request.getRequestDispatcher(view);
 	    try {
 			dispatcher.forward(request, response);

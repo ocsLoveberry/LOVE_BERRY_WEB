@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import Dispatcher.LoveBerryDispatcher;
+
 /**
  * Servlet implementation class TestCreateJugyoServlet
  */
@@ -48,9 +50,7 @@ public class ShowCreateJugyoServlet extends HttpServlet {
 			}
 			session.setAttribute("year",year);
 
-			String view = "/WEB-INF/create_jugyo.jsp";
-			RequestDispatcher dispatcher = request.getRequestDispatcher(view);
-		    dispatcher.forward(request, response);
+			LoveBerryDispatcher.dispatch(request, response, "/WEB-INF/create_jugyo.jsp");
 		}
 	}
 
