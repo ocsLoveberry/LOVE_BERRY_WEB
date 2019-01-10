@@ -17,25 +17,16 @@
 	<form action="showStudentDetailServlet" method="post">
 		<table>
 			<tr>
+				<th></th>
 				<th>学籍番号</th>
 				<th>名前</th>
 				<th>コメント</th>
-				<th>選択</th>
 			</tr>
 			<%
 				boolean isFirst = true;
 			 %>
 			<% for(OcsJohoData student: studentData){ %>
 				<tr>
-					<td>
-					 	<%= student.getSeki_no() %>
-					</td>
-					<td>
-						<%= student.getName() %>
-					</td>
-					<td>
-						<%= student.getComment() %>
-					</td>
 					<td>
 						<%if(isFirst){ %>
 							<input type="radio" name="seki_no" value="<%= student.getSeki_no() %> " checked>
@@ -47,6 +38,15 @@
 						<%
 						}
 					 	%>
+					</td>
+					<td>
+					 	<%= student.getSeki_no() %>
+					</td>
+					<td>
+						<%= student.getName() %>
+					</td>
+					<td>
+						<%= student.getComment() %>
 					</td>
 				</tr>
 			<%} %>
