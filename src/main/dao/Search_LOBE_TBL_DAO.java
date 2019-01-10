@@ -15,7 +15,12 @@ public class Search_LOBE_TBL_DAO extends DAOBase {
 	public ArrayList<lobeBean> search_LOBE_TBL_by_classroomName(String classroomName) throws DatabaseException, SystemException {
 		ArrayList<lobeBean> lobeList;
 		lobeList = new ArrayList<lobeBean>();
-		String sql = "select * from LOBE_TBL where ROOM_CD = '" + classroomName +"'";
+		String sql = "";
+		if(classroomName.equals("all")) {
+			sql = "select * from LOBE_TBL";
+		}else {
+			sql = "select * from LOBE_TBL where ROOM_CD = '" + classroomName +"'";
+		}
 		try {
 			this.open();
 			stmt = con.createStatement();

@@ -9,6 +9,14 @@ import javax.servlet.http.HttpServletResponse;
 
 public class LoveBerryDispatcher {
 
+	/**
+	 * インスタンス化しても無駄なのでprivateで定義しています。
+	 * インスタンスに対してメソッドを使うこともできてしまうが、
+	 * 実際インスタンス化しなくても同じ操作が可能なので、
+	 * インスタンスが無駄になる
+	 */
+	private LoveBerryDispatcher() {}
+
 	public static void dispatch(HttpServletRequest request,HttpServletResponse response,String target) {
 		String view = target;
 	    RequestDispatcher dispatcher = request.getRequestDispatcher(view);
