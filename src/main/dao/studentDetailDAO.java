@@ -48,7 +48,7 @@ public class studentDetailDAO extends DAOBase {
 /**
  * 		@TODO 入学年度を取得する方法
  */
-			String admissionYear = "2015";
+			String admissionYear = "20" + seki_no.substring(0, 2);
 			String message = rs.getString("MESSAGE");
 //			③
 			String sql2 = "select * from FELICA_TBL where SEKI_NO = '" + seki_no + "'";
