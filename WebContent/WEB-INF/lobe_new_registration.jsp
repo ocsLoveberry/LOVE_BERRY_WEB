@@ -7,11 +7,14 @@
 <title>Insert title here</title>
 </head>
 <body>
+<h1>LOBE新規登録</h1>
 <form action="CreateNewLobeServlet">
-新規LOBE名:<input type="text" name="newLobeName">
-設置教室名：<input type="text" name="installation_location">
+新規LOBE名:<input type="text" name="newLobeName" maxlength="3">
+設置教室名：<input type="text" name="installation_location" maxlength="3">
 <input type="submit" value="送信">
 </form>
-<a href="ShowTopServlet">戻る</a>
+<form action="ShowTopServlet">
+<input type="submit" value="トップへ戻る">
+</form>
 </body>
 </html>

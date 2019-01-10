@@ -10,19 +10,25 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>一覧表示</h1>
+<h2>検索結果</h2>
+<% if(!lobeList.isEmpty()){  %>
 <table>
 <tr>
 <th>リーダID</th>
 <th>教室</th>
 </tr>
-<% for(lobeBean lobe: lobeList) {%>
-<tr>
-<td><%= lobe.getLOBE_ID() %></td>
-<td><%= lobe.getROOM_CD() %></td>
-</tr>
-<%} %>
+	<% for(lobeBean lobe: lobeList) {%>
+		<tr>
+		<td><%= lobe.getLOBE_ID() %></td>
+		<td><%= lobe.getROOM_CD() %></td>
+		</tr>
+	<%}%>
+<%
+}else{
+	out.println("検索に一致するLOBEが見つかりませんでした");
+}
+%>
+
 </table>
-<a href="ShowTopServlet">戻る</a>
 </body>
 </html>

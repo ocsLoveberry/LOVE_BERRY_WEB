@@ -7,10 +7,13 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form name="lobeForm" action=ShowLobeSearchResultServlet method="post">
+<h1>LOBE検索</h1>
+<form name="lobeForm" action=ShowLobeSearchResultServlet method="post" target="resultTarget">
 <input type="radio" name="classRoomNameOrLobeName" value="checkedClassroom" checked="checked">
 教室名：
 <select name="classRoomName">
+			<optgroup label="<---全教室--->"></optgroup>
+			<option value="all">全教室</option>
 			<optgroup label="<---1階教室--->"></optgroup>
 			<option value="101">101教室</option>
 			<optgroup label="<---2階教室--->"></optgroup>
@@ -41,12 +44,15 @@
 			</select>
 <input type="radio" name="classRoomNameOrLobeName" value="checkedLobeID">
 LOBE名：<input type="text" name="lobeName">
-<br>
 <input type="submit" value="検索">
 </form>
 <form action="ShowLobeNewRegistration">
 <input type="submit" value="新規登録">
 </form>
-<a href="ShowTopServlet">戻る</a>
+<form action="ShowTopServlet">
+<input type="submit" value="トップへ戻る">
+<iframe name="resultTarget" width="1000px" height="700px">
+</form>
+
 </body>
 </html>
