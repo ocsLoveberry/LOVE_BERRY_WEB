@@ -25,6 +25,17 @@ public class LoveBerryDispatcher {
 			// TODO 自動生成された catch ブロック
 			e.printStackTrace();
 		}
-
 	}
+
+	/**
+	 * 呼び出し方
+	 * staticメソッドなのでnewしなくても利用できる
+	 *
+	 *  class {
+	 *  	void method() {
+	 *  		LoveBerryDispatcher.dispatch(request, response, "WEB-INF/~");
+	 *  	}
+	 *  }
+	 *  ユーティリティクラスにまとめたので一行で遷移できる。
+	 */
 }

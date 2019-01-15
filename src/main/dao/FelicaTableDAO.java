@@ -15,7 +15,7 @@ public class FelicaTableDAO extends DAOBase {
 		try {
 			ResultSet rs = executeQuery(sql);
 			while(rs.next()) {
-				felicaData.add(new FelicaData(rs.getString("SEKI_NO"), rs.getString("IDM1"), rs.getString("IDM2"), rs.getString("COMMEN1"), rs.getString("COMMENT2")));
+				felicaData.add(new FelicaData(rs.getString("SEKI_NO"), rs.getString("IDM1"), rs.getString("IDM2"), rs.getString("COMMENT1"), rs.getString("COMMENT2")));
 			}
 		} catch(DatabaseException e) {
 			e.printStackTrace();
