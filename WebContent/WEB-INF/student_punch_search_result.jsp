@@ -39,15 +39,15 @@
 			<table class="punch_result_table">
 				<thead>
 					<tr>
-						<th>打刻日時</th>
 						<th>打刻場所</th>
+						<th>打刻日時</th>
 					</tr>
 				</thead>
 				<tbody>
 					<% for(int i = 0; i < resultStudentPunch.size(); i++){ %>
 					<tr>
-						<td><%=resultStudentPunch.get(i)[1] %></td>
 						<td><%=resultStudentPunch.get(i)[2] %></td>
+						<td><%=resultStudentPunch.get(i)[1] %></td>
 					</tr>
 					<% } %>
 

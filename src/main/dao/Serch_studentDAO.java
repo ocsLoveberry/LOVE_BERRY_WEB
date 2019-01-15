@@ -1,3 +1,9 @@
+/**
+ * 2018/12/19
+ * seki_noだけで検索するメソッドを追加
+ * @author ace
+ */
+
 package main.dao;
 
 import java.sql.ResultSet;
@@ -28,7 +34,6 @@ public class Serch_studentDAO extends DAOBase{
 		} finally {
 			this.close(stmt);
 		}
-
 		return studentsList;
 	}
 }

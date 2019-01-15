@@ -2,6 +2,7 @@ package main.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -14,6 +15,7 @@ import main.parameter.ExceptionParameters;
 public class DAOBase {
 
 	Connection con;
+	Statement stmt;
 
 	protected void open() throws DatabaseException, SystemException {
 		try {
@@ -39,4 +41,18 @@ public class DAOBase {
 			throw new DatabaseException(ExceptionParameters.DATABASE_CLOSE_EXCEPTION_MESSAGE, e);
 		}
 	}
+
+	protected ResultSet executeQuery(String sql) throws DatabaseException, SystemException, SQLException{
+		this.open();
+		stmt = con.createStatement();
+		ResultSet rs = stmt.executeQuery(sql);
+		this.close(stmt);
+		return rs;
+
+	}
 }
+
+/**
+ * rsとconをクローズする処理が必要かも
+ * @author ace
+ */
