@@ -23,11 +23,14 @@
 	<% for(FelicaData felica: felicaData){ %>
 	<tr>
 		<td><%= felica.getSeki_no() %></td>
-		<td><%= felica.getIdm1() %></td>
+		<td><%= felica.getIdm1() %></a></td>
 		<td><%= felica.getComment1() %></td>
+		<td><%= felica.getIdm2() %></a></td>
 		<td><%= felica.getComment2() %></td>
 	</tr>
 	<%} %>
-</table>
+</table><br>
+<a href="ShowFelicaAddServlet">新規登録</a><br>
+<a href="ShowTopServlet">トップへ戻る</a>
 </body>
 </html>
