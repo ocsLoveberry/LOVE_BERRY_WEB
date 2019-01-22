@@ -50,6 +50,7 @@ public class TimeTableDAO extends DAOBase {
 				e.printStackTrace();
 			}
 			this.close(stmt);
+//			TODO:rs.close()の処理
 
 		return jikanwariData;
 	}
