@@ -5,8 +5,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import javaBeans.FelicaData;
-import main.exception.DatabaseException;
-import main.exception.SystemException;
 
 public class FelicaTableDAO extends DAOBase {
 	public ArrayList<FelicaData> selectAllFelicaTable() {
@@ -17,11 +15,7 @@ public class FelicaTableDAO extends DAOBase {
 			while(rs.next()) {
 				felicaData.add(new FelicaData(rs.getString("SEKI_NO"), rs.getString("IDM1"), rs.getString("IDM2"), rs.getString("COMMENT1"), rs.getString("COMMENT2")));
 			}
-		} catch(DatabaseException e) {
-			e.printStackTrace();
 		} catch (SQLException e) {
-			e.printStackTrace();
-		} catch (SystemException e) {
 			e.printStackTrace();
 		}
 		return felicaData;

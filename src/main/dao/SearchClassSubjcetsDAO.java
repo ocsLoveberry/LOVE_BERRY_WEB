@@ -9,7 +9,7 @@ import main.exception.DatabaseException;
 import main.exception.SystemException;
 import main.parameter.ExceptionParameters;
 
-public class SerchClassSubjcetsDAO extends DAOBase{
+public class SearchClassSubjcetsDAO extends DAOBase{
 	private Statement stmt;
 
 	public ArrayList<String> serch_subjects(String class_cd,String year) throws DatabaseException, SystemException {

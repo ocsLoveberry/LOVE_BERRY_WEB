@@ -9,7 +9,7 @@ import main.exception.DatabaseException;
 import main.exception.SystemException;
 import main.parameter.ExceptionParameters;
 
-public class SerchJugyoDetailDAO extends DAOBase{
+public class SearchJugyoDetailDAO extends DAOBase{
 	private Statement stmt;
 
 	public ArrayList<String> serch_jugyo(String tokutei_cd) throws DatabaseException, SystemException {

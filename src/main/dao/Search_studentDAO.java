@@ -15,7 +15,7 @@ import main.exception.DatabaseException;
 import main.exception.SystemException;
 import main.parameter.ExceptionParameters;
 
-public class Serch_studentDAO extends DAOBase{
+public class Search_studentDAO extends DAOBase{
 	private Statement stmt;
 
 	public ArrayList<String> serch_student(String class_cd,String year) throws DatabaseException, SystemException {

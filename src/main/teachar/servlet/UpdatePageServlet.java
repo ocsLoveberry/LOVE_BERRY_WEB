@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import Dispatcher.LoveBerryDispatcher;
-import main.dao.SerchTokutei_cdDAO;
+import main.dao.SearchTokutei_cdDAO;
 import main.dao.Subjects_cd_TO_nameDAO;
 import main.exception.DatabaseException;
 import main.exception.SystemException;
@@ -62,7 +62,7 @@ public class UpdatePageServlet extends HttpServlet {
 			String Jigen = (String)session.getAttribute("Jigen");
 			String tokutei_cd = subjects_cd + Nitiji + Jigen;
 			session.setAttribute("tokutei_cd",tokutei_cd);
-			SerchTokutei_cdDAO stcDAO = new SerchTokutei_cdDAO();
+			SearchTokutei_cdDAO stcDAO = new SearchTokutei_cdDAO();
 			try {
 				if(stcDAO.serch_tokutei_cd(tokutei_cd) == 1) {
 					session.setAttribute("tokutei_flag",1);

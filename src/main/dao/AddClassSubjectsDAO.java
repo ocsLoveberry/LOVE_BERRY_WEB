@@ -30,7 +30,7 @@ public class AddClassSubjectsDAO extends DAOBase{
 		this.open();
 		int num = 0;
 		try {
-			Serch_studentDAO ssDAO = new Serch_studentDAO();
+			Search_studentDAO ssDAO = new Search_studentDAO();
 			ArrayList<String> studentsList = new ArrayList<String>();
 			studentsList = ssDAO.serch_student(class_cd,year);
 			String sql="";

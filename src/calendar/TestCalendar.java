@@ -42,12 +42,14 @@ public class TestCalendar extends HttpServlet {
 		 * ③JSONデータに加工
 		 * ④PrintWriterで表示する
 		 */
-		System.out.println("動作チェック@loveberryweb");
 		TimeTableDAO timeTableDao = new TimeTableDAO();
 		ArrayList<JikanwariData> calendarList = new ArrayList<JikanwariData>();
 		calendarList = timeTableDao.getJikanwari();
 		setResponseSettings(response);
+//		↓↓↓デバッグ用メソッド↓↓↓
+		System.out.println("動作チェック@loveberryweb");
 		checkListContents(calendarList);
+//		↑↑↑ここまでデバッグ↑↑↑
 		PrintWriter out = response.getWriter();
 		out.write(new Gson().toJson(calendarList));
 		}
@@ -59,14 +61,6 @@ public class TestCalendar extends HttpServlet {
 	protected void setResponseSettings(HttpServletResponse response) {
 		response.setContentType("application/json");
 		response.setCharacterEncoding("UTF-8");
-	}
-
-	JikanwariData betunoyarikata(ArrayList<JikanwariData> calendarList){
-		JikanwariData j1 = new JikanwariData();
-		j1.setTitle(calendarList.get(0).getTitle());
-		j1.setStart(calendarList.get(0).getStart());
-		return j1;
-
 	}
 
 	void checkListContents(ArrayList<JikanwariData> calendarList){

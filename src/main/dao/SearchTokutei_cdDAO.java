@@ -9,7 +9,7 @@ import main.exception.DatabaseException;
 import main.exception.SystemException;
 import main.parameter.ExceptionParameters;
 
-public class SerchTokutei_cdDAO extends DAOBase{
+public class SearchTokutei_cdDAO extends DAOBase{
 	private Statement stmt;
 
 	public int serch_tokutei_cd(String tokutei_cd) throws DatabaseException, SystemException {
