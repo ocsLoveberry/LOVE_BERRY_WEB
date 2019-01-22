@@ -63,6 +63,14 @@ public class TestCalendar extends HttpServlet {
 		response.setCharacterEncoding("UTF-8");
 	}
 
+	JikanwariData betunoyarikata(ArrayList<JikanwariData> calendarList){
+		JikanwariData j1 = new JikanwariData();
+		j1.setTitle(calendarList.get(0).getTitle());
+		j1.setStart(calendarList.get(0).getStart());
+		return j1;
+
+	}
+
 	void checkListContents(ArrayList<JikanwariData> calendarList){
 		for(JikanwariData jikanwari: calendarList) {
 			System.out.println("title:"+jikanwari.getTitle());
