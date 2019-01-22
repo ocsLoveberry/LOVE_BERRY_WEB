@@ -22,7 +22,9 @@ public class Serch_studentDAO extends DAOBase{
 		this.open();
 		ArrayList<String> studentsList = new ArrayList<String>();
 		try {
+			//if()で選択肢の判定必要
 			String sql = "select SEKI_NO from OCS_JOHO_TBL where CLASS_CD = '" + class_cd + "' AND YEAR = '" + year + "'";
+			
 			this.open();
 			stmt = con.createStatement();
 			ResultSet rs = stmt.executeQuery(sql);

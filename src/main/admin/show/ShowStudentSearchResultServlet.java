@@ -52,6 +52,7 @@ public class ShowStudentSearchResultServlet extends HttpServlet {
 		System.out.println("student_name:"+student_name);
 		System.out.println("seki_no:"+seki_no);
 //		学籍番号のラジオボタンが選ばれていれば
+
 		if(radio_Name_or_SekiNo.equals("select_sekiNo")){
 			System.out.println("select_sekiNo:true");
 			Search_OCS_JOHO_TBL_DAO sojtd = new Search_OCS_JOHO_TBL_DAO();
