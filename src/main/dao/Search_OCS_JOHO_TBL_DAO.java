@@ -28,7 +28,6 @@ public class Search_OCS_JOHO_TBL_DAO extends DAOBase {
 		} finally {
 			this.close(stmt);
 		}
-
 		return studentList;
 	}
 
