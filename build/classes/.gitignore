@@ -5,3 +5,7 @@
 /admin/
 /other/
 /servlet/
+.checkstyle
+.metadata/
+.settings/*
+*.classes

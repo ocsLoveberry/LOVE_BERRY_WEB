@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import Dispatcher.LoveBerryDispatcher;
-import main.dao.SerchJugyoDetailDAO;
+import main.dao.SearchJugyoDetailDAO;
 import main.dao.Subjects_cd_TO_nameDAO;
 import main.exception.DatabaseException;
 import main.exception.SystemException;
@@ -45,7 +45,7 @@ public class ShowJugyoDetail extends HttpServlet {
 			//request.getAttribute?かなんかで受け取った前提
 			session.setAttribute("tokutei_cd", tokutei_cd);
 			ArrayList<String> jugyo_detail = new ArrayList<String>();
-			SerchJugyoDetailDAO sjdDAO = new SerchJugyoDetailDAO();
+			SearchJugyoDetailDAO sjdDAO = new SearchJugyoDetailDAO();
 			try {
 				jugyo_detail = sjdDAO.serch_jugyo(tokutei_cd);
 			} catch (DatabaseException | SystemException e) {

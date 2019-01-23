@@ -42,7 +42,6 @@ public class StudentPunchSearchResultServlet extends HttpServlet {
 		String seki_no  = request.getRemoteUser();
 		List<String[]> resultStudentPunch = null;
 		StudentPunchSearchDAO spsdao = new StudentPunchSearchDAO();
-
 		try {
 			resultStudentPunch = spsdao.searchStudentPunch(seki_no, formEntryDate, formClassroom);
 		} catch (DatabaseException e) {

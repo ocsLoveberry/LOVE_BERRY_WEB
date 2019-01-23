@@ -29,7 +29,7 @@ public class DAOBase {
 		}
 	}
 
-	protected void close(Statement stmt) throws DatabaseException {
+	protected void close(Statement stmt) {
 		try {
 			if (stmt != null) {
 				stmt.close();
@@ -38,15 +38,21 @@ public class DAOBase {
 				stmt.close();
 			}
 		} catch (SQLException e) {
-			throw new DatabaseException(ExceptionParameters.DATABASE_CLOSE_EXCEPTION_MESSAGE, e);
+			e.printStackTrace();
 		}
 	}
 
-	protected ResultSet executeQuery(String sql) throws DatabaseException, SystemException, SQLException{
-		this.open();
-		stmt = con.createStatement();
-		ResultSet rs = stmt.executeQuery(sql);
-		this.close(stmt);
+	protected ResultSet executeQuery(String sql){
+		ResultSet rs = null;
+		try {
+			this.open();
+			stmt = con.createStatement();
+			rs = stmt.executeQuery(sql);
+		} catch (DatabaseException | SystemException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 		return rs;
 
 	}

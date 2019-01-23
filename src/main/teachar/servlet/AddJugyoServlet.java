@@ -15,7 +15,7 @@ import Dispatcher.LoveBerryDispatcher;
 import main.dao.AddJikanwariTblDAO;
 import main.dao.AddJugyoDAO;
 import main.dao.CheckJikanwari;
-import main.dao.SerchClassDAO;
+import main.dao.SearchClassDAO;
 import main.dao.SetTimeContentDAO;
 import main.exception.DatabaseException;
 import main.exception.SystemException;
@@ -104,7 +104,7 @@ public class AddJugyoServlet extends HttpServlet {
 				//追加した科目を持つclass_cdリストを作成
 				String year =  session.getAttribute("year").toString();
 				ArrayList<String> class_cd_List = new ArrayList<String>();
-				SerchClassDAO scDAO = new SerchClassDAO();
+				SearchClassDAO scDAO = new SearchClassDAO();
 				try {
 					class_cd_List = scDAO.serch_class(subjects_cd,year);
 				} catch (DatabaseException | SystemException e) {

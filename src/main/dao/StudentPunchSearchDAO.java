@@ -32,9 +32,6 @@ public class StudentPunchSearchDAO extends DAOBase {
 			String l_lobe_id = rs.getString("LOBE_ID");
 			String[] dataLow = {l_seki_no,l_entry_date,l_lobe_id};
 			resultStudentPunch.add(dataLow);
-			System.out.println("StudentPunchSearchDAO:"+l_seki_no);
-			System.out.println("StudentPunchSearchDAO:"+l_entry_date);
-			System.out.println("StudentPunchSearchDAO:"+l_lobe_id);
 			}
 		}catch(Exception e) {
 			e.printStackTrace();
