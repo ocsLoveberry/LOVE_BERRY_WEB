@@ -13,8 +13,7 @@ import main.parameter.ExceptionParameters;
 public class studentDetailDAO extends DAOBase {
 	private Statement stmt;
 
-	/**
-	 *
+	/*
 	 * @param seki_no
 	 * 			学籍番号
 	 * @return
@@ -71,13 +70,11 @@ public class studentDetailDAO extends DAOBase {
 //		④
 		System.out.println("nullなん？"+studenDetailList.isEmpty());
 		return studenDetailList;
-
 	}
 
 	public String[] getAttendanceClass1(String seki_no) {
 		String sql = "select * from ";
 		String[] result = null;
 		return result;
-
 	}
 }

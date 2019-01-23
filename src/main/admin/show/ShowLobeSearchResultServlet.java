@@ -14,26 +14,14 @@ import javaBeans.lobeBean;
 import main.dao.Search_LOBE_TBL_DAO;
 import main.exception.DatabaseException;
 import main.exception.SystemException;
-
-/**
- * Servlet implementation class SearchLobeServlet
- */
 @WebServlet("/ShowLobeSearchResultServlet")
 public class ShowLobeSearchResultServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
     public ShowLobeSearchResultServlet() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String checked = request.getParameter("classRoomNameOrLobeName");
 		String classRoomName = request.getParameter("classRoomName");
 		System.out.println(classRoomName);
@@ -51,15 +39,10 @@ public class ShowLobeSearchResultServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 		request.setAttribute("lobeList", lobeList);
-		LoveBerryDispatcher.dispatch(request, response, "/WEB-INF/lobe_search_result.jsp");
+		LoveBerryDispatcher.dispatch(request, response, "/WEB-INF/Lobi/Lobe_Search_Result.jsp");
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);
 	}
-
 }

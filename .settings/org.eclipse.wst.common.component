@@ -2,6 +2,13 @@
     <wb-module deploy-name="LOVE_BERRY_WEB2">
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/WebContent/WEB-INF/lib/Admin"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/WebContent/WEB-INF/lib/Lobe"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/WebContent/WEB-INF/lib/HOME"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/WebContent/WEB-INF/lib/Student"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/WebContent/WEB-INF/lib/Teacher"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/WebContent/WEB-INF/lib/Felica"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/admin"/>
         <property name="context-root" value="LOVE_BERRY_WEB2"/>
         <property name="java-output-path" value="/LOVE_BERRY_WEB2/build/classes"/>
     </wb-module>

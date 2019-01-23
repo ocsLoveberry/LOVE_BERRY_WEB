@@ -1,4 +1,4 @@
-package main.teachar.servlet;
+package main.teachar;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -20,24 +20,14 @@ import main.dao.SetTimeContentDAO;
 import main.exception.DatabaseException;
 import main.exception.SystemException;
 
-/**
- * Servlet implementation class AddJugyoServlet
- */
 @WebServlet("/AddJugyoServlet")
 public class AddJugyoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
     public AddJugyoServlet() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession(false);
 		if(session.getAttribute("seki_no") == null) {
