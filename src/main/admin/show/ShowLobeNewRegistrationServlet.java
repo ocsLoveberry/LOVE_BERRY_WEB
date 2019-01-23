@@ -10,17 +10,18 @@ import javax.servlet.http.HttpServletResponse;
 
 import Dispatcher.LoveBerryDispatcher;
 
-@WebServlet("/ShowLobeTopServlet")
-public class ShowLobeTopServlet extends HttpServlet {
+@WebServlet("/ShowLobeNewRegistrationServlet")
+public class ShowLobeNewRegistrationServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	public ShowLobeTopServlet() {
-       super();
+    public ShowLobeNewRegistrationServlet() {
+        super();
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		LoveBerryDispatcher.dispatch(request, response, "/WEB-INF/Lobi/Lobe_Search.jsp");
+		LoveBerryDispatcher.dispatch(request, response, "/WEB-INF/Lobi/Lobe_New_Registration.jsp");
 	}
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);
 	}
 

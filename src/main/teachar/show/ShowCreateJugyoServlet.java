@@ -12,25 +12,14 @@ import javax.servlet.http.HttpSession;
 
 import Dispatcher.LoveBerryDispatcher;
 
-/**
- * Servlet implementation class TestCreateJugyoServlet
- */
 @WebServlet("/ShowCreateJugyoServlet")
 public class ShowCreateJugyoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
     public ShowCreateJugyoServlet() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//とりあえず中身勝手に指定
 		HttpSession session = request.getSession(false);
 		if(session.getAttribute("seki_no") == null) {
@@ -49,16 +38,10 @@ public class ShowCreateJugyoServlet extends HttpServlet {
 				year = String.valueOf(Integer.parseInt(year) - 1);
 			}
 			session.setAttribute("year",year);
-
 			LoveBerryDispatcher.dispatch(request, response, "/WEB-INF/create_jugyo.jsp");
 		}
 	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 

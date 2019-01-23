@@ -1,4 +1,4 @@
-package main.teachar.servlet;
+package main.teachar;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -16,25 +16,13 @@ import main.dao.SearchTokutei_cdDAO;
 import main.dao.Subjects_cd_TO_nameDAO;
 import main.exception.DatabaseException;
 import main.exception.SystemException;
-
-/**
- * Servlet implementation class UpdatePageServlet
- */
 @WebServlet("/UpdatePageServlet")
 public class UpdatePageServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
     public UpdatePageServlet() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession(false);
 		if(session.getAttribute("seki_no") == null) {
@@ -48,7 +36,6 @@ public class UpdatePageServlet extends HttpServlet {
 			try {
 				subjects_name = sctnDAO.to_name(subjects_cd);
 			} catch (DatabaseException | SystemException e) {
-				// TODO 自動生成された catch ブロック
 				e.printStackTrace();
 			}
 			//個々経由したフラグ的な
@@ -77,16 +64,11 @@ public class UpdatePageServlet extends HttpServlet {
 				// TODO 自動生成された catch ブロック
 				e.printStackTrace();
 			}
-
-			LoveBerryDispatcher.dispatch(request, response, "/WEB-INF/create_jugyo.jsp");
+			LoveBerryDispatcher.dispatch(request, response, "/WEB-INF/Teacher/Create_Jugyo.jsp");
 		}
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 

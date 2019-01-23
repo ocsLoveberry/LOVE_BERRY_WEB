@@ -16,25 +16,14 @@ import main.dao.Subjects_cd_TO_nameDAO;
 import main.exception.DatabaseException;
 import main.exception.SystemException;
 
-/**
- * Servlet implementation class ShowJugyoDetail
- */
-@WebServlet("/ShowJugyoDetail")
-public class ShowJugyoDetail extends HttpServlet {
+@WebServlet("/ShowJugyoDetailServlet")
+public class ShowJugyoDetailServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public ShowJugyoDetail() {
+    public ShowJugyoDetailServlet() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession(false);
 		String tokutei_cd = "test_subjects12018-04-011";
 		String class_cd = "R4A1_system";
@@ -69,15 +58,12 @@ public class ShowJugyoDetail extends HttpServlet {
 				e.printStackTrace();
 			}
 			session.setAttribute("subjects_name",subjects_name);
-			LoveBerryDispatcher.dispatch(request, response, "/WEB-INF/jugyo_detail.jsp");
+			LoveBerryDispatcher.dispatch(request, response, "/WEB-INF/Jugyo_Detail.jsp");
+			//dispatchメモ：らいだー
 		}
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 

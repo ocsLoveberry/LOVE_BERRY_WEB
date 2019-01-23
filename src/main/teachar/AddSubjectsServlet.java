@@ -1,4 +1,4 @@
-package main.teachar.servlet;
+package main.teachar;
 
 import java.io.IOException;
 
@@ -15,24 +15,13 @@ import main.dao.AddClassSubjectsDAO;
 import main.dao.Subjects_cd_TO_nameDAO;
 import main.exception.DatabaseException;
 import main.exception.SystemException;
-/**
- * Servlet implementation class AddSubjectsServlet
- */
 @WebServlet("/AddSubjectsServlet")
 public class AddSubjectsServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
     public AddSubjectsServlet() {
         super();
-        // TODO Auto-generated constructor stub
     }
-
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession(false);
 		if(session.getAttribute("seki_no") == null) {
@@ -74,18 +63,13 @@ public class AddSubjectsServlet extends HttpServlet {
 				}
 				request.setAttribute("subjects_name",subjects_name);
 				request.setAttribute("add_count",add_count);
-				String view = "/WEB-INF/add_result.jsp";
+				String view = "/WEB-INF/Teacher/Add_Result.jsp";
 				RequestDispatcher dispatcher = request.getRequestDispatcher(view);
 			    dispatcher.forward(request, response);
 			}
 		}
 	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 

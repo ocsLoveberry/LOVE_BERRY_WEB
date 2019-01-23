@@ -1,4 +1,4 @@
-package main.teachar.servlet;
+package main.teachar;
 
 import java.io.IOException;
 
@@ -11,24 +11,13 @@ import javax.servlet.http.HttpSession;
 
 import Dispatcher.LoveBerryDispatcher;
 
-/**
- * Servlet implementation class CheckAddSubjectsServlet
- */
 @WebServlet("/CheckAddSubjectsServlet")
 public class CheckAddSubjectsServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
     public CheckAddSubjectsServlet() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String room_cd1 = request.getParameter("room_cd1");
 		String room_cd2 = request.getParameter("room_cd2");
@@ -50,17 +39,12 @@ public class CheckAddSubjectsServlet extends HttpServlet {
 					session.setAttribute("room_cd3",room_cd3);
 				}
 				//確認ページに飛ばしたい
-				LoveBerryDispatcher.dispatch(request, response, "/WEB-INF/check_add_subjects.jsp");
+				LoveBerryDispatcher.dispatch(request, response, "/WEB-INF/Teacher/Check_Add_Subjects.jsp");
 			}
 		}
 
 	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 

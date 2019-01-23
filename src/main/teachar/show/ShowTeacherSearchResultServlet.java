@@ -33,16 +33,6 @@ public class ShowTeacherSearchResultServlet extends HttpServlet {
 		System.out.println("select_textbox_btn:"+select_textbox_btn);
 		System.out.println("scl_num_tb:"+scl_num_tb);
 		System.out.println("teacher_name_tb:"+teacher_name_tb);
-//		Search_teacherDAO SearchteacherDao = new Search_teacherDAO();
-/*
-		if((scl_num_tb.equals(""))||((teacher_name_tb.equals(""))))
-		{
-			System.out.print("入力欄が空白");
-			teacherDate = null;
-			request.setAttribute("teacherDate", teacherDate);
-			LoveBerryDispatcher.dispatch(request, response, "/WEB-INF/teacher_search_result.jsp");
-		}
-*/		//else {
 
 		Search_teacherDAO SearchteacherDao = new Search_teacherDAO();
 //		学籍番号が選ばれているとき
@@ -71,11 +61,11 @@ public class ShowTeacherSearchResultServlet extends HttpServlet {
 	}
 //		ArrayList<teacherSearchBeans>をrequestに登録する
 		request.setAttribute("teacherDate", teacherDate);
-		LoveBerryDispatcher.dispatch(request, response, "/WEB-INF/teacher_search_result.jsp");
+		LoveBerryDispatcher.dispatch(request, response, "/WEB-INF/Teacher/Teacher_Search_Result.jsp");
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+
 		doGet(request, response);
 	}
 }
