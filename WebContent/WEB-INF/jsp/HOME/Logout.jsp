@@ -4,11 +4,33 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="/LOVE_BERRY_WEB/css/logout.css">
+<style>
+body{
+	margin:0;
+	height:100%;
+	background-color:#ccc;
+}
+
+.LB{
+	font-size:3em;
+	font-family: 'Homemade Apple', cursive;
+	text-decoration: none;
+	color:#FFFFFF;
+}
+
+.top{
+
+}
+</style>
 <title>LOVE BERRY ログアウト</title>
 </head>
 <body>
-	<h1>LOVE BERRY</h1>
+<div class="LO">
+	<h1 class="LB">LOVE BERRY</h1>
 	<p>ログアウトしました。
-	<p><a href="ShowTopServlet">トップへ</a>
+
+	<p><a href="ShowTopServlet" calss="top">トップへ</a>
+</div>
 </body>
 </html>

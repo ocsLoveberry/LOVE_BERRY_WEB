@@ -1,0 +1,79 @@
+@charset "UTF-8";
+
+body,p,div,input{margin: 0}
+
+body{
+	background-image: url("img/nikaido.png");
+	background-repeat:no-repeat;
+	background-attachment:fixed;	/*背景画像をスクロールしないように固定*/
+	background-position:center center; /*常に画像が中央に表示される*/
+	background-size:cover;
+}
+
+#header{
+	width:auto;
+	padding:2px;
+	text-align:center;
+	dispaly:flex;
+	background-image:url("img/tea_header.jpg");
+	background-repeat:no-repeat;
+	background-size:cover;
+}
+
+.LB{
+	font-size:3em;
+	font-family: 'Homemade Apple', cursive;
+	text-decoration: none;
+	color:#FFFFFF;
+}
+
+h1{
+	text-align:center;
+	font-family: "Hannari";
+	text-decoration: none;
+	color:#000;
+	font-weight:bold;
+}
+
+span{
+	color:#FFF;
+}
+
+#form{
+	position:relative;
+	width:auto;
+	margin:0px auto;
+	max-width:400px;
+	text-align:center;
+}
+
+#search{
+	width:250px;
+	height:50px;
+	padding:0 10px;
+	border-radius:5px;
+	font-size:18px;
+	background:#eee;
+	outline:0;
+}
+
+#btn{
+	display       : inline-block;
+ 	border-radius : 5%;          /* 角丸       */
+  	font-size     : 18pt;        /* 文字サイズ */
+  	text-align    : center;      /* 文字位置   */
+  	cursor        : pointer;     /* カーソル   */
+  	padding       :10px 25px 15px 25px;   /* 余白       */
+  	background    : #56adff;     /* 背景色     */
+  	color         : #ffffff;     /* 文字色     */
+  	line-height   : 1em;         /* 1行の高さ  */
+  	transition    : .3s;         /* なめらか変化 */
+  	box-shadow    : 3px 3px 10px #666666;  /* 影の設定 */
+  	border        : 2px solid #56adff;    /* 枠の指定 */
+}
+
+#btn:hover{
+	  	box-shadow    : none;        /* カーソル時の影消去 */
+		color         : #56adff;     /* 背景色     */
+ 		background    : #ffffff;     /* 文字色     */
+}
