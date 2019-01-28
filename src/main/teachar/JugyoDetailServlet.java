@@ -1,6 +1,7 @@
-package main.teachar.show;
+package main.teachar;
 
 import java.io.IOException;
+import java.util.Enumeration;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -11,16 +12,16 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 /**
- * Servlet implementation class TestCreateJugyoServlet
+ * Servlet implementation class JugyoDetailServlet
  */
-@WebServlet("/ShowCreateJugyoServlet")
-public class ShowCreateJugyoServlet extends HttpServlet {
+@WebServlet("/JugyoDetailServlet")
+public class JugyoDetailServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ShowCreateJugyoServlet() {
+    public JugyoDetailServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -29,28 +30,33 @@ public class ShowCreateJugyoServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//とりあえず中身勝手に指定
 		HttpSession session = request.getSession(false);
 		if(session.getAttribute("seki_no") == null) {
 			String view = "ShowTopServlet";
 			RequestDispatcher dispatcher = request.getRequestDispatcher(view);
 		    dispatcher.forward(request, response);
 		}else {
-			session.setAttribute("Nitiji", "2018-12-12");
-			session.setAttribute("Jigen", "2");
-			session.setAttribute("Class", "R4A1System");
-			String year = session.getAttribute("Nitiji").toString();
-			String check_year = year.substring(5,7);
-			year = year.substring(0,4);
-			//1月2月3月の時に年度なので-1年する
-			if(check_year.equals("01") || check_year.equals("02") || check_year.equals("03")){
-				year = String.valueOf(Integer.parseInt(year) - 1);
+			String branch = request.getParameter("result").toString();
+			//修正ボタンか、戻るボタンか
+			if(branch.equals("revise")) {
+				//修正・削除ボタン
+				String view = "/WEB-INF/revise_jugyo.jsp";
+				RequestDispatcher dispatcher = request.getRequestDispatcher(view);
+			    dispatcher.forward(request, response);
+			}else{
+				//戻るボタン
+				//seki_no以外削除して時間割ページに
+				Enumeration e = session.getAttributeNames();
+				while(e.hasMoreElements()) {
+					String key = (String)e.nextElement();
+					if(!key.equals("seki_no")) {
+						session.removeAttribute(key);
+					}
+				}
+				String view = "CreateJikanwariServlet";
+				RequestDispatcher dispatcher = request.getRequestDispatcher(view);
+			    dispatcher.forward(request, response);
 			}
-			session.setAttribute("year",year);
-
-			String view = "/WEB-INF/create_jugyo.jsp";
-			RequestDispatcher dispatcher = request.getRequestDispatcher(view);
-		    dispatcher.forward(request, response);
 		}
 	}
 

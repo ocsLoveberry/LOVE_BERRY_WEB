@@ -17,7 +17,6 @@ public class RoomListDAO extends DAOBase{
 		ArrayList<String> room_list = new ArrayList<String>();
 		try {
 			String sql = "select ROOM_CD from ROOM_LIST_TBL";
-			this.open();
 			stmt = con.createStatement();
 			ResultSet rs = stmt.executeQuery(sql);
 			while(rs.next()) {
