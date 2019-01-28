@@ -41,11 +41,11 @@ public class StudentPunchSearchResultServlet extends HttpServlet {
 //		指定した日時に打刻があれば
 		if(!resultStudentPunch.isEmpty()) {
 			request.setAttribute("resultStudentPunch", resultStudentPunch);
-			LoveBerryDispatcher.dispatch(request, response, "/WEB-INF/Stundet/Student_Punch_Search_Result.jsp");
+			LoveBerryDispatcher.dispatch(request, response, "/WEB-INF/jsp/Stundet/Student_Punch_Search_Result.jsp");
 //	    指定した日時に打刻がなければ
 		}else {
 			request.setAttribute("isError", "true");
-			LoveBerryDispatcher.dispatch(request, response, "/WEB-INF/Stundet/Student_Punch_Search.jsp");
+			LoveBerryDispatcher.dispatch(request, response, "/WEB-INF/jsp/Stundet/Student_Punch_Search.jsp");
 		}
 	}
 

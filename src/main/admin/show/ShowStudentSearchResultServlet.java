@@ -61,7 +61,7 @@ public class ShowStudentSearchResultServlet extends HttpServlet {
 		System.out.println("studentData.isEmpty():" + studentData.isEmpty());
 //		ArrayList<OcsJohoData> を reqestに登録する
 		request.setAttribute("studentData", studentData);
-		LoveBerryDispatcher.dispatch(request, response, "/WEB-INF/Admin/Admin_StudentSearch_Result.jsp");
+		LoveBerryDispatcher.dispatch(request, response, "/WEB-INF/jsp/Admin/Admin_StudentSearch_Result.jsp");
 //		}
 	}
 

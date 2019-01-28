@@ -32,7 +32,7 @@ public class TestCreateJugyoServlet extends HttpServlet {
 		}
 		session.setAttribute("year",year);
 
-		LoveBerryDispatcher.dispatch(request, response, "/WEB-INF/Teacher/Test_Create_Jugyo.jsp");
+		LoveBerryDispatcher.dispatch(request, response, "/WEB-INF/jsp/Teacher/Test_Create_Jugyo.jsp");
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);

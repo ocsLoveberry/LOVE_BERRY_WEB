@@ -63,7 +63,7 @@ public class AddSubjectsServlet extends HttpServlet {
 				}
 				request.setAttribute("subjects_name",subjects_name);
 				request.setAttribute("add_count",add_count);
-				String view = "/WEB-INF/Teacher/Add_Result.jsp";
+				String view = "/WEB-INF/jsp/Teacher/Add_Result.jsp";
 				RequestDispatcher dispatcher = request.getRequestDispatcher(view);
 			    dispatcher.forward(request, response);
 			}

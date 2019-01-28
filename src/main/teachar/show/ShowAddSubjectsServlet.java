@@ -22,7 +22,7 @@ public class ShowAddSubjectsServlet extends HttpServlet {
 		if(session.getAttribute("seki_no") == null) {
 			LoveBerryDispatcher.dispatch(request, response, "ShowTopServlet");
 		}else {
-			LoveBerryDispatcher.dispatch(request, response, "/WEB-INF/add_subjects.jsp");
+			LoveBerryDispatcher.dispatch(request, response, "/WEB-INF/jsp/add_subjects.jsp");
 		}
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

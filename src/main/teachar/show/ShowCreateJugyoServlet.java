@@ -38,7 +38,7 @@ public class ShowCreateJugyoServlet extends HttpServlet {
 				year = String.valueOf(Integer.parseInt(year) - 1);
 			}
 			session.setAttribute("year",year);
-			LoveBerryDispatcher.dispatch(request, response, "/WEB-INF/create_jugyo.jsp");
+			LoveBerryDispatcher.dispatch(request, response, "/WEB-INF/jsp/create_jugyo.jsp");
 		}
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

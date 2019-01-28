@@ -58,7 +58,9 @@ public class ShowJugyoDetailServlet extends HttpServlet {
 				e.printStackTrace();
 			}
 			session.setAttribute("subjects_name",subjects_name);
-			LoveBerryDispatcher.dispatch(request, response, "/WEB-INF/Jugyo_Detail.jsp");
+
+			//@TODO Jugyo_detail.jspのjsp/配下のファルダにリンク
+			LoveBerryDispatcher.dispatch(request, response, "/WEB-INF/jsp/Jugyo_Detail.jsp");
 			//dispatchメモ：らいだー
 		}
 	}

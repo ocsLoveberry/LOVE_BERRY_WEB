@@ -39,7 +39,7 @@ public class CheckAddSubjectsServlet extends HttpServlet {
 					session.setAttribute("room_cd3",room_cd3);
 				}
 				//確認ページに飛ばしたい
-				LoveBerryDispatcher.dispatch(request, response, "/WEB-INF/Teacher/Check_Add_Subjects.jsp");
+				LoveBerryDispatcher.dispatch(request, response, "/WEB-INF/jsp/Teacher/Check_Add_Subjects.jsp");
 			}
 		}
 

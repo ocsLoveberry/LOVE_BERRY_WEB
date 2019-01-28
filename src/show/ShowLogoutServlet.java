@@ -38,7 +38,7 @@ public class ShowLogoutServlet extends HttpServlet {
 	    	session.invalidate();
 	    }
 	    //その上でログアウト画面へ遷移
-	    LoveBerryDispatcher.dispatch(request, response, "/WEB-INF/logout.jsp");
+	    LoveBerryDispatcher.dispatch(request, response, "/WEB-INF/jsp/logout.jsp");
 	}
 
 	/**
