@@ -1,0 +1,43 @@
+@charset "UTF-8";
+
+#main{
+	width:30%;
+	text-align:center;
+	margin:20px auto;
+	background-color: white;
+	padding-top:10px;
+	overflow: hidden;
+
+}
+
+div.punch_table {
+	margin: 20px;
+}
+table, td, th{
+    border: 1px solid gray;
+}
+
+table.punch_result_table {
+	width: 400px;
+	table-layout: auto;
+	margin: auto;
+}
+div.main p {
+	margin:20px;
+}
+
+#date{
+	padding-top: 50px;
+}
+
+
+#form1{
+	width:700px auto;
+	margin:200px auto;
+	padding:150px;
+	/* background-image:url("img/form.jpg");
+	background-repeat:no-repeat;
+	background-size:cover;
+	opacity:0.7;*/
+}
+
