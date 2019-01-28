@@ -12,8 +12,10 @@
 <h1>LOVE_BERRY  学生ページだぞ</h1>
 </header>
 	<table>
-	<tr><td><a href="StudentInfoServlet">学生一覧表示</a></td></tr>
-	<tr><td><a href="studentinput.html">学生登録</a></td></tr>
+	<tr>
+	<td><a href="StudentInfoServlet">学生一覧表示</a></td>
+	<td><a href="studentinput.html">学生登録</a></td>
+	</tr>
 	<tr><td><a href="ShowStudentPunchSearchServlet">打刻検索</a></td></tr>
 	<tr><td><a href="ShowTestServlet">テストページ表示</a></td></tr>
 	<tr><td>下記は問題なし、上はテスト項目</td></tr>

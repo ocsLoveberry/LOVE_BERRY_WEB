@@ -10,10 +10,14 @@
 <body>
 <h1>LOVE_BERRY  管理者ページ</h1>
 	<table>
-	<tr><td><input type="button" value="学生検索" id="stu"></td></tr>
-	<tr><td><a href="">教員検索画面（工事中）</a></td></tr>
-	<tr><td><input type="button" value="Felica画面" id="Fel"></td></tr>
-	<tr><td><a href="ShowLobeTopServlet">LOBE情報画面（工事中）</a></td></tr>
+	<tr>
+	<td><input type="button" value="学生検索" id="stu"></td>
+	<td><a href="">教員検索画面（工事中）</a></td>
+	</tr>
+	<tr>
+	<td><input type="button" value="Felica画面" id="Fel"></td>
+	<td><a href="ShowLobeTopServlet">LOBE情報画面（工事中）</a></td>
+	</tr>
 	<tr><td>下記は問題なし、上はテスト項目</td></tr>
 
 	<%
