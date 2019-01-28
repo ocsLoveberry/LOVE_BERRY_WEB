@@ -1,4 +1,4 @@
-package main.teachar.show;
+package main.admin.show;
 
 import java.io.IOException;
 
@@ -18,7 +18,7 @@ public class ShowTeacherSearchServlet extends HttpServlet {
 
     //教員検索画面への遷移
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String view = "/WEB-INF/jsp/Teacher/Teacher_Search.jsp";
+		String view = "/WEB-INF/jsp/Admin/Admin_Teacher_Search.jsp";
 	    RequestDispatcher dispatcher = request.getRequestDispatcher(view);
 	    dispatcher.forward(request, response);
 	}

@@ -18,6 +18,7 @@
 	<td><input type="button" value="Felica画面" id="Fel"></td>
 	<td><a href="ShowLobeTopServlet">LOBE情報画面（工事中）</a></td>
 	</tr>
+
 	<tr><td>下記は問題なし、上はテスト項目</td></tr>
 
 	<%

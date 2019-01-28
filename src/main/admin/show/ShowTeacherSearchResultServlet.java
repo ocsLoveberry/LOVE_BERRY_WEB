@@ -1,4 +1,4 @@
-package main.teachar.show;
+package main.admin.show;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -61,7 +61,7 @@ public class ShowTeacherSearchResultServlet extends HttpServlet {
 	}
 //		ArrayList<teacherSearchBeans>をrequestに登録する
 		request.setAttribute("teacherDate", teacherDate);
-		LoveBerryDispatcher.dispatch(request, response, "/WEB-INF/jsp/Teacher/Teacher_Search_Result.jsp");
+		LoveBerryDispatcher.dispatch(request, response, "/WEB-INF/jsp/Admin/Admin_Teacher_Search_Result.jsp");
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

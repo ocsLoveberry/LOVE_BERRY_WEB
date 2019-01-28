@@ -24,8 +24,8 @@
     <auth-method>FORM</auth-method>
     <form-login-config>
       <form-login-page>/WEB-INF/jsp/HOME/Login.jsp</form-login-page>
-      <form-error-page>/WEB-INF/jsp/HOME/Loginerror.jsp</form-error-page>
-    </form-login-config>
+      <form-error-page>/WEB-INF/jsp/HOME/Login_Error.jsp</form-error-page>
+      </form-login-config>
   </login-config>
   <security-role>
     <role-name>1</role-name>

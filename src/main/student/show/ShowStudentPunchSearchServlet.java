@@ -20,7 +20,7 @@ public class ShowStudentPunchSearchServlet extends HttpServlet {
 //    ログインセッションの有無の確認
 //    打刻検索画面への遷移
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		LoveBerryDispatcher.dispatch(request, response, "/WEB-INF/jsp/Stundent/Student_Punch_Search.jsp");
+		LoveBerryDispatcher.dispatch(request, response, "/WEB-INF/jsp/Student/Student_Punch_Search.jsp");
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);
