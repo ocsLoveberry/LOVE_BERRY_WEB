@@ -41,11 +41,11 @@ public class ShowTopServlet extends HttpServlet {
 		}
 
 		if (request.isUserInRole("1")){
-			LoveBerryDispatcher.dispatch(request, response, "/WEB-INF/teacher_top.jsp");
+			LoveBerryDispatcher.dispatch(request, response, "/WEB-INF/main/Teachar/Teacher_Top.jsp");
 		}else if(request.isUserInRole("2")) {
-			LoveBerryDispatcher.dispatch(request, response, "/WEB-INF/admin_top.jsp");
+			LoveBerryDispatcher.dispatch(request, response, "/WEB-INF/main/Admin/Admin_Top.jsp");
 		}else if(request.isUserInRole("3")) {
-			LoveBerryDispatcher.dispatch(request, response, "/WEB-INF/student_top.jsp");
+			LoveBerryDispatcher.dispatch(request, response, "/WEB-INF/main/Strudent/Student_Top.jsp");
 		}
 	}
 
