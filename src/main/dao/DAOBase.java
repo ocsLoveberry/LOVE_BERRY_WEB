@@ -35,7 +35,7 @@ public class DAOBase {
 				stmt.close();
 			}
 			if (con != null) {
-				con.close();
+				stmt.close();
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();

@@ -1,4 +1,4 @@
-package main.admin.show;
+package main.teachar.show;
 
 import java.io.IOException;
 
