@@ -4,10 +4,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="/LOVE_BERRY_WEB/css/stu_top.css">
 <title>LOVE_BERRY</title>
 </head>
 <body>
+<header>
 <h1>LOVE_BERRY  学生ページだぞ</h1>
+</header>
 	<table>
 	<tr><td><a href="StudentInfoServlet">学生一覧表示</a></td></tr>
 	<tr><td><a href="studentinput.html">学生登録</a></td></tr>

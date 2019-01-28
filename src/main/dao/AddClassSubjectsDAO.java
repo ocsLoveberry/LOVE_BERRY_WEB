@@ -32,7 +32,7 @@ public class AddClassSubjectsDAO extends DAOBase{
 		try {
 			Search_studentDAO ssDAO = new Search_studentDAO();
 			ArrayList<String> studentsList = new ArrayList<String>();
-			studentsList = ssDAO.serch_student(class_cd,year);
+			studentsList = ssDAO.search_student(class_cd,year);
 			String sql="";
 			for(int i=0; i<studentsList.size();i++){
 				sql ="INSERT INTO SUBJECTS_TBL (SEKI_NO,SUBJECTS_CD,YEAR) VALUES('" + studentsList.get(0) + "' ,'" + subjects_cd + "' ,'" + year + "' )";

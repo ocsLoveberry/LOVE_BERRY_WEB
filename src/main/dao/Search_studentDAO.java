@@ -18,13 +18,13 @@ import main.parameter.ExceptionParameters;
 public class Search_studentDAO extends DAOBase{
 	private Statement stmt;
 
-	public ArrayList<String> serch_student(String class_cd,String year) throws DatabaseException, SystemException {
+	public ArrayList<String> search_student(String class_cd,String year) throws DatabaseException, SystemException {
 		this.open();
 		ArrayList<String> studentsList = new ArrayList<String>();
 		try {
 			//if()で選択肢の判定必要
 			String sql = "select SEKI_NO from OCS_JOHO_TBL where CLASS_CD = '" + class_cd + "' AND YEAR = '" + year + "'";
-			
+
 			this.open();
 			stmt = con.createStatement();
 			ResultSet rs = stmt.executeQuery(sql);
