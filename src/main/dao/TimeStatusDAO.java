@@ -22,7 +22,7 @@ public class TimeStatusDAO extends DAOBase{
 			Search_studentDAO ssDAO = new Search_studentDAO();
 			for(int i=0; i<class_cd_List.size();i++){
 				//クラス内のseki_noリストで取得
-				seki_no_List = ssDAO.serch_student(class_cd_List.get(i),year);
+				seki_no_List = ssDAO.search_student(class_cd_List.get(i),year);
 				for(int j=0; j<seki_no_List.size();j++){
 					//クラス内の生徒の出席情報テーブル追加、ダブリとかのエラーはスルーする→ignore
 					sql = ("INSERT IGNORE INTO TIME_STATUS_TBL (SEKI_NO,SUBJECTS_CD,START_DATE,START_TIME_CD) VALUES( '" + seki_no_List.get(j) + "' , '" + subjects_cd + "', '" + start_date + "' , '" + start_time_cd + "')");
