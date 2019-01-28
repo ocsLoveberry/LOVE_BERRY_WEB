@@ -30,7 +30,7 @@ public class CreateNewLobeServlet extends HttpServlet {
 		} catch (DatabaseException | SystemException e) {
 			e.printStackTrace();
 		}
-			LoveBerryDispatcher.dispatch(request, response, "WEB-INF/Lobe/Lobe_Search.jsp");
+			LoveBerryDispatcher.dispatch(request, response, "/WEB-INF/jsp/Lobe/Lobe_Search.jsp");
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

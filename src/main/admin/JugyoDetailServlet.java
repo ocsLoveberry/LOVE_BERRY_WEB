@@ -31,7 +31,8 @@ public class JugyoDetailServlet extends HttpServlet {
 			//修正ボタンか、OKボタンか
 			if(branch.equals("revise")) {
 				//修正ボタン
-				LoveBerryDispatcher.dispatch(request, response, "/WEB-INF/revise_jugyo.jsp");
+				//@TODO reveise_jugyo.jspのフォルダ分けと下記リンクの変更＋これを使うアクターは誰か
+				LoveBerryDispatcher.dispatch(request, response, "/WEB-INF/jsp/revise_jugyo.jsp");
 			}else{
 				//OKボタン
 				Enumeration e = session.getAttributeNames();

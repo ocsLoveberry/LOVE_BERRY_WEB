@@ -39,7 +39,7 @@ public class ShowLobeSearchResultServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 		request.setAttribute("lobeList", lobeList);
-		LoveBerryDispatcher.dispatch(request, response, "/WEB-INF/Lobi/Lobe_Search_Result.jsp");
+		LoveBerryDispatcher.dispatch(request, response, "/WEB-INF/jsp/Lobe/Lobe_Search_Result.jsp");
 	}
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

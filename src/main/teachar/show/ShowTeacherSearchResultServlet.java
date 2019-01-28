@@ -61,7 +61,7 @@ public class ShowTeacherSearchResultServlet extends HttpServlet {
 	}
 //		ArrayList<teacherSearchBeans>をrequestに登録する
 		request.setAttribute("teacherDate", teacherDate);
-		LoveBerryDispatcher.dispatch(request, response, "/WEB-INF/Teacher/Teacher_Search_Result.jsp");
+		LoveBerryDispatcher.dispatch(request, response, "/WEB-INF/jsp/Teacher/Teacher_Search_Result.jsp");
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

@@ -21,7 +21,7 @@ public class ShowStudentSearchServlet extends HttpServlet {
 //    ログインセッションの有無の確認
 //    打刻検索画面への遷移
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		LoveBerryDispatcher.dispatch(request, response, "/WEB-INF/admin_studentSearch.jsp");
+		LoveBerryDispatcher.dispatch(request, response, "/WEB-INF/jsp/Admin/Admin_StudentSearch.jsp");
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

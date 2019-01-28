@@ -64,7 +64,7 @@ public class UpdatePageServlet extends HttpServlet {
 				// TODO 自動生成された catch ブロック
 				e.printStackTrace();
 			}
-			LoveBerryDispatcher.dispatch(request, response, "/WEB-INF/Teacher/Create_Jugyo.jsp");
+			LoveBerryDispatcher.dispatch(request, response, "/WEB-INF/jsp/Teacher/Create_Jugyo.jsp");
 		}
 	}
 

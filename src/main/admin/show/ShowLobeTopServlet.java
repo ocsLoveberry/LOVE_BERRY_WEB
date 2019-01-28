@@ -18,7 +18,7 @@ public class ShowLobeTopServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		LoveBerryDispatcher.dispatch(request, response, "/WEB-INF/Lobi/Lobe_Search.jsp");
+		LoveBerryDispatcher.dispatch(request, response, "/WEB-INF/jsp/Lobe/Lobe_Search.jsp");
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);

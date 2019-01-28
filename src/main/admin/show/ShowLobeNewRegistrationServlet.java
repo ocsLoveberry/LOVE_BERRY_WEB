@@ -18,7 +18,7 @@ public class ShowLobeNewRegistrationServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		LoveBerryDispatcher.dispatch(request, response, "/WEB-INF/Lobi/Lobe_New_Registration.jsp");
+		LoveBerryDispatcher.dispatch(request, response, "/WEB-INF/jsp/Lobe/Lobe_New_Registration.jsp");
 	}
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

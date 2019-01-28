@@ -37,7 +37,7 @@ public class ShowStudentDetailServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 //		学生詳細情報画面を表示させる
-		LoveBerryDispatcher.dispatch(request, response, "/WEB-INF/Admin/Admin_Student_Detail.jsp");
+		LoveBerryDispatcher.dispatch(request, response, "/WEB-INF/jsp/Admin/Admin_Student_Detail.jsp");
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);

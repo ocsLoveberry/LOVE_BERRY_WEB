@@ -17,7 +17,7 @@ public class ShowTeacherDetailServlet extends HttpServlet {
         super();
     }
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		LoveBerryDispatcher.dispatch(request, response, "WEB-INF/Admin/Admin_Teacher_Detail.jsp");
+		LoveBerryDispatcher.dispatch(request, response, "/WEB-INF/jsp/Admin/Admin_Teacher_Detail.jsp");
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);

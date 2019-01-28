@@ -28,7 +28,7 @@ public class CreateJikanwariServlet extends HttpServlet {
 			RequestDispatcher dispatcher = request.getRequestDispatcher(view);
 		    dispatcher.forward(request, response);
 		}else {
-			String view = "/WEB-INF/Teacher/Create_Jikanwari.jsp";
+			String view = "/WEB-INF/jsp/Teacher/Create_Jikanwari.jsp";
 			ClassCountDAO countdao = new ClassCountDAO();
 			String seki_no = request.getRemoteUser();
 			try {
