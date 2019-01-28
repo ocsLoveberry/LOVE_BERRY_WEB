@@ -18,7 +18,7 @@ public class ShowFelicaAddServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		LoveBerryDispatcher.dispatch(request, response, "WEB-INF/Felica/Felica_Add.jsp");
+		LoveBerryDispatcher.dispatch(request, response, "WEB-INF/jsp/Felica/Felica_Add.jsp");
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
