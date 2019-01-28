@@ -8,3 +8,29 @@ body{
 	background-position:center center; /*常に画像が中央に表示される*/
 	background-size:cover;
 }
+
+input[type="button"]{
+	width:300px;
+	padding:50px;
+	margin:40px ;
+	font-size:20px;
+	background-color:transparent;
+	color:#000;
+	font-size:30px;
+	border-radius:10px;
+	font-weight:bold;
+	outline:0;
+}
+
+input[type="button"]:hover{
+	background-color: rgba(255, 255, 255, .2);
+@charset "UTF-8";
+
+
+body{
+	background-image: url("img/admin.jpg");
+	background-repeat:no-repeat;
+	background-attachment:fixed;	/*背景画像をスクロールしないように固定*/
+	background-position:center center; /*常に画像が中央に表示される*/
+	background-size:cover;
+}

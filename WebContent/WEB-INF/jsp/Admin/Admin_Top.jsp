@@ -12,10 +12,8 @@
 	<table>
 	<tr><td><input type="button" value="学生検索" id="stu"></td></tr>
 	<tr><td><a href="">教員検索画面（工事中）</a></td></tr>
-	<tr><td><a href="">インポート画面（工事中）</a></td></tr>
-	<tr><td><a href="ShowFelicaTopServlet">Felica画面（工事中）</a></td></tr>
+	<tr><td><input type="button" value="Felica画面" id="Fel"></td></tr>
 	<tr><td><a href="ShowLobeTopServlet">LOBE情報画面（工事中）</a></td></tr>
-	<tr><td><a href="ShowSessionListServlet">テストページ表示</a></td></tr>
 	<tr><td>下記は問題なし、上はテスト項目</td></tr>
 
 	<%
@@ -30,6 +28,10 @@
 <script>
 document.getElementById("stu").onclick= function(){
 	location.href= "/LOVE_BERRY_WEB/ShowStudentSearchServlet";
+	}
+
+document.getElementById("Fel").onclick= function(){
+	location.href= "/LOVE_BERRY_WEB/ShowFelicaTopServlet";
 	}
 </script>
 </body>
