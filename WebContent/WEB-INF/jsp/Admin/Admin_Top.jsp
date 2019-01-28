@@ -11,7 +11,7 @@
 <h1>LOVE_BERRY  管理者ページ</h1>
 	<table>
 	<tr><td><input type="button" value="学生検索" id="stu"></td></tr>
-	<tr><td><a href="">教員検索画面（工事中）</a></td></tr>
+	<tr><td><a href="ShowTeacherSearchServlet">教員検索画面（工事中）</a></td></tr>
 	<tr><td><a href="">インポート画面（工事中）</a></td></tr>
 	<tr><td><a href="ShowFelicaTopServlet">Felica画面（工事中）</a></td></tr>
 	<tr><td><a href="ShowLobeTopServlet">LOBE情報画面（工事中）</a></td></tr>
