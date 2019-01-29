@@ -18,7 +18,6 @@
 	<td><input type="button" value="Felica" id="Fel"></td>
 	<td><input type="button" value="LOBE情報" id="lobe"></td>
 	</tr>
-
 	<tr><td>下記は問題なし、上はテスト項目</td></tr>
 
 	<%
