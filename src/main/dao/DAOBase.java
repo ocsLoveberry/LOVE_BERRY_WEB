@@ -2,6 +2,7 @@ package main.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -35,13 +36,28 @@ public class DAOBase {
 				stmt.close();
 			}
 			if (con != null) {
-				stmt.close();
+				con.close();
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 	}
 
+	protected void close(PreparedStatement pstmt, ResultSet rs) {
+		try {
+			if (pstmt != null) {
+				pstmt.close();
+			}
+			if (rs != null) {
+				rs.close();
+			}
+			if (con != null) {
+				con.close();
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
 	protected ResultSet executeQuery(String sql){
 		ResultSet rs = null;
 		try {
