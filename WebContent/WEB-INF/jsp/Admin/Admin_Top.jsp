@@ -8,15 +8,15 @@
 <title>LOVE_BERRY</title>
 </head>
 <body>
-<h1>LOVE_BERRY  管理者ページ</h1>
+<h1 id="LB">LOVE_BERRY  管理者ページ</h1>
 	<table>
 	<tr>
 	<td><input type="button" value="学生検索" id="stu"></td>
-	<td><a href="ShowTeacherSearchServlet">教員検索画面（らいだーさん作成中）</a></td>
+	<td><input type="button" value="教員検索" id="tea"></td>
 	</tr>
 	<tr>
-	<td><input type="button" value="Felica画面" id="Fel"></td>
-	<td><a href="ShowLobeTopServlet">LOBE情報画面（工事中）</a></td>
+	<td><input type="button" value="Felica" id="Fel"></td>
+	<td><input type="button" value="LOBE情報" id="lobe"></td>
 	</tr>
 	<tr><td>下記は問題なし、上はテスト項目</td></tr>
 
@@ -37,6 +37,17 @@ document.getElementById("stu").onclick= function(){
 document.getElementById("Fel").onclick= function(){
 	location.href= "/LOVE_BERRY_WEB/ShowFelicaTopServlet";
 	}
+
+document.getElementById("lobe").onclick= function(){
+	location.href= "/LOVE_BERRY_WEB/ShowLobeTopServlet";
+	}
+
+document.getElementById("#").onclick= function(){
+	location.href= "/LOVE_BERRY_WEB/";
+	// ShowTeacherSearchServletを教員検索のジャンプ先として指定しといてください終わったらここも消しといて @Rider
+	}
+
+
 </script>
 </body>
 </html>

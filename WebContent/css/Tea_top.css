@@ -32,6 +32,9 @@ h4{
 	color:#FFFFFF;
 	margin:0px 0px 0px 0px;
 }
+.menu{
+	margin: auto auto;
+}
 
 input[type="button"]{
 	width:300px;
