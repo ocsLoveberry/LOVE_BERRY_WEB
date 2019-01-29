@@ -22,7 +22,7 @@ try{
 	<table>
 
 		<tr>
-			<th>学生番号</th>
+			<th>学籍番号</th>
 			<td>
 				<%= studentDetail.getSeki_no() %>
 			</td>

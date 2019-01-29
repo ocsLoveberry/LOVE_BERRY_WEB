@@ -12,7 +12,7 @@
 	<table>
 	<tr>
 	<td><input type="button" value="学生検索" id="stu"></td>
-	<td><a href="">教員検索画面（工事中）</a></td>
+	<td><a href="ShowTeacherSearchServlet">教員検索画面（らいだーさん作成中）</a></td>
 	</tr>
 	<tr>
 	<td><input type="button" value="Felica画面" id="Fel"></td>
