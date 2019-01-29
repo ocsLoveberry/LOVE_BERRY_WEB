@@ -14,7 +14,7 @@
 <body>
 	<br>
 	<% if(!studentData.isEmpty()){ %>
-	<form action="showStudentDetailServlet" method="post">
+	<form action="ShowStudentDetailServlet" method="post">
 		<table>
 			<tr>
 				<th></th>
