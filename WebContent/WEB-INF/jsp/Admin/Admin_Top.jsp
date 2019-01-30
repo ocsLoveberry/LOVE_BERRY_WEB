@@ -43,8 +43,8 @@ document.getElementById("lobe").onclick= function(){
 	location.href= "/LOVE_BERRY_WEB/ShowLobeTopServlet";
 	}
 
-document.getElementById("#").onclick= function(){
-	location.href= "/LOVE_BERRY_WEB/";
+document.getElementById("tea").onclick= function(){
+	location.href= "/LOVE_BERRY_WEB/ShowTeacherSearchServlet";
 	// ShowTeacherSearchServletを教員検索のジャンプ先として指定しといてください終わったらここも消しといて @Rider
 	}
 
