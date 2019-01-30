@@ -5,20 +5,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="/LOVE_BERRY_WEB/Admin_Teacher_Search.css">
 <title>教職員検索画面</title>
 </head>
 <body>
 <h1>教職員検索画面</h1>
 <form action="ShowTeacherSearchResultServlet" target="resultTeachers">
-	<header>
-		<div class="id">
-			<div id="header">
-				<h1 class="LB">
-					<a href="stu_top.html">Love&Berry</a>
-				</h1>
-			</div>
-		</div>
-	</header>
 <!-- 教職員画面作る -->
 		<input type="radio" name="select_textbox_btn" value="select_name" checked >氏名：
 		<input type="text" name="teacher_name_tb" value="">
@@ -32,10 +24,6 @@
 	<br>
 		<form action="ShowTopServlet">
 	 		<input type="submit" value="トップへ戻る">
-		</form>
-	<br>
-		 <form action="ShowLogoutServlet">
-		 	<input type="submit" value="ログアウト">
 		</form>
 	</body>
 </html>
