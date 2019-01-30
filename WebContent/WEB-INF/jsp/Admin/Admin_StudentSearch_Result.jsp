@@ -46,7 +46,7 @@
 						<%= student.getName() %>
 					</td>
 					<td>
-						<%= student.getComment() %>
+						<%= student.getMessage() %>
 					</td>
 				</tr>
 			<%} %>
