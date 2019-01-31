@@ -11,14 +11,15 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>タイトルを入力</title>
+<link rel="stylesheet" type="text/css" href="/LOVE_BERRY_WEB/css/table_Result.css">
+<title>教員検索</title>
 </head>
 <body>
 	<h2>検索結果の表示</h2>
  	<% if(!teacherDate.isEmpty()){ %>
  	<form action = "ShowTeacherDetailServlet" method="post">
 	<table>
-	<tr>
+	<tr class="sub">
 		<th></th>
 		<th>学籍番号</th>
 		<th>氏名</th>
@@ -44,10 +45,10 @@
 		}
 	 	%>
 	</td>
- 		<td><%= teacherList.getSeki_no() %>
- 		<td><%= teacherList.getName() %>
- 		<td><%= teacherList.getMail_address() %>
- 		<td><%=  teacherList.getMassage() %>
+ 		<td id="num"><%= teacherList.getSeki_no() %>
+ 		<td id="name"><%= teacherList.getName() %>
+ 		<td id="mail"><%= teacherList.getMail_address() %>
+ 		<td id="come"><%= teacherList.getMassage() %>
 	</tr>
 	<%} %>
  </table>

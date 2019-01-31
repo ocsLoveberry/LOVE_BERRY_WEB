@@ -1,0 +1,47 @@
+@charset "UTF-8";
+body,p,div,input{margin: 0}
+
+body{
+	background-image: url("img/add_back2.png");
+	background-repeat:no-repeat;
+	background-attachment:fixed;	/*背景画像をスクロールしないように固定*/
+	background-position:center center; /*常に画像が中央に表示される*/
+	background-size:cover;
+}
+#ent{/*全体画面*/
+	width:1000px;
+	margin:auto auto;
+}
+#form{/*入力画面*/
+	width:300px;
+	text-align:center;
+	margin:auto auto;
+	padding:30px;
+
+}
+h1{
+	color:#fff;
+	font-size:40px;
+	text-align:center;
+	margin:5px 0px 0px 0px;
+}
+p{
+	font-size:20px;
+	font-weight:bolder;
+	color:#fff;
+	text-align:left;
+}
+
+input[type="text"],input[type="password"]{
+	font-size:20px;
+	width:100%;
+	padding:5px;
+}
+
+select{
+	padding:5px;
+}
+
+option{
+	font-size:20px;
+}
