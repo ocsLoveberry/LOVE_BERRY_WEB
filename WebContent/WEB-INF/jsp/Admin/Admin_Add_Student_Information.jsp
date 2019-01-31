@@ -4,12 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<<<<<<< HEAD
 <link rel="stylesheet" type="text/css" href="/LOVE_BERRY_WEB/css/Admin_addStuInfo.css">
 <title>学生情報登録</title>
-=======
 <title></title>
->>>>>>> 7ab53edf643e0e79375284d40e3e24df09c012c2
 <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
 <script type="text/javascript">
 
