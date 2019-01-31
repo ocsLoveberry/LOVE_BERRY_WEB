@@ -64,38 +64,38 @@ $(function(){
 		<!-- メールアドレスのpattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" -->
 		学科：
 		<select name="gakka_cd" required="required">
-			<option selected="selected" disabled="disabled">専攻を選択してください</option>
+			<option selected="selected" disabled="disabled">学科を選択してください</option>
 			<option value="R" class="R">大学併修学科</option>
 			<option value="S" class="S">システム開発学科</option>
-			<option value="G" class="G">ゲーム学科</option>		<!-- DBデータなし -->
-			<option value="B" class="B">ビジネス学科</option>		<!-- DBデータなし -->
-			<option value="L" class="L">短期養成学科</option>		<!-- DBデータなし -->
+			<option value="G" class="G">ゲーム学科</option>
+			<option value="B" class="B">ビジネス学科</option>
+			<option value="L" class="L">短期養成学科</option>
 		</select><br>
 		専攻：
 		<select name="senko_cd" required="required">
 			<option selected="selected" disabled="disabled">専攻を選択してください</option>
 			<option value="r_system" class="R">大学システム専攻</option>
-			<option value="r_business" class="R">大学ビジネス専攻</option>				<!-- DBデータなし -->
-			<option value="r_game" class="R">大学ゲーム専攻</option>					<!-- DBデータなし -->
-			<option value="r_medical_infomation" class="R">大学医療情報専攻</option>	<!-- DBデータなし -->
-			<option value="g_create" class="G">ゲームクリエイト専攻</option>					<!-- DBデータなし -->
-			<option value="g_program" class="G">ゲームプログラム専攻</option>					<!-- DBデータなし -->
-			<option value="b_business" class="B">ビジネス専攻</option>					<!-- DBデータなし -->
-			<option value="b_accounting_office" class="B">経理事務専攻</option>			<!-- DBデータなし -->
-			<option value="b_medical_office" class="B">医療事務専攻</option>			<!-- DBデータなし -->
+			<option value="r_business" class="R">大学ビジネス専攻</option>
+			<option value="r_game" class="R">大学ゲーム専攻</option>
+			<option value="r_medical_infomation" class="R">大学医療情報専攻</option>
+			<option value="g_create" class="G">ゲームクリエイト専攻</option>
+			<option value="g_program" class="G">ゲームプログラム専攻</option>
+			<option value="b_business" class="B">ビジネス専攻</option>
+			<option value="b_accounting_office" class="B">経理事務専攻</option>
+			<option value="b_medical_office" class="B">医療事務専攻</option>
 			<option value="s_system" class="J">システム専攻</option>
-			<option value="s_net_security" class="S">ネットセキュリティ専攻</option>	<!-- DBデータなし -->
-			<option value="s_program" class="S">プログラム専攻</option>					<!-- DBデータなし -->
-			<option value="l_tanki_yousei" class="L">短期養成専攻</option>		<!-- DBデータなし&& 専攻もない -->
+			<option value="s_net_security" class="S">ネットセキュリティ専攻</option>
+			<option value="s_program" class="S">プログラム専攻</option>
+			<option value="l_tanki_yousei" class="L">短期養成専攻</option>
 		</select><br>
 		クラス：
 		<select name="class_gakka" id="class_gakka" required="required">
 			<option value="R" class="R">R</option>
 			<option value="S" class="S">S</option>
-			<option value="G" class="G">G</option>	<!-- DBデータなし -->
-			<option value="B" class="B">B</option>	<!-- DBデータなし -->
+			<option value="G" class="G">G</option>
+			<option value="B" class="B">B</option>
 			<option value="J" class="J">J</option>	<!-- DBデータなし -->
-			<option value="L" class="L">L</option>	<!-- DBデータなし -->
+			<option value="L" class="L">L</option>
 			<option value="M" class="M">M</option>	<!--全然わからん！魔法！調べといて -->
 		</select>
 		<select name="class_year" required="required">
