@@ -4,7 +4,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<<<<<<< HEAD
+<link rel="stylesheet" type="text/css" href="/LOVE_BERRY_WEB/css/Admin_addStuInfo.css">
+<title>学生情報登録</title>
+=======
 <title></title>
+>>>>>>> 7ab53edf643e0e79375284d40e3e24df09c012c2
 <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
 <script type="text/javascript">
 
@@ -53,8 +58,8 @@ $(function(){
 <body>
 <h1>学生情報登録</h1>
 	<form action="AddStudentInformationServlet" method="post">
-		学籍番号：<input type="text" name="seki_no" maxlength="6" placeholder="学籍番号を入力" required="required"><br>
-		氏名：<input type="text" name="name" maxlength="10" placeholder="氏名を入力" required="required"><br>
+		学籍番号：	  <input type="text" name="seki_no" maxlength="6" placeholder="学籍番号を入力" required="required"><br>
+		氏		名	：	  <input type="text" name="name" maxlength="10" placeholder="氏名を入力" required="required"><br>
 		メッセージ：<input type="text" name="message" placeholder="メッセージを入力" required="required"><br>
 		パスワード：<input type="password" name="password" placeholder="パスワードを入力" required="required"><br>
 		<!-- パスワードのpattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 8文字以上で1文字以上の数字、小文字アルファベット、大文字アルファベットがそれぞれ含まれていること-->
@@ -219,5 +224,6 @@ $(function(){
 
 		<input type="submit" value="送信">
 	</form>
+	<form action="ShowTopServlet"><input type="submit" value=" " id="back"></form>
 </body>
 </html>
