@@ -7,8 +7,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import main.exception.DatabaseException;
-import main.exception.SystemException;
 import main.parameter.DAOParameters;
 import main.parameter.ExceptionParameters;
 
@@ -18,15 +16,17 @@ public class DAOBase {
 	Connection con;
 	Statement stmt;
 
-	protected void open() throws DatabaseException, SystemException {
+	protected void open(){
 		try {
 			Class.forName(DAOParameters.DRIVER_NAME);
 			con = DriverManager.getConnection(DAOParameters.CONNECT_STRING, DAOParameters.USERID,
 					DAOParameters.PASSWORD);
 		} catch (ClassNotFoundException e) {
-			throw new SystemException(ExceptionParameters.SYSTEM_EXCEPTION_MESSAGE);
+			System.err.println(ExceptionParameters.SYSTEM_EXCEPTION_MESSAGE);
+			e.printStackTrace();
 		} catch (SQLException e) {
-			throw new DatabaseException(ExceptionParameters.DATABASE_CONNECTION_EXCEPTION_MASSAGE, e);
+			System.err.println(ExceptionParameters.DATABASE_CONNECTION_EXCEPTION_MASSAGE);
+			e.printStackTrace();
 		}
 	}
 
@@ -58,15 +58,14 @@ public class DAOBase {
 			e.printStackTrace();
 		}
 	}
-	protected ResultSet executeQuery(String sql){
+	protected ResultSet executeQuery(String sql) {
 		ResultSet rs = null;
 		try {
 			this.open();
 			stmt = con.createStatement();
 			rs = stmt.executeQuery(sql);
-		} catch (DatabaseException | SystemException e) {
-			e.printStackTrace();
 		} catch (SQLException e) {
+			System.err.println(ExceptionParameters.PARAMETER_FORMAT_EXCEPTION_MESSAGE);
 			e.printStackTrace();
 		}
 		return rs;

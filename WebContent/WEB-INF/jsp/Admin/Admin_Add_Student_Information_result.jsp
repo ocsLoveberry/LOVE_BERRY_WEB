@@ -7,6 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-ok
+登録が完了しました<br>
+続けて登録しますか?<br>
+<a href="ShowAddStudentInformationServlet"> はい</a>/<a href="ShowTopServlet">いいえ</a>
 </body>
 </html>

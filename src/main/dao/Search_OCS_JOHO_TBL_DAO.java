@@ -45,8 +45,6 @@ public class Search_OCS_JOHO_TBL_DAO extends DAOBase {
 			}
 		} catch (SQLException e) {
 			throw new DatabaseException(ExceptionParameters.DATABASE_CONNECTION_EXCEPTION_MASSAGE, e);
-		}catch (SystemException e) {
-			e.printStackTrace();
 		} finally {
 			this.close(stmt);
 		}

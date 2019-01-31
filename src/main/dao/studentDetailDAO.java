@@ -72,6 +72,7 @@ public class studentDetailDAO extends DAOBase {
 		return studenDetailList;
 	}
 
+//	TODO:出席を判定するプログラムかDBの値を表示させるもしくは、出席を消す
 	public String[] getAttendanceClass1(String seki_no) {
 		String sql = "select * from ";
 		String[] result = null;

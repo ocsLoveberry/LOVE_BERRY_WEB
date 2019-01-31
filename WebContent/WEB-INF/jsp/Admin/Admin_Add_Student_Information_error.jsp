@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-ng
+問題が発生しました。もう一度やり直してください。<br>
+<a href="ShowAddStudentInformationServlet">戻る</a>
 </body>
 </html>
