@@ -44,6 +44,7 @@
 	<tr><td><input type="submit" value="ログアウト" id="logout"></td></tr>
 	</table>
 
+	<a href="ShowSubjectListServlet">科目一覧画面</a>
 
 <script>
 	document.getElementById("kamoku").onclick= function(){
