@@ -46,7 +46,7 @@
 LOBE名：<input type="text" name="lobeName">
 <input type="submit" value="検索">
 </form>
-<form action="ShowLobeNewRegistration">
+<form action="ShowLobeNewRegistrationServlet">
 <input type="submit" value="新規登録">
 </form>
 <form action="ShowTopServlet">
