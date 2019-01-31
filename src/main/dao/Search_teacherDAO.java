@@ -54,8 +54,6 @@ public class Search_teacherDAO extends DAOBase{
 				}
 		} catch (SQLException e) {
 			throw new DatabaseException(ExceptionParameters.DATABASE_CONNECTION_EXCEPTION_MASSAGE, e);
-		} catch (SystemException e) {
-			e.printStackTrace();
 		} finally {
 			this.close(stmt);
 		}
