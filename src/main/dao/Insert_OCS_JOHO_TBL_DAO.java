@@ -9,14 +9,15 @@ import javaBeans.OcsJohoData;
 public class Insert_OCS_JOHO_TBL_DAO extends DAOBase {
 	private PreparedStatement pstmt;
 
-	public void Insert_OCS_JOHO_TBL(OcsJohoData newStudentInfomation) {
+	public boolean Insert_OCS_JOHO_TBL(OcsJohoData newStudentInfomation) {
 		String sql = "INSERT INTO OCS_JOHO_TBL (seki_no,type,name,message,password,mail_address,gakka_cd,senko_cd,class_cd,year,tannin_flag) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
 		ResultSet rs = null;
+		int result = 0;
 		try {
 			this.open();
 			pstmt = con.prepareStatement(sql);
 			setPstmt(pstmt,newStudentInfomation);
-			pstmt.executeUpdate();
+			result = pstmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} catch (Exception e) {
@@ -24,6 +25,11 @@ public class Insert_OCS_JOHO_TBL_DAO extends DAOBase {
 		} finally {
 			this.close(pstmt,rs);
 		}
+		boolean isInsertOk = false;
+		if(result > 0) {
+			isInsertOk = true;
+		}
+		return isInsertOk;
 	}
 
 	private void setPstmt(PreparedStatement pstmt, OcsJohoData newStudentInfomation) throws SQLException {

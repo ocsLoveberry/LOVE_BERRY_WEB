@@ -1,7 +1,6 @@
 package main.admin.show;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,24 +9,21 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import Dispatcher.LoveBerryDispatcher;
-import javaBeans.FelicaData;
-import main.dao.FelicaTableDAO;
 
-@WebServlet("/ShowFelicaTopServlet")
-public class ShowFelicaTopServlet extends HttpServlet {
+@WebServlet("/ShowAddStudentInformationServlet")
+public class ShowAddStudentInformationServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-    public ShowFelicaTopServlet() {
+
+    public ShowAddStudentInformationServlet() {
         super();
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		FelicaTableDAO ftdao = new FelicaTableDAO();
-		ArrayList<FelicaData> felicaData = ftdao.selectAllFelicaTable();
-		request.setAttribute("felicaData", felicaData);
-		LoveBerryDispatcher.dispatch(request, response, "WEB-INF/jsp/Felica/Felica_Top.jsp");
+		LoveBerryDispatcher.dispatch(request, response, "/WEB-INF/jsp/Admin/Admin_Add_Student_Information.jsp");
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 

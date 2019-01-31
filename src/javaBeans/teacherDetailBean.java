@@ -25,6 +25,10 @@ public class teacherDetailBean {
 		this.teacherFelicaID2 = teacherFelicaID2;
 	}
 
+	public teacherDetailBean() {
+		// TODO 自動生成されたコンストラクター・スタブ
+	}
+
 	public String getMessage() {
 		return message;
 	}
