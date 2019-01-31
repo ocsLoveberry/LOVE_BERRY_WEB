@@ -4,12 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>新規Felica画面</title>
+<title>Insert title here</title>
 </head>
 <body>
-<form>
-学籍番号を入力:<input type="text" maxlength="6">
-<input type="submit" value="確定">
-</form>
+ok
 </body>
 </html>

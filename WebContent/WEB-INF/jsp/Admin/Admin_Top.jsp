@@ -15,8 +15,8 @@
 	<td><input type="button" value="教員検索" id="tea"></td>
 	</tr>
 	<tr>
-	<td><input type="button" value="学生情報登録" id="Fel"></td>
-	<td><input type="button" value="LOBE情報" id="lobe"></td>
+<td><input type="button" value="学生情報登録" id="Fel"></td>
+<td><input type="button" value="LOBE情報" id="lobe"></td>
 	</tr>
 	<tr><td>下記は問題なし、上はテスト項目</td></tr>
 
@@ -33,11 +33,9 @@
 document.getElementById("stu").onclick= function(){
 	location.href= "/LOVE_BERRY_WEB/ShowStudentSearchServlet";
 	}
-
 document.getElementById("Fel").onclick= function(){
 	location.href= "/LOVE_BERRY_WEB/ShowAddStudentInformationServlet";
 	}
-
 document.getElementById("lobe").onclick= function(){
 	location.href= "/LOVE_BERRY_WEB/ShowLobeTopServlet";
 	}
