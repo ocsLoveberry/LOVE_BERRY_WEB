@@ -37,7 +37,7 @@
 			<td><input type="button" value="学生検索" id="stu_sea"></td>
 	</tr>
 	<tr>
-			<td><input type="button" value="グラブル" id="guraburu"></td>
+			<td><input type="button" value="科目一覧" id="guraburu"></td>
 			<td><input type="button" value="ケモフレ民" id="tathuki"></td>
 	</tr>
 

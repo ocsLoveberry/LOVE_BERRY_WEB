@@ -20,6 +20,7 @@ try{
 <title>teacher_detail</title>
 </head>
 <body>
+<form action="ShowTeacherDetailUpdateResultServret" target="resultTeachers">
 	<h1>教員詳細情報</h1>
 	<table>
 		<tr>
@@ -38,7 +39,6 @@ try{
 		</tr>
 	</table>
 	<h2>登録済みFelica情報</h2>
-<form action="なんかdeleteさせるservletに飛ばしす" target="resultTeachers">
 	<table>
 		<tr>
 			<th>FelicaID</th>
@@ -46,13 +46,16 @@ try{
 		<tr>
 			<td>
 			<%
+			session.setAttribute("seki_no",teacherDetail.getSeki_no()); 
+			%>
+			<%
 			try{
 				if(teacherDetail.getTeacherFelicaID1().isEmpty()){
 					out.println("登録済みFelica1情報はありません");
 				}else{
 					out.println(teacherDetail.getTeacherFelicaID1());
 					%>
-					<input type ="checkbox" name = "delete_idm_btn" value="idm1" >
+					<input type ="checkbox" name = "update_idm_btn" value="idm1" >
 					<%
 				}
 				}catch(NullPointerException e){
@@ -70,7 +73,7 @@ try{
 				}else{
 					out.println(teacherDetail.getTeacherFelicaID2());
 					%>
-					<input type ="checkbox" name = "delete_idm_btn" value="idm2" >
+					<input type ="checkbox" name = "update_idm_btn" value="idm2" >
 					<%
 				}
 			}catch(NullPointerException e){
@@ -79,12 +82,12 @@ try{
 			%></td>
 			<tr>
 			 <td>
-			 	<input type="submit" value="戻る" id="">
+			 	<input type="submit" name="Back" value="戻る" id="">
 			 </td>
 			</tr>
 			<tr>
 			 <td>
-			 	<input type="submit" value="確定" id="" >
+			 	<input type="submit" name="Confirm" value="確定" id="" >
 			 </td>
 			</tr>
 	</table>

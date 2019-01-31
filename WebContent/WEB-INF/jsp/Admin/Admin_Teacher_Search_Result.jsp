@@ -51,6 +51,7 @@
 	</tr>
 	<%} %>
  </table>
+ 	<% session.setAttribute("teacherDate",teacherDate); %>
  	<input type="submit" value="詳細表示">
  	</form>
  	<%
