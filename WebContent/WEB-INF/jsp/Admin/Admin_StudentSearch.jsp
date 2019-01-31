@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="/LOVE_BERRY_WEB/css/Admin_StudentSearch.css">
+<link rel="stylesheet" type="text/css" href="/LOVE_BERRY_WEB/css/table_Result.css">
 <title>学生検索</title>
 </head>
 <body>

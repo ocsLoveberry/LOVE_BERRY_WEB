@@ -5,11 +5,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" type="text/css" href="/LOVE_BERRY_WEB/Admin_Teacher_Search.css">
+<link rel="stylesheet" type="text/css" href="/LOVE_BERRY_WEB/css/Admin_Teacher_Search.css">
+<link rel="stylesheet" type="text/css" href="/LOVE_BERRY_WEB/css/table_Result.css">
 <title>教職員検索画面</title>
 </head>
 <body>
-<h1>教職員検索画面</h1>
+<div id="form">
+<h1 id="title">教職員検索画面</h1>
 <form action="ShowTeacherSearchResultServlet" target="resultTeachers">
 <!-- 教職員画面作る -->
 		<input type="radio" name="select_textbox_btn" value="select_name" checked >氏名：
@@ -19,11 +21,10 @@
 		<input type="submit" value="検索">
 	<br>
 </form>
-	<iframe name="resultTeachers" width="1000px" height="700px">
+	<iframe name="resultTeachers" width="900px" height="700px" id="frame">
 	</iframe>
 	<br>
-		<form action="ShowTopServlet">
-	 		<input type="submit" value="トップへ戻る">
-		</form>
+<form action="ShowTopServlet"><input type="submit" value=" " id="back"></form>
+</div>
 	</body>
 </html>

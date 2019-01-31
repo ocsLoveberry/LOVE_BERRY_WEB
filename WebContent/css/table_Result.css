@@ -1,0 +1,20 @@
+@charset "UTF-8";
+
+.sub{
+width: 8em;
+text-align:left;
+}
+#num{
+	width:6em;
+}
+#come{
+	width: 15em;
+}
+
+#name{
+	width:8em;
+}
+
+#mail{
+	width:12em;
+}

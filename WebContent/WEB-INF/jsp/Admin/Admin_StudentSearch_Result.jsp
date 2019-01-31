@@ -8,6 +8,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="/LOVE_BERRY_WEB/css/table_Result.css">
 
 <title>Insert title here</title>
 </head>
@@ -16,7 +17,7 @@
 	<% if(!studentData.isEmpty()){ %>
 	<form action="ShowStudentDetailServlet" method="post">
 		<table>
-			<tr>
+			<tr class="sub">
 				<th></th>
 				<th>学籍番号</th>
 				<th>名前</th>
@@ -26,7 +27,7 @@
 				boolean isFirst = true;
 			 %>
 			<% for(OcsJohoData student: studentData){ %>
-				<tr>
+				<tr id="res">
 					<td>
 						<%if(isFirst){ %>
 							<input type="radio" name="seki_no" value="<%= student.getSeki_no() %> " checked>
@@ -39,13 +40,13 @@
 						}
 					 	%>
 					</td>
-					<td>
+					<td id="num">
 					 	<%= student.getSeki_no() %>
 					</td>
-					<td>
+					<td class="sub">
 						<%= student.getName() %>
 					</td>
-					<td>
+					<td id="come">
 						<%= student.getMessage() %>
 					</td>
 				</tr>

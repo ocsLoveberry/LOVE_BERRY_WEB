@@ -1,8 +1,30 @@
 @charset "UTF-8";
+body,p,div,input{margin: 0}
+
 body{
 	background-image: url("img/sanjou.jpg");
 	background-repeat:no-repeat;
 	background-attachment:fixed;	/*背景画像をスクロールしないように固定*/
 	background-position:center center; /*常に画像が中央に表示される*/
 	background-size:cover;
+}
+#title{
+	margin:0px 0px;
+	text-align:left;
+	font-size:50px;
+	font-family:"HGS行書体";
+}
+#form{
+	width:1000px;
+ margin:auto auto;
+}
+#frame{
+	background-color:#FFF;
+}
+
+#back{
+	padding:15px 44px;
+	 background: url(img/back.png) left top no-repeat;
+	 border:none;
+	outline:none;
 }
