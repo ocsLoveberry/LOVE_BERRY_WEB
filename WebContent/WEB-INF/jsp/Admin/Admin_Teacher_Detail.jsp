@@ -20,7 +20,7 @@
 <title>teacher_detail</title>
 </head>
 <body>
-	<form action="ShowTeacherDetailUpdateResultServret"
+	<form action="ShowDetailUpdateResultServret"
 		target="resultTeachers">
 		<h1>教員詳細情報</h1>
 		<table>
@@ -46,7 +46,6 @@
 				<td>
 					<%
 						session.setAttribute("seki_no", teacherDetail.getSeki_no());
-					%> <%
  	try {
  		if (teacherDetail.getTeacherFelicaID1().isEmpty()) {
  			out.println("登録済みFelica1情報はありません");

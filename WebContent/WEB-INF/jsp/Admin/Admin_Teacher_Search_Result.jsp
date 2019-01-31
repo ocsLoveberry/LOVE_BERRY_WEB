@@ -2,62 +2,75 @@
 <%@page import="java.sql.Array"%>
 <%@page import="javaBeans.TeacherSearchBeans"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%@page import="java.util.List"%>
-<% ArrayList<TeacherSearchBeans> teacherDate = (ArrayList<TeacherSearchBeans>)request.getAttribute("teacherDate");
- %>
+<%
+	ArrayList<TeacherSearchBeans> teacherDate = (ArrayList<TeacherSearchBeans>) request
+			.getAttribute("teacherDate");
+%>
 
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" type="text/css" href="/LOVE_BERRY_WEB/css/table_Result.css">
+<link rel="stylesheet" type="text/css"
+	href="/LOVE_BERRY_WEB/css/table_Result.css">
 <title>教員検索</title>
 </head>
 <body>
 	<h2>検索結果の表示</h2>
- 	<% if(!teacherDate.isEmpty()){ %>
- 	<form action = "ShowTeacherDetailServlet" method="post">
-	<table>
-	<tr class="sub">
-		<th></th>
-		<th>学籍番号</th>
-		<th>氏名</th>
-		<th>メールアドレス</th>
-		<th>メッセージ</th>
-	</tr>
-	<%//} %>
-	<tr>
- <% for(TeacherSearchBeans teacherList: teacherDate) {%>
- 	<tr>
- 	<td>
-		<% boolean isFirst = true;
-			if(isFirst){ %>
-			<input type="radio" name="seki_no"
-					value="<%= teacherList.getSeki_no() %> " checked>
+	<%
+		if (!teacherDate.isEmpty()) {
+	%>
+	<form action="ShowTeacherDetailServlet" method="post">
+		<table>
+			<tr class="sub">
+				<th></th>
+				<th>学籍番号</th>
+				<th>氏名</th>
+				<th>メールアドレス</th>
+				<th>メッセージ</th>
+			</tr>
+			<%
+				//}
+			%>
+			<tr>
+				<%
+					for (TeacherSearchBeans teacherList : teacherDate) {
+				%>
+			
+			<tr>
+				<td>
+					<%
+						boolean isFirst = true;
+								if (isFirst) {
+					%> <input type="radio" name="seki_no"
+					value="<%=teacherList.getSeki_no()%> " checked> <%
+ 	isFirst = false;
+ 			} else {
+ %> <input type="radio" name="seki_no"
+					value="<%=teacherList.getSeki_no()%> "> <%
+ 	}
+ %>
+				</td>
+				<td id="num"><%=teacherList.getSeki_no()%>
+				<td id="name"><%=teacherList.getName()%>
+				<td id="mail"><%=teacherList.getMail_address()%>
+				<td id="come"><%=teacherList.getMassage()%>
+			</tr>
+			<%
+				}
+			%>
+		</table>
 		<%
-			isFirst = false;
-			}else{
+			session.setAttribute("teacherDate", teacherDate);
 		%>
-			<input type="radio" name="seki_no"
-					 value="<%= teacherList.getSeki_no() %> " >
-		<%
+		<input type="submit" value="詳細表示">
+	</form>
+	<%
+		} else {
+			out.print("検索に一致する教員が見つかりませんでした");
 		}
-	 	%>
-	</td>
- 		<td id="num"><%= teacherList.getSeki_no() %>
- 		<td id="name"><%= teacherList.getName() %>
- 		<td id="mail"><%= teacherList.getMail_address() %>
- 		<td id="come"><%= teacherList.getMassage() %>
-	</tr>
-	<%} %>
- </table>
- 	<% session.setAttribute("teacherDate",teacherDate); %>
- 	<input type="submit" value="詳細表示">
- 	</form>
- 	<%
- 	}else{
- 		out.print("検索に一致する教員が見つかりませんでした");
- 		}%>
- </body>
+	%>
+</body>
 </html>
