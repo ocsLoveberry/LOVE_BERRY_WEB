@@ -3,13 +3,15 @@ package main.dao;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.SQLIntegrityConstraintViolationException;
 
 import javaBeans.OcsJohoData;
+import main.parameter.ExceptionParameters;
 
 public class Insert_OCS_JOHO_TBL_DAO extends DAOBase {
 	private PreparedStatement pstmt;
 
-	public boolean Insert_OCS_JOHO_TBL(OcsJohoData newStudentInfomation) {
+	public boolean Insert_OCS_JOHO_TBL(OcsJohoData newStudentInfomation) throws SQLIntegrityConstraintViolationException{
 		String sql = "INSERT INTO OCS_JOHO_TBL (seki_no,type,name,message,password,mail_address,gakka_cd,senko_cd,class_cd,year,tannin_flag) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
 		ResultSet rs = null;
 		int result = 0;
@@ -18,9 +20,9 @@ public class Insert_OCS_JOHO_TBL_DAO extends DAOBase {
 			pstmt = con.prepareStatement(sql);
 			setPstmt(pstmt,newStudentInfomation);
 			result = pstmt.executeUpdate();
+		} catch (SQLIntegrityConstraintViolationException e) {
+			throw new SQLIntegrityConstraintViolationException(ExceptionParameters.SQL_INTEGRITY_CONSTRAINT_VIOLATION_EXCEPTION);
 		} catch (SQLException e) {
-			e.printStackTrace();
-		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
 			this.close(pstmt,rs);

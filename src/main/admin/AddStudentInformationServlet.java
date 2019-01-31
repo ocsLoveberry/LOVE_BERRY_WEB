@@ -1,12 +1,14 @@
 package main.admin;
 
 import java.io.IOException;
+import java.sql.SQLIntegrityConstraintViolationException;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.sun.xml.internal.ws.util.StringUtils;
 
@@ -30,6 +32,8 @@ public class AddStudentInformationServlet extends HttpServlet {
      */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
+
+
 		String seki_no = request.getParameter("seki_no");
 		String type = "3";
 		String name = request.getParameter("name");
@@ -46,19 +50,49 @@ public class AddStudentInformationServlet extends HttpServlet {
 //		↑↑↑ここまでデバッグ↑↑↑
 		OcsJohoData newStudentInfomation = new OcsJohoData(seki_no, type, name, message, mail_adress, password, gakka_cd, senko_cd, class_cd, year);
 		Insert_OCS_JOHO_TBL_DAO insert_OCS_DAO = new Insert_OCS_JOHO_TBL_DAO();
-		boolean isInsertOk = insert_OCS_DAO.Insert_OCS_JOHO_TBL(newStudentInfomation);
+
+		validatioCheck(newStudentInfomation);
+		boolean isInsertOk = false;
+		try {
+			isInsertOk = insert_OCS_DAO.Insert_OCS_JOHO_TBL(newStudentInfomation);
+		} catch (SQLIntegrityConstraintViolationException e) {
+//			@TODO:学籍番号がかぶったときにエラーを表示させる処理
+			request.setAttribute("error_SQLIntegrityConstraintViolationException", "true");
+		}
 
 		if(isInsertOk) {
 			LoveBerryDispatcher.dispatch(request, response, RESULT_PAGE);
 		}else {
 			LoveBerryDispatcher.dispatch(request, response, ERROR_PAGE);
 		}
+//		続けて登録する用
+//		@TODO:sessionにformの値を渡して専攻とクラスの初期値を前回の入力と同じにしたかった
+//		setSessionData(request,newStudentInfomation);
+
 	}
+
+
+	private void validatioCheck(OcsJohoData newStudentInfomation) {
+
+	}
+
 
 	private String editClassCd(String senko_cd,String class_cd) {
 		String trimedSenko_cd = senko_cd.substring(2);
 		String result = class_cd + StringUtils.capitalize(trimedSenko_cd);
 		return result;
+	}
+
+	@SuppressWarnings("unused")
+	private void setSessionData(HttpServletRequest request,OcsJohoData newStudentInfomation) {
+		HttpSession session = request.getSession();
+		session.setAttribute("retryFlag", "true");
+		session.setAttribute("gakka_cd", newStudentInfomation.getGakka_cd());
+		session.setAttribute("class_gakka", newStudentInfomation.getClass_cd().charAt(0));
+		session.setAttribute("class_year", newStudentInfomation.getClass_cd().charAt(1));
+		session.setAttribute("class_AorB", newStudentInfomation.getClass_cd().charAt(2));
+		session.setAttribute("class_1or2or3", newStudentInfomation.getClass_cd().charAt(3));
+		session.setAttribute("yaer", newStudentInfomation.getYear());
 	}
 
 	@SuppressWarnings("unused")

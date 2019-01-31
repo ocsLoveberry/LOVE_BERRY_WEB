@@ -57,7 +57,9 @@ $(function(){
 		氏名：<input type="text" name="name" maxlength="10" placeholder="氏名を入力" required="required"><br>
 		メッセージ：<input type="text" name="message" placeholder="メッセージを入力" required="required"><br>
 		パスワード：<input type="password" name="password" placeholder="パスワードを入力" required="required"><br>
+		<!-- パスワードのpattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 8文字以上で1文字以上の数字、小文字アルファベット、大文字アルファベットがそれぞれ含まれていること-->
 		メールアドレス：<input type="text" name="mail_adress" placeholder="info@example.com"><br>
+		<!-- メールアドレスのpattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" -->
 		学科：
 		<select name="gakka_cd" required="required">
 			<option selected="selected" disabled="disabled">専攻を選択してください</option>
