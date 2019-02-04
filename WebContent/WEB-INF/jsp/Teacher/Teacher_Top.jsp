@@ -44,7 +44,7 @@
 	<tr><td><input type="submit" value="ログアウト" id="logout"></td></tr>
 	</table>
 
-	<a href="ShowSubjectListServlet">科目一覧画面</a>
+	<a href="ShowTeacherSubjectListServlet">科目一覧画面</a>
 
 <script>
 	document.getElementById("kamoku").onclick= function(){
@@ -72,3 +72,14 @@
 
 </body>
 </html>
+<!--
+!!科目一覧画面について
+トップ画面
+↓
+科目一覧画面（Teacher_Subject_List.jsp）
+↓
+科目詳細画面（Teacher_Subject_Detail.jsp）
+↓
+科目情報変更画面（Teacher_Subject_Infomation_Change.jsp）
+
+ -->
