@@ -20,8 +20,6 @@ public class ShowStudentDetailServlet extends HttpServlet {
         super();
     }
 
-//    ログインセッションの有無の確認
-//    打刻検索画面への遷移
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		//		学生詳細情報を表示するためのデータベースの処理を書いたプログラム呼び出す
@@ -30,10 +28,8 @@ public class ShowStudentDetailServlet extends HttpServlet {
 		try {
 			request.setAttribute("studentDetail", sdDAO.getStudentDetail(seki_no));
 		} catch (DatabaseException e) {
-			// TODO 自動生成された catch ブロック
 			e.printStackTrace();
 		} catch (SystemException e) {
-			// TODO 自動生成された catch ブロック
 			e.printStackTrace();
 		}
 //		学生詳細情報画面を表示させる
