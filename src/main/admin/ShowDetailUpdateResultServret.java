@@ -17,10 +17,6 @@ import main.dao.Admin_Detail_deleteDAO;
 import main.exception.DatabaseException;
 import main.exception.SystemException;
 
-/*admin_teacher_detailのcheckboxを指定されているときに
- *確定が押されたらIDM1の値をnullに更新してresultページに
- *飛ばすんじゃ！
- */
 @WebServlet("/ShowDetailUpdateResultServret")
 public class ShowDetailUpdateResultServret extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -37,19 +33,27 @@ public class ShowDetailUpdateResultServret extends HttpServlet {
 		String seki_no = (String) session.getAttribute("seki_no");
 		String Confirm = (String) request.getParameter("Confirm");
 		ArrayList<TeacherSearchBeans> teacherdate = (ArrayList<TeacherSearchBeans>) session.getAttribute("teacherDate");
-		ArrayList<OcsJohoData> studentdate = (ArrayList<OcsJohoData>) session.getAttribute("studentDate");
-
+		ArrayList<OcsJohoData> studentlist = (ArrayList<OcsJohoData>) session.getAttribute("studentlist");
 		System.out.println("checkbox:" + checkbox);
 		System.out.println("seki_no:" + seki_no);
 		System.out.println("Confirm:" + Confirm);
-		System.out.println("studentdate:" + studentdate);
+		System.out.println("teacher:" + teacherdate);
 
-		if (Confirm != "null") {
+		/*		OcsJohoData[] studentlist = new OcsJohoData[studentdate.size()];
+				for (int i = 0; i < studentlist.length; i++) {
+					studentlist [i] = studentdate.get(i).toString();
+				}
+		*/
+
+		if ("確定".equals(Confirm)) {
+			System.out.println("CONfirmの値が確定の時は表示 Confirmの値:"+Confirm);
 			if ("idm1".equals(checkbox)) {
+				System.out.println("checkboxがidm1のときreturn true 値は:");
 				try {
 					System.out.println("try実行しました");
 					Admin_Detail_deleteDAO adDAO = new Admin_Detail_deleteDAO();
 					adDAO.Admin_Detail_deleteDAO(seki_no);
+					System.out.println("felicaの値をdeleteできました");
 				} catch (DatabaseException e) {
 					e.printStackTrace();
 				} catch (SystemException e) {
@@ -57,14 +61,13 @@ public class ShowDetailUpdateResultServret extends HttpServlet {
 				}
 			}
 		}
-
-			if (teacherdate != null) {
+		if (teacherdate != null) {
 			request.setAttribute("teacherDate", teacherdate);
 			LoveBerryDispatcher.dispatch(request, response, "/WEB-INF/jsp/Admin/Admin_Teacher_Search_Result.jsp");
-//			System.out.println("update_idm");
 		} else {
-			request.setAttribute("studentDate", studentdate);
-			LoveBerryDispatcher.dispatch(request, response, "/WEB-INF/jsp/Admin/Admin_Student_Search_Result.jsp");
+			System.out.println("studentdata:" + studentlist);
+			request.setAttribute("studentData", studentlist);
+			LoveBerryDispatcher.dispatch(request, response, "/WEB-INF/jsp/Admin/Admin_StudentSearch_Result.jsp");
 		}
 	}
 

@@ -4,14 +4,16 @@
 	pageEncoding="UTF-8"%>
 <%
 	studentDetailBean studentDetail = null;
-	try {
-		ArrayList<studentDetailBean> studentDetailList = (ArrayList<studentDetailBean>) request
+ArrayList<studentDetailBean> studentDetailList = null;
+try {
+		 studentDetailList = (ArrayList<studentDetailBean>) request
 				.getAttribute("studentDetail");
 		studentDetail = studentDetailList.get(0);
 	} catch (Exception e) {
 		e.printStackTrace();
 	}
 %>
+	<% session.setAttribute("studentDate",studentDetailList); %>
 <!DOCTYPE html>
 <html>
 <head>
