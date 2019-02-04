@@ -13,8 +13,8 @@ import Dispatcher.LoveBerryDispatcher;
 import javaBeans.JugyoTable;
 import main.dao.JugyoTableDAO;
 
-@WebServlet("/ShowTeacherSubjectDetailServlet")
-public class ShowTeacherSubjectDetailServlet extends HttpServlet {
+@WebServlet("/ShowTeacherSubjectListServlet")
+public class ShowTeacherSubjectListServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private String view = "/WEB-INF/jsp/Teacher/Teacher_Subject_Detail.jsp";
 
