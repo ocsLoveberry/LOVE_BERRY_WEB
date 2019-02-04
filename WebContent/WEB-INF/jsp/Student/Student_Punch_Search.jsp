@@ -19,12 +19,12 @@
 		<div class="id">
 			<div id="header">
 				<h1 class="LB">
-					<a href="stu_top.html">Love&Berry</a>
+					<a href="ShowTopServlet">Love&Berry</a>
 				</h1>
 				<!-- リンク -->
 				<div class="link">
-					<a href="ShowTopServlet;">トップへ戻る</a>
-					<a href="showLogoutServlet">ログアウト</a>
+					<a href="ShowTopServlet">トップへ戻る</a>
+					<a href="ShowLogoutServlet">ログアウト</a>
 				</div>
 				<p></p>
 			</div>
