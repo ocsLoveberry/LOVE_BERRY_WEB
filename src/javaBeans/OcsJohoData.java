@@ -77,8 +77,8 @@ public class OcsJohoData {
 		return message;
 	}
 
-	public void setMessage(String comment) {
-		this.message = comment;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public String getMail_address() {
@@ -128,4 +128,5 @@ public class OcsJohoData {
 	public void setYear(String year) {
 		this.year = year;
 	}
+
 }

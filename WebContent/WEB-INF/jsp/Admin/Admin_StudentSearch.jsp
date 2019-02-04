@@ -11,7 +11,7 @@
 <body>
 <div id="form">
 <h1 id="title">学生検索</h1><br>
-<form action="ShowStudentSearchResultServlet" target="resultTarget">
+<form action="ShowStudentSearchResultServlet" target="resultStudent">
 <input type="radio" name="radio_Name_or_SekiNo" value="select_Name" checked>
 氏名
 <input type="text" name="text_Student_name" maxlength="6">
@@ -21,7 +21,7 @@
 <input type="submit" value="検索">
 </form>
 <!-- 検索結果表示枠 -->
-<iframe name="resultTarget" width="900px" height="700px" id="frame">
+<iframe name="resultStudent" width="900px" height="700px" id="frame">
 </iframe>
 <form action="ShowTopServlet"><input type="submit" value=" " id="back"></form>
 </div>

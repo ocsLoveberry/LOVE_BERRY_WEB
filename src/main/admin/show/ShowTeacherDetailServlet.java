@@ -27,10 +27,8 @@ public class ShowTeacherDetailServlet extends HttpServlet {
 		try {
 			request.setAttribute("teacherDetail", tsDetailDAO.getStudentDetail(seki_no));
 		} catch (DatabaseException e) {
-			// TODO 自動生成された catch ブロック
 			e.printStackTrace();
 		} catch (SystemException e) {
-			// TODO 自動生成された catch ブロック
 			e.printStackTrace();
 		}
 		LoveBerryDispatcher.dispatch(request, response, "/WEB-INF/jsp/Admin/Admin_Teacher_Detail.jsp");

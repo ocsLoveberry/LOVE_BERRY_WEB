@@ -10,23 +10,21 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import Dispatcher.LoveBerryDispatcher;
-import javaBeans.JugyoTable;
-import main.dao.JugyoTableDAO;
+import javaBeans.ClassSubjects;
+import main.dao.ClassSubjectsDAO;
 
 @WebServlet("/ShowTeacherSubjectListServlet")
 public class ShowTeacherSubjectListServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private String view = "/WEB-INF/jsp/Teacher/Teacher_Subject_Detail.jsp";
+	private final String view = "/WEB-INF/jsp/Teacher/Teacher_Subject_List.jsp";
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String where = request.getParameter("where");
-		System.out.println("show:" + where );
-		ArrayList<JugyoTable> jugyo;
-		JugyoTableDAO jugyoTableDao  = new JugyoTableDAO();
-		jugyo = jugyoTableDao.selectWhere(where);
-		request.setAttribute("jugyo", jugyo);
+		// dao
+		ClassSubjectsDAO classSubjectsDAO = new ClassSubjectsDAO();
+		ArrayList<ClassSubjects> classSubject = classSubjectsDAO.selectAll();
+		//req.setpara
+		request.setAttribute("classSubject", classSubject);
 		LoveBerryDispatcher.dispatch(request, response, view);
-
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

@@ -45,7 +45,7 @@ public class ShowStudentSearchResultServlet extends HttpServlet {
 				e.printStackTrace();
 			}
 			
-//		氏名のラジオボタンが選ばれていれば
+//		氏名のラジオボタンが選ばれていれば			
 		} else if(radio_Name_or_SekiNo.equals("select_Name")) {
 			System.out.println("select_Name:true");
 //			sojtdでデータベースから氏名でOCS_JOHO_TBLを検索する

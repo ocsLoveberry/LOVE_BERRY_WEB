@@ -6,6 +6,7 @@ public class JikanwariData {
 	public String start;
 	public String end;
 	public String color;
+	public String url;
 
 	public JikanwariData() {}
 	public JikanwariData(String title, String start) {
@@ -19,6 +20,14 @@ public class JikanwariData {
 		this.title = title;
 		this.start = start;
 		this.end = end;
+	}
+
+	public JikanwariData(String title, String start,String end,String url) {
+		super();
+		this.title = title;
+		this.start = start;
+		this.end = end;
+		this.url = url;
 	}
 	public String getId() {
 		return id;
@@ -50,4 +59,11 @@ public class JikanwariData {
 	public void setColor(String color) {
 		this.color = color;
 	}
+	public String getUrl() {
+		return url;
+	}
+	public void setUrl(String url) {
+		this.url = url;
+	}
+
 }
