@@ -6,7 +6,6 @@ import java.sql.SQLException;
 import java.sql.SQLIntegrityConstraintViolationException;
 
 import javaBeans.OcsJohoData;
-import main.parameter.ExceptionParameters;
 
 public class Insert_OCS_JOHO_TBL_DAO extends DAOBase {
 	private PreparedStatement pstmt;
@@ -21,7 +20,6 @@ public class Insert_OCS_JOHO_TBL_DAO extends DAOBase {
 			setPstmt(pstmt,newStudentInfomation);
 			result = pstmt.executeUpdate();
 		} catch (SQLIntegrityConstraintViolationException e) {
-			throw new SQLIntegrityConstraintViolationException(ExceptionParameters.SQL_INTEGRITY_CONSTRAINT_VIOLATION_EXCEPTION);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
@@ -61,6 +59,5 @@ public class Insert_OCS_JOHO_TBL_DAO extends DAOBase {
 		pstmt.setString(10, newStudentInfomation.getYear());
 		pstmt.setString(11, "0");		//生徒は基本0、教師のみ1か0を持つ
 	}
-
 
 }
