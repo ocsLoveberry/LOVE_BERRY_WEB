@@ -1,6 +1,7 @@
 <%@page import="javaBeans.JugyoTable"%>
 <%@page import="javaBeans.JikanwariTable"%>
 <%@page import="java.util.ArrayList"%>
+<%@page import="main.dao.CheckPunchDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
@@ -10,6 +11,8 @@
 	ArrayList<String> name_List = (ArrayList<String>)request.getAttribute("name_List");
 	String subjects_name = (String)request.getAttribute("subjects_name");
 	int jugyo_count = (int)request.getAttribute("jugyo_count");
+	CheckPunchDAO checkPunchDAO = new CheckPunchDAO();
+	String[] status = null;
 %>
 <!DOCTYPE html>
 <html>
@@ -43,8 +46,26 @@
   				<tr>
   					<th><%=seki_no_List.get(j) %></th><th><%=name_List.get(j) %></th>
   					<%
-  						//ここに授業回数分のstatus情報
-  						//<th>丸</th>とか
+  						for(int i=0;i<jugyo_count;i++){
+  							%>
+  								<%
+  								status = checkPunchDAO.check_punch(seki_no_List.get(j),jugyo.get(i).getSubjects_cd(),jugyo.get(i).getStart_date(),jugyo.get(i).getStart_time_cd());
+  								if(status[0] == "nothing"){
+  									%>
+  									<th>無</th>
+  									<%
+  								}else if(status[0] == "confirm"){
+  									%>
+  									<th><%=status[1] %></th>
+  									<%
+  								}else{
+  									%>
+  									<th>未確定。ここ背景色変更したい<%=status[1] %></th>
+  									<%
+  								}
+  								%>
+  							<%
+  						}
   					%>
   				</tr>
   				<%

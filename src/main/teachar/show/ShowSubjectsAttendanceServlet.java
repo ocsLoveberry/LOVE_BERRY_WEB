@@ -54,7 +54,6 @@ public class ShowSubjectsAttendanceServlet extends HttpServlet {
 			// TODO 自動生成された catch ブロック
 			e.printStackTrace();
 		}
-
 		request.setAttribute("subjects_name",subjects_name);
 		request.setAttribute("jugyo_count",jugyo_count);
 		request.setAttribute("jugyo", jugyo);
