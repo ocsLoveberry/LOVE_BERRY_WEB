@@ -18,19 +18,21 @@ public class ShowTeacherSubjectDetailServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private final String view = "/WEB-INF/jsp/Teacher/Teacher_Subject_Detail.jsp";
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//		where句の作成
-		String where = request.getParameter("where");
-		System.out.println("show:" + where );
-		ArrayList<JugyoTable> jugyo;
-		JugyoTableDAO jugyoTableDao  = new JugyoTableDAO();
-		jugyo = jugyoTableDao.selectWhere(where);
-		request.setAttribute("jugyo", jugyo);
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		//		where句の作成
+		String Subjects_cd = request.getParameter("Subjects_cd");
+		System.out.println("Subjects_cdの値:" + Subjects_cd);
+		ArrayList<JugyoTable> jugyolist;
+		JugyoTableDAO jugyoTableDao = new JugyoTableDAO();
+		jugyolist = jugyoTableDao.selectWhere(Subjects_cd);
+		request.setAttribute("jugyo", jugyolist);
 		LoveBerryDispatcher.dispatch(request, response, view);
 
 	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		doGet(request, response);
 	}
 
