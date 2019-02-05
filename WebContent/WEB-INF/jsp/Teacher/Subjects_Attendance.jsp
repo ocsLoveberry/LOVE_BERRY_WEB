@@ -6,6 +6,8 @@
 
 <%
 	ArrayList<JugyoTable> jugyo = (ArrayList<JugyoTable>) request.getAttribute("jugyo");
+	ArrayList<String> seki_no_List = (ArrayList<String>)request.getAttribute("seki_no_List");
+	ArrayList<String> name_List = (ArrayList<String>)request.getAttribute("name_List");
 	String subjects_name = (String)request.getAttribute("subjects_name");
 	int jugyo_count = (int)request.getAttribute("jugyo_count");
 %>
@@ -19,10 +21,37 @@
 <h1><%=subjects_name%></h1>
 
 <table class="attendance_table">
-  <tr><th></th><th>列-A</th><th>列-B</th></tr>
-  <tr><td>行-1</td><td>A-1</td><td>B-1</td></tr>
-  <tr><td>行-2</td><td>A-2</td><td>B-2</td></tr>
-  <tr><td>行-3</td><td>A-3</td><td>B-3</td></tr>
+  <tr>
+  	<th>学籍番号</th><th>学生氏名</th>
+  		<%
+  			for(int i=1;i<=jugyo_count;i++){
+  				//授業回数分列追加
+  				%>
+  				<th><%=i %></th>
+  				<%
+  			}
+  		%>
+  </tr>
+  	<%
+  		if(seki_no_List == null){
+  			%>
+  			 <tr><th>受講学生はいません</th><th>受講学生はいません</th></tr>
+  			<%
+  		}else{
+  			for(int j=0;j<seki_no_List.size();j++){
+  				%>
+  				<tr>
+  					<th><%=seki_no_List.get(j) %></th><th><%=name_List.get(j) %></th>
+  					<%
+  						//ここに授業回数分のstatus情報
+  						//<th>丸</th>とか
+  					%>
+  				</tr>
+  				<%
+  			}
+
+  		}
+  	%>
 </table>
 </body>
 </html>
