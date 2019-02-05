@@ -13,7 +13,7 @@
 <h1>科目変更画面</h1>
 （デバッグ）セッションID:<%= session.getId() %><br>
 <%
-	ArrayList<JugyoTable> testLow = (ArrayList<JugyoTable>)request.getAttribute("testLow");
+		ArrayList<JugyoTable> testLow = (ArrayList<JugyoTable>)request.getAttribute("testLow");
 %>
 <%= testLow.get(0).getSubjects_cd() %>
 </body>

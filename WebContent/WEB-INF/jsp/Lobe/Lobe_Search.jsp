@@ -54,7 +54,7 @@ LOBE名：<input type="text" name="lobeName">
 
 <iframe name="resultTarget" width="900px" height="700px" id="frame"></iframe>
 <form action="ShowTopServlet">
-<input type="submit" value="トップへ戻る">
+<input type="submit" value="" id="back">
 </form>
 </div>
 

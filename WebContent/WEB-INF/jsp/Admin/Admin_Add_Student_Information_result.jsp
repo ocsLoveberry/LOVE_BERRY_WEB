@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>生徒登録完了画面</title>
 </head>
 <body>
 登録が完了しました<br>

@@ -8,17 +8,33 @@
 <title>LOVE_BERRY</title>
 </head>
 <body>
-<header>
-<h1>LOVE_BERRY  学生ページだぞ</h1>
+<header id="header">
+<% String username = request.getRemoteUser();%>
+	<h4>ログインIDは<%= username %></h4>
+<h1 id="LB">LOVE_BERRY  学生ページだぞ</h1>
 </header>
-	<table>
-	<tr><td><a href="ShowStudentPunchSearchServlet">打刻検索</a></td></tr>
-	<tr><td>時間割表示(工事中！優先度高)</td></tr>
+	<table id="menu">
+	<tr>
+	<td><input type="button" value="打刻検索" id="punch"></td>
+	<td><input type="button" value="時間割" id="time"></td>
+	</tr>
+	<tr><td><input type="submit" value="ログアウト" id="out"></td></tr>
+
 	<tr><td><a href="ShowTestServlet">テストページ表示</a></td></tr>
-	<tr><td>下記は問題なし、上はテスト項目</td></tr>
-	<% String username = request.getRemoteUser();%>
-	<tr><td>ログインIDは<%= username %></td></tr>
-	<tr><td><a href="ShowLogoutServlet">ログアウト</a></td></tr>
 	</table>
+
+	<script>
+	document.getElementById("punch").onclick= function(){
+	location.href= "/LOVE_BERRY_WEB/ShowStudentPunchSearchServlet";
+	}
+
+	document.getElementById("time").onclick= function(){
+	location.href= "/LOVE_BERRY_WEB/";
+	}
+
+	document.getElementById("out").onclick= function(){
+	location.href= "/LOVE_BERRY_WEB/ShowLogoutServlet";
+	}
+	</script>
 </body>
 </html>

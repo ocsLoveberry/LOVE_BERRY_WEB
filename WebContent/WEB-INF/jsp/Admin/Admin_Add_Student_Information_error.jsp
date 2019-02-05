@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>生徒登録エラー画面</title>
 </head>
 <body>
 問題が発生しました。もう一度やり直してください。<br>
