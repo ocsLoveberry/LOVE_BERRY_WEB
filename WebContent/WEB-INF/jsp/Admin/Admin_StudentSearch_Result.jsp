@@ -1,9 +1,20 @@
+<!--
+管理者が学生検索ページに遷移して学生の検索結果を押した後に
+遷移してくるページ
+
+このページからの遷移先はShowStundetDetailServlet 学生詳細画面
+
+ShowStudentSearchServlet から遷移してくる
+
+
+
+  -->
 <%@page import="org.apache.jasper.tagplugins.jstl.core.ForEach"%>
 <%@page import="javaBeans.OcsJohoData"%>
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<% ArrayList<OcsJohoData> studentData = (ArrayList<OcsJohoData>)request.getAttribute("studentData"); %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,7 +25,9 @@
 </head>
 <body>
 	<br>
-	<% if(!studentData.isEmpty()){ %>
+<% ArrayList<OcsJohoData> studentData = (ArrayList<OcsJohoData>)request.getAttribute("studentData");
+	if(studentData != null || studentData.size() != 0 ) {
+	%>
 	<form action="ShowStudentDetailServlet" method="post">
 		<table>
 			<tr class="sub">
@@ -50,8 +63,9 @@
 						<%= student.getMessage() %>
 					</td>
 				</tr>
-			<%} %>
+			<%}session.setAttribute("studentlist", studentData);%>
 		</table>
+<%-- 	<%session.setAttribute("studentDate", studentData); %> --%>
 		<input type="submit" value="詳細表示">
 	</form>
 		<%

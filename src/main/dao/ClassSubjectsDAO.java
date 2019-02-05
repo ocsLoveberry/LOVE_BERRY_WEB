@@ -13,7 +13,7 @@ public class ClassSubjectsDAO extends DAOBase {
 	public ArrayList<ClassSubjects> selectAll(){
 		ArrayList<ClassSubjects> classSubjects;
 		classSubjects = new ArrayList<ClassSubjects>();
-		String sql = "DISTINCT SELECT CLASS_CD, SUBJECTS_CD, YEAR FROM CLASS_SUBJECTS_TBL";
+		String sql = "SELECT DISTINCT  CLASS_CD, SUBJECTS_CD, YEAR FROM CLASS_SUBJECTS_TBL";
 		ResultSet rs = null;
 		try {
 			this.open();

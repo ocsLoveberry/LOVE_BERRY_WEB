@@ -15,6 +15,7 @@ public class DAOBase {
 
 	Connection con;
 	Statement stmt;
+	PreparedStatement pstmt;
 
 	protected void open(){
 		try {
@@ -34,6 +35,22 @@ public class DAOBase {
 		try {
 			if (stmt != null) {
 				stmt.close();
+			}
+			if (con != null) {
+				con.close();
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+
+	protected void close(Statement stmt, ResultSet rs) {
+		try {
+			if (stmt != null) {
+				stmt.close();
+			}
+			if (rs != null) {
+				rs.close();
 			}
 			if (con != null) {
 				con.close();
