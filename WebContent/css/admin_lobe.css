@@ -2,10 +2,35 @@
 body,p,div,input{margin: 0}
 
 body{
-	background-image: url("img/nikaido.png");
+	background-image: url("img/lobe.jpg");
 	background-repeat:no-repeat;
 	background-attachment:fixed;	/*背景画像をスクロールしないように固定*/
 	background-position:center center; /*常に画像が中央に表示される*/
 	background-size:cover;
 }
 
+#title{
+		font-family:"HGS行書体";
+		font-size:40px;
+		color:#fffS;
+}
+
+#main{
+	width:1000px;
+	margin:auto auto;
+}
+
+#sea{
+	font-size:18px;
+	font-weight:bolder;
+}
+
+#sea,#new{
+	display:inline;
+}
+
+#frame{
+	margin:10px 0px;
+	display:block;
+	background-color:#fff;
+}

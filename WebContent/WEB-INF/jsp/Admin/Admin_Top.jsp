@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" type="text/css" href="/LOVE_BERRY_WEB/css/admin_lobe.css">
+<link rel="stylesheet" type="text/css" href="/LOVE_BERRY_WEB/css/admin_top.css">
 <title>LOVE_BERRY</title>
 </head>
 <body>
