@@ -225,6 +225,6 @@ $(function(){
 	</form>
 	</div>
 	</div>
-	<form action="ShowTopServlet"><input type="submit" value=" " id="back"></form>
+	<div id="yazi"><form action="ShowTopServlet"><input type="submit" value=" " id="back"></form></div>
 </body>
 </html>

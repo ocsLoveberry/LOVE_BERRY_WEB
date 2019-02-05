@@ -45,3 +45,17 @@ select{
 option{
 	font-size:20px;
 }
+
+#yazi{
+	width:400px;
+	margin:auto auto;
+}
+
+#back{
+	padding:15px 44px;
+	 background: url(img/back_w.png) left top no-repeat;
+	 border:none;
+	outline:none;
+	cursor: pointer;
+	cursor: hand;
+}

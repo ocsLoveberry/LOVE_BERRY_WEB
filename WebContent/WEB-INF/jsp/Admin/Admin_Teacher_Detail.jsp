@@ -76,11 +76,11 @@
 					%>
 				</td>
 			<tr>
-				<td><input type="submit" name="Back" value="戻る" id="">
+				<td><input type="submit" name="Confirm" value="確定" id="">
 				</td>
 			</tr>
 			<tr>
-				<td><input type="submit" name="Confirm" value="確定" id="">
+				<td><input type="submit" name="Back" value="戻る" id="">
 				</td>
 			</tr>
 		</table>

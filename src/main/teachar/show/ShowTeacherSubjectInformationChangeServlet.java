@@ -18,22 +18,26 @@ public class ShowTeacherSubjectInformationChangeServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private final String view = "/WEB-INF/jsp/Teacher/Teacher_Subject_Infomation_Change.jsp";
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	//	String subject_cd = request.getParameter("subject_cd");
-	//	String start_date = request.getParameter("start_date");
-	//	String start_time_cd = request.getParameter("start_time_cd");
-	//	String Jugyo_cnt = request.getParameter("Jugyo_cnt");
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		//	String subject_cd = request.getParameter("subject_cd");
+		//	String start_date = request.getParameter("start_date");
+		//	String start_time_cd = request.getParameter("start_time_cd");
+		//	String Jugyo_cnt = request.getParameter("Jugyo_cnt");
 		String tokutei_cd = request.getParameter("tokutei_cd");
 		ArrayList<JugyoTable> jugyoDetailOneLow = new ArrayList<>();
 		JugyoTableDAO jugyoTableDao = new JugyoTableDAO();
 
-		System.out.println("tokutei_cd:"+tokutei_cd);
+		System.out.println("tokutei_cd:" + tokutei_cd);
 		jugyoDetailOneLow = jugyoTableDao.Jugyo_Detail(tokutei_cd);
-		System.out.println("jugyoDetailOneLowの値は:"+jugyoDetailOneLow);
+		System.out.println("jugyoDetailOneLowの値は:" + jugyoDetailOneLow);
+
 		request.setAttribute("testLow", jugyoDetailOneLow);
 		LoveBerryDispatcher.dispatch(request, response, view);
 	}
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		System.out.println("dopst");
 		doGet(request, response);
 	}
