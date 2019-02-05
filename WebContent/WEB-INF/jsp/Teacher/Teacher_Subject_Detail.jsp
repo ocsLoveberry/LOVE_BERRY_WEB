@@ -62,7 +62,7 @@
 		request.setAttribute("Jugyo_cnt", i);%>
 	</table>
 	<form action="ShowSubjectsAttendanceServlet" target="subjectDetail">
-	<input type="button" name="ShowSubjectsAttendanceServletbtn" value="出席情報一覧へ">
+	<input type="submit" name="ShowSubjectsAttendanceServletbtn" value="出席情報一覧へ">
 	<% request.setAttribute("Subjects_cd", jugyo.get(0).getSubjects_cd()); %>
 	</form>
 </body>
