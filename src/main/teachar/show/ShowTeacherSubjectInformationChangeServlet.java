@@ -25,14 +25,14 @@ public class ShowTeacherSubjectInformationChangeServlet extends HttpServlet {
 		//	String start_time_cd = request.getParameter("start_time_cd");
 		//	String Jugyo_cnt = request.getParameter("Jugyo_cnt");
 		String tokutei_cd = request.getParameter("tokutei_cd");
-		ArrayList<JugyoTable> jugyoDetailOneLow = new ArrayList<>();
+		ArrayList<JugyoTable> jugyoDetailList = new ArrayList<>();
 		JugyoTableDAO jugyoTableDao = new JugyoTableDAO();
 
 		System.out.println("tokutei_cd:" + tokutei_cd);
-		jugyoDetailOneLow = jugyoTableDao.Jugyo_Detail(tokutei_cd);
-		System.out.println("jugyoDetailOneLowの値は:" + jugyoDetailOneLow);
+		jugyoDetailList = jugyoTableDao.Jugyo_Detail(tokutei_cd);
+		System.out.println("jugyoDetailOneLowの値は:" + jugyoDetailList);
 
-		request.setAttribute("testLow", jugyoDetailOneLow);
+		request.setAttribute("jugyoDetailList", jugyoDetailList);
 		LoveBerryDispatcher.dispatch(request, response, view);
 	}
 
