@@ -24,7 +24,7 @@
 			<!-- servlet名?パラメータ名=パラメータでgetメソッドで値をhrefで送信できる -->
 			<!-- formタグを使えばPOSTメソッドも使える -->
 			<td><a
-				href="ShowTeacherSubjectDetailServlet?where=<%=csView.getSubjects_cd()%>"
+				href="ShowTeacherSubjectDetailServlet?Subjects_cd=<%=csView.getSubjects_cd()%>"
 				target="subjectDetail"><%=csView.getSubjects_cd()%></a></td>
 		</tr>
 		<%

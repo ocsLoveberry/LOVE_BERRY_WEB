@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>科目変更画面</title>
 </head>
 <body>
 <h1>科目変更画面</h1>
