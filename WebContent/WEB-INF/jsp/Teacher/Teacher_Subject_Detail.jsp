@@ -63,7 +63,8 @@
 	</table>
 	<form action="ShowSubjectsAttendanceServlet" target="subjectDetail">
 	<input type="submit" name="ShowSubjectsAttendanceServletbtn" value="出席情報一覧へ">
-	<% request.setAttribute("Subjects_cd", jugyo.get(0).getSubjects_cd()); %>
+	<% session.setAttribute("Subjects_cd", jugyo.get(0).getSubjects_cd()); 
+		%>
 	</form>
 </body>
 </html>

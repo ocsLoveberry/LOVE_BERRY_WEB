@@ -4,10 +4,12 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import Dispatcher.LoveBerryDispatcher;
 import javaBeans.JugyoTable;
@@ -22,10 +24,9 @@ public class ShowSubjectsAttendanceServlet extends HttpServlet {
         super();
     }
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String where = request.getParameter("Subjects_cd");
-
-		//String where = "oracle_motodera_2018";
-
+		HttpSession session = request.getSession();
+		String where = (String) session.getAttribute("Subjects_cd");
+		System.out.println("whereの値は:"+where);
 		System.out.println("print確認");
 		System.out.println(where);
 		ArrayList<JugyoTable> jugyo;
