@@ -150,6 +150,6 @@ var default_ymd_format = 'YYYY-MM-DD HH:mm'
   <div id='calendar'></div>
  <button>Submit</button>
  <div id ="subjectDetail"></div>
- <a href="ShowLogoutServlet">ログアウト</a>
+ <a href="ShowTopServlet">トップに戻る</a>
 </body>
 </html>

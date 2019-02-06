@@ -17,50 +17,28 @@
 	<h4>ログインID:<%= username %></h4>
 <h1 class="LB">LOVE_BERRY  教員ページだゾ</h1>
 </header>
-<!--
-		<ul class="link">
-			<li><input type="button" value="科目一覧"  id="kamoku"></li>
-			<li><input type="button" value="時間割" class="time"></li>
-		</ul>
-
-		<ul class="link2">
-			<li><input type="button" value="学生検索" class="student"></li>
-			<li><input type="button" value="イベント情報" class="events"></li>
-		</ul>
-		<ul class="link3">
-			<li><input type="button" value="ログアウト" class="logout"></li>
-		</ul>
--->
 	<table class="menu">
 	<tr>
-			<td><input type="button" value="時間割" id="kamoku"></td>
-			<td><input type="button" value="学生検索" id="stu_sea"></td>
+			<td><input type="button" value="時間割" id="time"></td>
+			<td><input type="button" value="クラス生徒" id="stu_sea"></td>
 	</tr>
 	<tr>
-			<td><input type="button" value="科目一覧" id="guraburu"></td>
-			<td><input type="button" value="ケモフレ民" id="tathuki"></td>
+			<td><input type="button" value="科目一覧" id="SL"></td>
 	</tr>
 
-	<tr><td><input type="submit" value="ログアウト" id="logout"></td></tr>
+	<tr><td><input type="submit" value="" id="logout"></td></tr>
 	</table>
-
-	<a href="ShowTeacherSubjectListServlet">科目一覧画面</a>
-
 <script>
-	document.getElementById("kamoku").onclick= function(){
+	document.getElementById("time").onclick= function(){
 	location.href= "/LOVE_BERRY_WEB/CreateJikanwariServlet";
 	}
 
-	document.getElementById("kamoku").onclick= function(){
-	location.href= "/LOVE_BERRY_WEB/ShowCreateJugyoServlet";
+	document.getElementById("SL").onclick= function(){
+	location.href= "/LOVE_BERRY_WEB/ShowTeacherSubjectListServlet";
 	}
 
 	document.getElementById("stu_sea").onclick= function(){
 	location.href= "/LOVE_BERRY_WEB/ShowSessionListServlet";
-	}
-
-	document.getElementById("kamoku").onclick= function(){
-	location.href= "/LOVE_BERRY_WEB/ShowJugyoDetail";
 	}
 
 	document.getElementById("logout").onclick= function(){
