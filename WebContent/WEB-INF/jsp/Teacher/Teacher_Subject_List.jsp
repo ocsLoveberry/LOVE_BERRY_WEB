@@ -40,7 +40,7 @@
 		<br>
 		<div id="yazi">
 			<form action="ShowTopServlet">
-				<input type="submit" value="トップに戻る" id="back">
+				<input type="submit" value="" id="back">
 			</form>
 		</div>
 	</div>
