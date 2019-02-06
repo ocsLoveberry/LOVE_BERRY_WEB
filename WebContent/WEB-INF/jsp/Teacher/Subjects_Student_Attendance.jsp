@@ -11,6 +11,8 @@ String subjects_name = (String)request.getAttribute("subjects_name");
 int jugyo_count = (int)request.getAttribute("jugyo_count");
 String temp_status[] = (String[])request.getAttribute("temp_status");
 String status[] = (String[])request.getAttribute("status");
+String seki_no = ocsJohoData.get(0).getSeki_no();
+String subjects_cd = jugyo.get(0).getSubjects_cd();
 %>
 <html>
 <head>
@@ -69,7 +71,9 @@ String status[] = (String[])request.getAttribute("status");
 		%>
 	</table>
 	<h2>◯：出席、☓：欠席、△：遅刻</h2>
-
+	<input type='hidden' name="seki_no" value=<%=seki_no %>>
+	<input type='hidden' name="subjects_cd" value=<%=subjects_cd %>>
+	<input type='hidden' name="jugyo_count" value=<%=jugyo_count %>>
 	<input type='submit' name="ConfirmStatusServletbtn" value='確定'>
 </form>
 </body>

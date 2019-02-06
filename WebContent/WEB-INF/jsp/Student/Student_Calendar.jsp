@@ -7,6 +7,11 @@
 <link href='../LOVE_BERRY_WEB/calendar/fullcalendar.min.css' rel='stylesheet' />
 <link href='../LOVE_BERRY_WEB/calendar/modal.css' rel='stylesheet' />
 <link href='../LOVE_BERRY_WEB/calendar/fullcalendar.print.min.css' rel='stylesheet' media='print' />
+<<<<<<< HEAD
+=======
+<link rel="stylesheet" type="text/css" href="/LOVE_BERRY_WEB/css/Student_Cal.css">
+<link href='../LOVE_BERRY_WEB/calendar/modal.css' rel='stylesheet'/>
+>>>>>>> aff41060ff91db7635dc6cbf79a9a59d804aa77b
 <script src='../LOVE_BERRY_WEB/calendar/lib/moment.min.js'></script>
 <script src='../LOVE_BERRY_WEB/calendar/lib/jquery.min.js'></script>
 <script src='../LOVE_BERRY_WEB/calendar/fullcalendar.min.js'></script>
@@ -40,7 +45,7 @@ $(function(){
 <style>
 
   body {
-    margin: 40px 10px;
+    margin: 0px 0px;
     padding: 0;
     font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
     font-size: 14px;
@@ -48,8 +53,12 @@ $(function(){
 
   #calendar {
     max-width: 900px;
-    margin: 0 auto;
+    margin:20px auto 0px auto;
   }
+.fc-mon,.fc-tue,.fc-wed,.fc-thu,.fc-fri{
+color:#000;
+background-color:#fff;
+}
 
 .fc-sun {
     color: red;
@@ -65,12 +74,14 @@ $(function(){
 </style>
 </head>
 <body>
+<header id="header">
 <%
 	String username = request.getRemoteUser();
 	session.setAttribute("seki_no",username);
 	%>
-	ログインIDは<%= username %><br>
-<a href="ShowLogoutServlet">ログアウト</a><br>
+	<h4>ログインIDは<%= username %></h4><br>
+	<h1 id="LB">Love&Berry</h1>
+	</header>
   <div id='calendar'></div>
  <a href="ShowTopServlet">トップに戻る</a>
 
