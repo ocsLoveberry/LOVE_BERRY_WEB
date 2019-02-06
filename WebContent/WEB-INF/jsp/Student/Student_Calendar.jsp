@@ -7,6 +7,7 @@
 <link href='../LOVE_BERRY_WEB/calendar/fullcalendar.min.css' rel='stylesheet' />
 <link href='../LOVE_BERRY_WEB/calendar/fullcalendar.print.min.css' rel='stylesheet' media='print' />
 <link rel="stylesheet" type="text/css" href="/LOVE_BERRY_WEB/css/Student_Cal.css">
+<link href='../LOVE_BERRY_WEB/calendar/modal.css' rel='stylesheet'/>
 <script src='../LOVE_BERRY_WEB/calendar/lib/moment.min.js'></script>
 <script src='../LOVE_BERRY_WEB/calendar/lib/jquery.min.js'></script>
 <script src='../LOVE_BERRY_WEB/calendar/fullcalendar.min.js'></script>
@@ -15,28 +16,9 @@
 <script>
 $(document).ready(function(){
 	initializePage(<%= request.getRemoteUser()%>);
-
 })
 </script>
 
-<script type="text/javascript">
-$(function(){
-	$('#btn-modal').on('click', function(){
-		  $('#overlay').fadeIn();
-		  $('#modal').fadeIn();
-		});
-
-		$('#close-btn').on('click', function(){
-		  $('#overlay').fadeOut();
-		  $('#modal').fadeOut();
-		});
-		$('#overlay').on('click', function(){
-		  $('#overlay').fadeOut();
-		  $('#modal').fadeOut();
-		});
-
-	});
-</script>
 <style>
 
   body {
