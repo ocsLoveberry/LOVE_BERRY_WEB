@@ -50,3 +50,9 @@ input[type="button"]{
 	font-weight:bold;
 	outline:0;
 }
+#out{
+	padding: 80px 120px;
+	 background: url(img/logout.png) left top no-repeat;
+	 border:none;
+	outline:none;
+}
