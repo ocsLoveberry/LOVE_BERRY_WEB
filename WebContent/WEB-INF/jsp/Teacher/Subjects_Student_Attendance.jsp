@@ -27,6 +27,50 @@ String status[] = (String[])request.getAttribute("status");
 		<th><%=ocsJohoData.get(0).getSeki_no() %></th><th><%=ocsJohoData.get(0).getName() %></th><th><%=ocsJohoData.get(0).getMessage() %></th>
 	</tr>
 </table>
+<form action="ConfirmStatusServlet">
+	<table class=attendance>
+		<tr>
+			<th>回数</th><th>日付</th><th>時限</th><th>出欠判定</th><th>打刻出欠</th>
+		</tr>
+		<%
+			for(int i=0;i<jugyo_count;i++){
+				%>
+				<tr>
+				<!-- 回数、日付、時限、出欠判定、打刻出欠の順 -->
+				<th><%=i+1 %></th>
+				<th><%=jugyo.get(i).getStart_date() %></th>
+				<th><%=jugyo.get(i).getStart_time_cd() %>限</th>
+				<th>
+					<select class="status" name="status<%=i %>">
+					<%if(status[i].equals("◯")){
+						%><option value="◯" selected>◯</option><%
+					}else{
+						%><option value="◯">◯</option><%
+					}
+					%>
+					<%if(status[i].equals("☓")){
+						%><option value="☓" selected>☓</option><%
+					}else{
+						%><option value="☓">☓</option><%
+					}
+					%>
+					<%if(status[i].equals("△")){
+						%><option value="△" selected>△</option><%
+					}else{
+						%><option value="△">△</option><%
+					}
+					%>
+					</select>
+	        	</th>
+				<th><%=temp_status[i] %></th>
+				</tr>
+				<%
+			}
+		%>
+	</table>
+	<h2>◯：出席、☓：欠席、△：遅刻</h2>
 
+	<input type='submit' name="ConfirmStatusServletbtn" value='確定'>
+</form>
 </body>
 </html>
