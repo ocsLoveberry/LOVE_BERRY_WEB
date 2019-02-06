@@ -21,7 +21,7 @@
 			for (ClassSubjects csView : classSubject) {
 		%>
 		<tr>
-			<!-- servlet名?パラメータ名=パラメータでgetメソッドで値をhrefで送信できる -->
+			 <!-- servlet名?パラメータ名=パラメータでgetメソッドで値をhrefで送信できる -->
 			<!-- formタグを使えばPOSTメソッドも使える -->
 			<td><a
 				href="ShowTeacherSubjectDetailServlet?Subjects_cd=<%=csView.getSubjects_cd()%>"
