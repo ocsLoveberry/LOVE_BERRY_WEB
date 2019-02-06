@@ -72,13 +72,18 @@ $(function(){
 	ログインIDは<%= username %><br>
 <a href="ShowLogoutServlet">ログアウト</a><br>
   <div id='calendar'></div>
- <div id ="subjectDetail"></div>
  <a href="ShowTopServlet">トップに戻る</a>
 
  <button id="btn-modal">モーダルを開く</button>
  <div id="overlay" class="overlay"></div>
  	<div id="modal" class="modal">
-		ここがモーダル
+ 		<div class="modal_header"></div>
+			<button class="modal-close-btn" id="close-btn">閉じる</button><br>
+ 		<div class="modal_body">
+			<div id="subjectDetail"></div>
+		</div>
+		<div class="modal_footer"></div>
+
  	</div>
 </body>
 </html>
