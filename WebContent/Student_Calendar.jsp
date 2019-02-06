@@ -6,7 +6,7 @@
 <meta charset='utf-8' />
 <link href='calendar/fullcalendar.min.css' rel='stylesheet' />
 <link href='calendar/fullcalendar.print.min.css' rel='stylesheet' media='print' />
-
+<link href="calendar.css" rel="stylesheet">
 <script src='calendar/lib/moment.min.js'></script>
 <script src='calendar/lib/jquery.min.js'></script>
 <script src='calendar/fullcalendar.min.js'></script>
@@ -32,7 +32,7 @@ var default_ymd_format = 'YYYY-MM-DD HH:mm'
       },
       //Option
       editable: true,			// 編集可能設定
-      selectable: true,			// カレンダー空白部分のドラッグ可能
+      selectable: false,			// カレンダー空白部分のドラッグ可能
       selectHelper: true,		// これをtrueにすると範囲設定できます
       defaultView: 'month',		//初期ビュー
 //    selectMinDistance: 1,
@@ -44,9 +44,8 @@ var default_ymd_format = 'YYYY-MM-DD HH:mm'
       firstDay: 1,
       defaultDate: '2018-12-01', //getToday(), //下に関数を用意しています
       eventLimit: true, // allow "more" link when too many events
-      eventDurationEditable: true,
+      eventDurationEditable: false,
       timeFormat: 'HH:mm',
-
       //AgendaView
       minTime: '09:15:00',
       maxTime: '18:30:00',
@@ -79,28 +78,7 @@ var default_ymd_format = 'YYYY-MM-DD HH:mm'
 
 
       },
-
       events: 'CalendarView'
-
-      /* eventClickのメソッドについて
-       *
-       * 学生と先生の場合で処理を分ける
-       *
-       * 学生の場合
-       * イベントをクリックしたら
-       * 	クリックした日付の詳細画面へ遷移させる
-       * 空白をクリックしたら
-       *	何もしない
-       *
-       * 先生の場合
-       * イベントをクリックしたら
-       *	確認・変更画面に遷移
-       * 空白をクリックしたら
-       *	科目登録画面に遷移
-       *
-       * TODO:(先生)科目確認画面を作る
-       * TODO:(先生)を作る
-      */
     });
     function getToday(){
 		var today = new Date();
@@ -111,6 +89,25 @@ var default_ymd_format = 'YYYY-MM-DD HH:mm'
       	return result
       }
   });
+</script>
+
+<script type="text/javascript">
+$(function(){
+	$('#btn-modal').on('click', function(){
+		  $('#overlay').fadeIn();
+		  $('#modal').fadeIn();
+		});
+
+		$('#close-btn').on('click', function(){
+		  $('#overlay').fadeOut();
+		  $('#modal').fadeOut();
+		});
+		$('#overlay').on('click', function(){
+		  $('#overlay').fadeOut();
+		  $('#modal').fadeOut();
+		});
+
+	});
 </script>
 <style>
 
@@ -126,7 +123,6 @@ var default_ymd_format = 'YYYY-MM-DD HH:mm'
     margin: 0 auto;
   }
 
-  /* 日曜日 */
 .fc-sun {
     color: red;
     background-color: #fff0f0;
@@ -146,9 +142,8 @@ var default_ymd_format = 'YYYY-MM-DD HH:mm'
 	session.setAttribute("seki_no",username);
 	%>
 	ログインIDは<%= username %><br>
-
+<a href="ShowLogoutServlet">ログアウト</a><br>
   <div id='calendar'></div>
- <button>Submit</button>
  <div id ="subjectDetail"></div>
  <a href="ShowTopServlet">トップに戻る</a>
 </body>
