@@ -207,7 +207,7 @@ body {
 			</div>
 		  	<div class="moda-footer" id="modal-footer">
 		  		<input type="submit" value="登録" name="submit" id="submit">
-		  		<button id="testbtn">test</button>
+		  		<button id="testbtn" type="button">登録ボタン</button>
 		  	</div>
 		</form>
 		</div>
