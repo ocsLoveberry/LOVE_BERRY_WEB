@@ -11,6 +11,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" type="text/css"
+	href="/LOVE_BERRY_WEB/css/table_Result.css">
 <title>科目詳細画面</title>
 </head>
 <h1>科目詳細画面(Teacher_Subject_List.jsp)</h1>
@@ -19,7 +21,7 @@
 	<h1><%=jugyo.get(0).getSubjects_cd()%></h1>
 	<br>
 	<table>
-		<tr>
+		<tr class="sub">
 			<td>回数</td>
 			<td>授業名（デバッグ）</td>
 			<td>日付</td>
@@ -36,34 +38,38 @@
 		%>
 
 		<tr>
-			<td><%=i%></td>
-			<td><input type="hidden" name="subject_cd"> <%=viewJugyo.getSubjects_cd()%>
+			<td id="con"><%=i%></td>
+			<td id="jgy"><input type="hidden" name="subject_cd"> <%=viewJugyo.getSubjects_cd()%>
 			</td>
-			<td><input type="hidden" name="start_date"> <%=viewJugyo.getStart_date()%>
+			<td id="day"><input type="hidden" name="start_date"> <%=viewJugyo.getStart_date()%>
 			</td>
-			<td><input type="hidden" name="start_time_cd"><%=viewJugyo.getStart_time_cd()%>
+			<td id="time"><input type="hidden" name="start_time_cd"><%=viewJugyo.getStart_time_cd()%>時限
 			</td>
-			<td><input type="hidden" name="room_cd1()"><%=viewJugyo.getRoom_cd1()%>
+			<td class="room"><input type="hidden" name="room_cd1()"><%=viewJugyo.getRoom_cd1()%>
 			</td>
-			<td><input type="hidden" name="room_cd2()"><%=viewJugyo.getRoom_cd2()%>
+			<td class="room"><input type="hidden" name="room_cd2()"><%=viewJugyo.getRoom_cd2()%>
 			</td>
-			<td><input type="hidden" name="room_cd2()"><%=viewJugyo.getRoom_cd3()%>
+			<td class="room"><input type="hidden" name="room_cd2()"><%=viewJugyo.getRoom_cd3()%>
 			</td>
-			<td><input type="hidden" name="comment()"><%=viewJugyo.getComment()%>
+			<td id="coment"><input type="hidden" name="comment()"><%=viewJugyo.getComment()%>
 			</td>
 			<td><a
 				href="ShowTeacherSubjectInformationChangeServlet?subject_cd=<%=viewJugyo.getSubjects_cd()%>
 				&start_date= <%=viewJugyo.getStart_date()%>&start_time_cd=<%=viewJugyo.getStart_time_cd()%>
-				&tokutei_cd=<%=viewJugyo.getTokutei_cd() %>">編集する</a></td>
+				&tokutei_cd=<%=viewJugyo.getTokutei_cd()%>">編集する</a></td>
 		</tr>
 		<%
 			i++;
 			}
-		request.setAttribute("Jugyo_cnt", i);%>
+			request.setAttribute("Jugyo_cnt", i);
+		%>
 	</table>
 	<form action="ShowSubjectsAttendanceServlet" target="subjectDetail">
-	<input type="submit" name="ShowSubjectsAttendanceServletbtn" value="出席情報一覧へ">
-	<% session.setAttribute("Subjects_cd", jugyo.get(0).getSubjects_cd()); %>
+		<input type="submit" name="ShowSubjectsAttendanceServletbtn"
+			value="出席情報一覧へ">
+		<%
+			session.setAttribute("Subjects_cd", jugyo.get(0).getSubjects_cd());
+		%>
 	</form>
 </body>
 </html>
