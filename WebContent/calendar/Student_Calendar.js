@@ -1,23 +1,13 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset='utf-8' />
-<link href='calendar/fullcalendar.min.css' rel='stylesheet' />
-<link href='calendar/fullcalendar.print.min.css' rel='stylesheet' media='print' />
-<link href="calendar.css" rel="stylesheet">
-<script src='calendar/lib/moment.min.js'></script>
-<script src='calendar/lib/jquery.min.js'></script>
-<script src='calendar/fullcalendar.min.js'></script>
-<script src='calendar/locale/ja.js'></script>
+/**
+ *
+ */
 
-
-<script>
 
 
 var default_ymd_format = 'YYYY-MM-DD HH:mm'
-  $(document).ready(function() {
+var seki_no;
+function initializePage(input_seki_no) {
+	seki_no = input_seki_no;
     $('#calendar').fullCalendar({
 
 	  //Toolbar
@@ -64,7 +54,7 @@ var default_ymd_format = 'YYYY-MM-DD HH:mm'
 	  		type: 'get',
 	  		dataType: 'json',
 	  		data:{
-	  			seki_no : "<%= request.getRemoteUser()%>",
+	  			seki_no : seki_no,
 	  			subjectID : calEvent.title,
 	  			start : calEvent.start.format(default_ymd_format),
 	  			end : calEvent.end.format(default_ymd_format)
@@ -88,63 +78,4 @@ var default_ymd_format = 'YYYY-MM-DD HH:mm'
       	var result = '\'' + year + '-' + month + '-' + day + '\'';
       	return result
       }
-  });
-</script>
-
-<script type="text/javascript">
-$(function(){
-	$('#btn-modal').on('click', function(){
-		  $('#overlay').fadeIn();
-		  $('#modal').fadeIn();
-		});
-
-		$('#close-btn').on('click', function(){
-		  $('#overlay').fadeOut();
-		  $('#modal').fadeOut();
-		});
-		$('#overlay').on('click', function(){
-		  $('#overlay').fadeOut();
-		  $('#modal').fadeOut();
-		});
-
-	});
-</script>
-<style>
-
-  body {
-    margin: 40px 10px;
-    padding: 0;
-    font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
-    font-size: 14px;
   }
-
-  #calendar {
-    max-width: 900px;
-    margin: 0 auto;
-  }
-
-.fc-sun {
-    color: red;
-    background-color: #fff0f0;
-}
-
-/* 土曜日 */
-.fc-sat {
-    color: blue;
-    background-color: #f0f0ff;
-}
-
-</style>
-</head>
-<body>
-<%
-	String username = request.getRemoteUser();
-	session.setAttribute("seki_no",username);
-	%>
-	ログインIDは<%= username %><br>
-<a href="ShowLogoutServlet">ログアウト</a><br>
-  <div id='calendar'></div>
- <div id ="subjectDetail"></div>
- <a href="ShowTopServlet">トップに戻る</a>
-</body>
-</html>

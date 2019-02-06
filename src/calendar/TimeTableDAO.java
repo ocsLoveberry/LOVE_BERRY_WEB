@@ -1,3 +1,10 @@
+/**
+ * カレンダー用クラス
+ * seki_noを受け取ってその生徒（教員）の時間割のデータをCalendarViewに渡す
+ *
+ * @author 154139
+ */
+
 package calendar;
 
 import java.sql.ResultSet;
@@ -12,7 +19,6 @@ public class TimeTableDAO extends DAOBase {
 	public ArrayList<JikanwariData> getJikanwari(String seki_no) {
 
 		ArrayList<JikanwariData> jikanwariData = new ArrayList<>();
-		//		TODO:R4A1Systemをreqestとかsessionから指定した値を引数にして渡してくる 2019/01/22
 		String class_cd = getClassCd(seki_no);
 		String sql = "SELECT * FROM JIKANWARI_TBL WHERE CLASS_CD = '" + class_cd
 				+ "' ORDER BY START_DATE, START_TIME_CD";

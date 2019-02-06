@@ -1,3 +1,11 @@
+/**
+ * カレンダーを表示するためのクラス
+ * jspから呼び出される
+ * カレンダー（json形式）が返される
+ *
+ * @author 154139
+ */
+
 package calendar;
 
 import java.io.IOException;
