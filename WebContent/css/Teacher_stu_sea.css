@@ -12,22 +12,44 @@ body {
 	background-size: cover;
 }
 
-#main {
+#title {
+	margin: 0px 0px;
+	width: auto;
+	padding: 2px;
+	text-align: center;
+	dispaly: flex;
+	background-image: url("img/tea_header.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: auto;
+}
+
+h4 {
+	margin: 0px 0px 0px 0px;
+	text-align: right;
+	color: white;;
+}
+
+#LB {
+	font-size: 3em;
+	font-family: 'Homemade Apple', cursive;
+	text-decoration: none;
+	color: #FFFFFF;
+	margin: 0px 0px 0px 0px;
+}
+
+#form {
 	width: 1000px;
 	margin: auto auto;
 }
 
-h2 {
-	margin: 20px 0px 0px 0px;
-}
-
-select {
-	padding: 5px;
-	font-size: 18px;
-}
-
 #frame {
 	background-color: #fff;
+}
+
+#yazi {
+	width: 1000px;
+	margin: auto auto;
 }
 
 #back {

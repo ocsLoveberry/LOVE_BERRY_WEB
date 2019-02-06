@@ -125,7 +125,7 @@ try {
 			<%
 				}
 			%><tr>
-				<td><input type="submit" name="Confirm" value="確定" id="">
+				<td><input type="submit" name="Confirm" value="削除" id="">
 				</td>
 			</tr>
 			<tr>
