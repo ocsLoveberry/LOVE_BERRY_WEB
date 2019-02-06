@@ -18,7 +18,7 @@
 	<td><input type="button" value="打刻検索" id="punch"></td>
 	<td><input type="button" value="時間割" id="time"></td>
 	</tr>
-	<tr><td><input type="submit" value="ログアウト" id="out"></td></tr>
+	<tr><td><input type="submit" value="" id="out"></td></tr>
 
 	<tr><td><a href="ShowTestServlet">テストページ表示</a></td></tr>
 	</table>
@@ -29,7 +29,7 @@
 	}
 
 	document.getElementById("time").onclick= function(){
-	location.href= "/LOVE_BERRY_WEB/";
+	location.href= "/LOVE_BERRY_WEB/CalendarDetailServlet";
 	}
 
 	document.getElementById("out").onclick= function(){

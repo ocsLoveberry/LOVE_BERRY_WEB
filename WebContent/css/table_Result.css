@@ -1,20 +1,48 @@
 @charset "UTF-8";
+/*共通項目*/
+.sub {
+	width: 8em;
+	text-align: left;
+}
 
-.sub{
-width: 8em;
-text-align:left;
+#num {
+	width: 6em;
 }
-#num{
-	width:6em;
-}
-#come{
+
+#come {
 	width: 15em;
 }
 
-#name{
-	width:8em;
+#name {
+	width: 8em;
 }
 
-#mail{
-	width:12em;
+#mail {
+	width: 12em;
+}
+
+/*Teacher_Sub_List*/
+
+#con{
+	width:4em;
+}
+#jgy {
+	width: 16em;
+}
+
+#day {
+	width: 6em;
+}
+
+#time {
+	width: 4em;
+
+}
+
+.room {
+	width: 3em;
+}
+
+#coment{
+	width:8em;
 }

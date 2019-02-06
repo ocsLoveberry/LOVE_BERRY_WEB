@@ -59,51 +59,10 @@ input[type="button"]:hover{
 	font-size:14px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-#kamoku{
-	text-align:center;
-	list-style:none;
+#logout{
+	padding: 80px 120px;
+	 background: url(img/logout2.png) left top no-repeat;
+	 border:none;
+	outline:none;
 }
-
-.link li{
-	text-align:center;
-	display:inline-block;
-}
-
-.link2{
-	text-align:center;
-	list-style:none;
-
-}
-
-.link2 li{
-	text-align:center;
-	display:inline-block;
-}
-
-.link3{
-	margin-top:50px;
-	text-align:center;
-	list-style:none;
-
-}
-
-.link3 li{
-	text-align:center;
-	display:inline-block;
-}
-*/
 
