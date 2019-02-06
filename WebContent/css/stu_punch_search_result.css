@@ -1,43 +1,92 @@
 @charset "UTF-8";
 
-#main{
-	width:30%;
-	text-align:center;
-	margin:20px auto;
-	background-color: white;
-	padding-top:10px;
-	overflow: hidden;
-
+body, p, div, input {
+	margin: 0
 }
 
-div.punch_table {
-	margin: 20px;
-}
-table, td, th{
-    border: 1px solid gray;
-}
-
-table.punch_result_table {
-	width: 400px;
-	table-layout: auto;
-	margin: auto;
-}
-div.main p {
-	margin:20px;
+body {
+	background-image: url("img/normal.jpg" );
+	background-repeat: no-repeat;
+	background-attachment: fixed; /*背景画像をスクロールしないように固定*/
+	background-position: center center; /*常に画像が中央に表示される*/
+	background-size: cover;
 }
 
-#date{
-	padding-top: 50px;
+#header {
+	width: auto;
+	text-align: center;
+	padding: 2px;
+	dispaly: flex;
+	background-image: url("img/black.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	color: #FFFFFF;
 }
 
-
-#form1{
-	width:700px auto;
-	margin:200px auto;
-	padding:150px;
-	/* background-image:url("img/form.jpg");
-	background-repeat:no-repeat;
-	background-size:cover;
-	opacity:0.7;*/
+h4 {
+	margin: 0px 0px 0px 0px;
+	text-align: right;
+	color: white;;
 }
 
+.LB {
+	font-size: 3em;
+	background: -webkit-linear-gradient(left, #FFFFFF, #BDBDBD, #000000);
+	-webkit-text-fill-color: transparent;
+	-webkit-background-clip: text;
+	margin: 0px 0px 0px 0px;
+}
+
+#main {
+	width: 35%;
+	text-align: center;
+	margin: 50px auto;
+	padding: 25px;
+	background-image: url("img/form.jpeg");
+	background-repeat: no-repeat;
+	background-attachment: fixed; /*背景画像をスクロールしないように固定*/
+	background-position: center center; /*常に画像が中央に表示される*/
+	background-size: cover;
+}
+
+#punch_result_table {
+	margin: auto auto;
+	text-align: center;
+	border: solid 1px #000000;
+	border-collapse: collapse;
+}
+
+#num {
+	font-size: 20px;
+	font-weight: bold;
+}
+
+th {
+	font-size: 18px;
+	font-weight: bold;
+	text-align: justify auto;
+	border: solid 1px #000000;
+	border-collapse: collapse;
+	padding: 0px 10px;
+}
+
+td {
+	font-size: 18px;
+	border: solid 1px #000000;
+	border-collapse: collapse;
+	padding: 0px 10px;
+}
+
+#yazi {
+	width: 40%;
+	margin: auto auto;
+}
+
+#back {
+	padding: 50px 50px;
+	background: url(img/home_back.png) left top no-repeat;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	cursor: hand;
+}
