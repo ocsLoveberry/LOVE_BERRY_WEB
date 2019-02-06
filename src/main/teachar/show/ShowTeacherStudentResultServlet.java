@@ -1,4 +1,4 @@
-package main.admin.show;
+package main.teachar.show;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -15,11 +15,11 @@ import main.dao.Search_OCS_JOHO_TBL_DAO;
 import main.exception.DatabaseException;
 import main.exception.SystemException;
 
-@WebServlet("/ShowStudentSearchResultServlet")
-public class ShowStudentSearchResultServlet extends HttpServlet {
+@WebServlet("/ShowTeacherStudentResultServlet")
+public class ShowTeacherStudentResultServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	public ShowStudentSearchResultServlet() {
+	public ShowTeacherStudentResultServlet() {
 		super();
 	}
 
@@ -58,8 +58,7 @@ public class ShowStudentSearchResultServlet extends HttpServlet {
 		}
 		System.out.println("studentData.isEmpty():" + studentData.isEmpty());
 		request.setAttribute("studentData", studentData);
-		LoveBerryDispatcher.dispatch(request, response, "/WEB-INF/jsp/Admin/Admin_StudentSearch_Result.jsp");
-		//		}
+		LoveBerryDispatcher.dispatch(request, response, "/WEB-INF/jsp/Teacher/Teacher_Student_Searcher_Result.jsp");
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)

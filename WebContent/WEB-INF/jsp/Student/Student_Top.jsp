@@ -20,7 +20,6 @@
 	</tr>
 	<tr><td><input type="submit" value="" id="out"></td></tr>
 
-	<tr><td><a href="ShowTestServlet">テストページ表示</a></td></tr>
 	</table>
 <a href="ShowStudentCalendar">calendar</a>
 	<script>

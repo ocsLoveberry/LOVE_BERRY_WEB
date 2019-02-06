@@ -21,7 +21,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1><%=subjects_name%></h1>
+<h1>学生出欠管理システム</h1>
+<h2><%=subjects_name%></h2>
+
+
 
 <table class="attendance_table">
   <tr>
@@ -44,7 +47,10 @@
   			for(int j=0;j<seki_no_List.size();j++){
   				%>
   				<tr>
-  					<th><%=seki_no_List.get(j) %></th><th><%=name_List.get(j) %></th>
+  					<th><a href="ShowSubjectsStudentAttendanceServlet?subjects_cd=<%=jugyo.get(0).getSubjects_cd() %>&seki_no=<%=seki_no_List.get(j) %>"><%=seki_no_List.get(j) %></a></th>
+  					<%-- <th><%=seki_no_List.get(j) %></th> --%>
+
+  					<th><%=name_List.get(j) %></th>
   					<%
   						for(int i=0;i<jugyo_count;i++){
   							%>

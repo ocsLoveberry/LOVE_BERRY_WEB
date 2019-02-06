@@ -1,38 +1,102 @@
 @charset "UTF-8";
 
-#main{
-	width:30%;
-	height:300px;
-	text-align:center;
-	margin:20px auto;
-	background-color: white;
-
-
+body, p, div, input {
+	margin: 0
 }
 
-#date{
-	padding-top: 50px;
+body {
+	background-image: url("img/normal.jpg" );
+	background-repeat: no-repeat;
+	background-attachment: fixed; /*背景画像をスクロールしないように固定*/
+	background-position: center center; /*常に画像が中央に表示される*/
+	background-size: cover;
 }
 
-input#kensaku_button {
-	margin-top:70px;
-    padding: 15px 40px;
-    font-size: 1.2em;
-    // 背景色を黒に指定
-    background-color: #000;
-    // submitボタンのを枠を非表示にする
-    border-style: none;
-}
-div.main p {
-	margin:20px;
-}
-#form1{
-	width:700px auto;
-	margin:200px auto;
-	padding:150px;
-	/* background-image:url("img/form.jpg");
-	background-repeat:no-repeat;
-	background-size:cover;
-	opacity:0.7;*/
+header {
+	width: auto;
+	text-align: center;
+	padding: 2px;
+	dispaly: flex;
+	background-image: url("img/black.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	color: #FFFFFF;
 }
 
+h4 {
+	margin: 0px 0px 0px 0px;
+	text-align: right;
+	color: white;;
+}
+
+.LB {
+	font-size: 3em;
+	background: -webkit-linear-gradient(left, #FFFFFF, #BDBDBD, #000000);
+	-webkit-text-fill-color: transparent;
+	-webkit-background-clip: text;
+	margin: 0px 0px 0px 0px;
+}
+
+#main {
+	width: 35%;
+	text-align: center;
+	margin: 50px auto;
+	padding: 25px;
+	background-image: url("img/form.jpeg");
+	background-repeat: no-repeat;
+	background-attachment: fixed; /*背景画像をスクロールしないように固定*/
+	background-position: center center; /*常に画像が中央に表示される*/
+	background-size: cover;
+}
+
+h1 {
+	font-size: 48px;
+}
+
+#form {
+	margin: 20px 0px;
+}
+
+.sea {
+	padding: 5px 0px;
+	font-size: 18px;
+}
+
+#kensaku_button {
+	text-align: center;
+	font-size: 1.2em;
+	background-color: #000; /*背景色を黒に指定*/
+	border-style: none; /*ubmitボタンのを枠を非表示にする*/
+	display: inline-block;
+	text-decoration: none;
+	background: #87befd;
+	color: #FFF;
+	width: 120px;
+	height: 120px;
+	line-height: 120px;
+	border-radius: 50%;
+	text-align: center;
+	vertical-align: middle;
+	overflow: hidden;
+	transition: .4s;
+	outline: none;
+}
+
+#kensaku_button:hover {
+	background: #000;
+	outline: none;
+}
+
+#yazi {
+	width: 40%;
+	margin: auto auto;
+}
+
+#back {
+	padding: 50px 50px;
+	background: url(img/home_back.png) left top no-repeat;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	cursor: hand;
+}

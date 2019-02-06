@@ -27,6 +27,7 @@ public class ShowSubjectsAttendanceServlet extends HttpServlet {
     }
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
+
         String where = (String) session.getAttribute("Subjects_cd");
 		System.out.println(where);
 		ArrayList<JugyoTable> jugyo;
