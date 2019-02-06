@@ -1,22 +1,16 @@
-<!--
-管理者が学生検索ページに遷移して学生の検索結果を押した後に
-遷移してくるページ
-このページからの遷移先はShowStundetDetailServlet 学生詳細画面
-ShowStudentSearchServlet から遷移してくる
-  -->
 <%@page import="org.apache.jasper.tagplugins.jstl.core.ForEach"%>
 <%@page import="javaBeans.OcsJohoData"%>
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
-<!DOCTYPE html>
+<!DOCTYPE htnl>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" type="text/css" href="/LOVE_BERRY_WEB/css/table_Result.css">
 
-<title>Insert title here</title>
+<title>学生検索Page(Teacher_Student_Search.jsp)</title>
 </head>
 <body>
 	<br>
@@ -67,6 +61,5 @@ ShowStudentSearchServlet から遷移してくる
 		 }else{
 			out.println("検索に一致する生徒が見つかりませんでした");
 		}%>
-
 </body>
 </html>

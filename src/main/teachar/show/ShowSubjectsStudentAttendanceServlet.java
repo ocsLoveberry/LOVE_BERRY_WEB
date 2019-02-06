@@ -43,7 +43,6 @@ public class ShowSubjectsStudentAttendanceServlet extends HttpServlet {
 		jugyo = jugyoTableDao.selectWhere(subjects_cd);
 		//現在の登録されている授業回数取得
 		int jugyo_count = jugyo.size();
-		System.out.println("jugyo_count" + jugyo_count);
 
 		//授業回数だけのstatus保管用リスト作成
 		String[] temp_status = new String[jugyo_count];
@@ -62,6 +61,8 @@ public class ShowSubjectsStudentAttendanceServlet extends HttpServlet {
 			// TODO 自動生成された catch ブロック
 			e.printStackTrace();
 		}
+
+		//status[],temp_status[]を
 
 		request.setAttribute("status",status);
 		request.setAttribute("temp_status",temp_status);
