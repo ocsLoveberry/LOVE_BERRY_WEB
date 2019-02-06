@@ -27,7 +27,6 @@ public class studentDetailDAO extends DAOBase {
 		//			②出欠状況を何かしらの方法で取ってくる
 		//			③登録済みfelica情報を取ってくる
 		//			④詳細ビーンズに渡して返すかー
-		//
 
 		ArrayList<studentDetailBean> studenDetailList;
 		studenDetailList = new ArrayList<studentDetailBean>();
@@ -55,13 +54,11 @@ public class studentDetailDAO extends DAOBase {
 //			次の行が存在するか（Felicaが登録されているか)
 			boolean isExists = rs2.next();
 			String studentFelicaID1 = "";
-			String studentFelicaID2 = "";
 			if(isExists){
 				studentFelicaID1 = rs2.getString("IDM1");
-				studentFelicaID2 = rs2.getString("IDM2");
 //			String studentFelicaEntryDate = rs2.getString("ENTRY_DATE");	//登録日時を表示するのはどっちでもいいらしい
 			}
-			studenDetailList.add(new studentDetailBean(seki_no, name, department, major, studentClass, admissionYear, message,studentFelicaID1,studentFelicaID2));
+			studenDetailList.add(new studentDetailBean(seki_no, name, department, major, studentClass, admissionYear, message,studentFelicaID1));
 		} catch (SQLException e) {
 			throw new DatabaseException(ExceptionParameters.DATABASE_CONNECTION_EXCEPTION_MASSAGE, e);
 		} finally {

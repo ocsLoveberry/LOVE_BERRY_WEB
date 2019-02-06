@@ -4,16 +4,18 @@
 	pageEncoding="UTF-8"%>
 <%
 	studentDetailBean studentDetail = null;
-ArrayList<studentDetailBean> studentDetailList = null;
-try {
-		 studentDetailList = (ArrayList<studentDetailBean>) request
+	ArrayList<studentDetailBean> studentDetailList = null;
+	try {
+		studentDetailList = (ArrayList<studentDetailBean>) request
 				.getAttribute("studentDetail");
 		studentDetail = studentDetailList.get(0);
 	} catch (Exception e) {
 		e.printStackTrace();
 	}
 %>
-	<% session.setAttribute("studentDate",studentDetailList); %>
+<%
+	session.setAttribute("studentDate", studentDetailList);
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -98,7 +100,7 @@ try {
 			<tr>
 				<td>
 					<%
-					session.setAttribute("seki_no", studentDetail.getSeki_no());
+						session.setAttribute("seki_no", studentDetail.getSeki_no());
 
 						try {
 							if (studentDetail.getStudentFelicaID1().isEmpty()) {
@@ -116,15 +118,7 @@ try {
 					%>
 				</td>
 			</tr>
-			<%
-				if (studentDetail.getStudentFelicaID2() != null) {
-			%>
 			<tr>
-				<td><%=studentDetail.getStudentFelicaID2()%> <!-- <input type="checkbox" name="update_idm_btn" value="idm1"></td> -->
-			</tr>
-			<%
-				}
-			%><tr>
 				<td><input type="submit" name="Confirm" value="確定" id="">
 				</td>
 			</tr>

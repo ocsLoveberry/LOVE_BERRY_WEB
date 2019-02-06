@@ -39,12 +39,6 @@ public class ShowDetailUpdateResultServret extends HttpServlet {
 		System.out.println("Confirm:" + Confirm);
 		System.out.println("teacher:" + teacherdate);
 
-		/*		OcsJohoData[] studentlist = new OcsJohoData[studentdate.size()];
-				for (int i = 0; i < studentlist.length; i++) {
-					studentlist [i] = studentdate.get(i).toString();
-				}
-		*/
-
 		if ("確定".equals(Confirm)) {
 			System.out.println("CONfirmの値が確定の時は表示 Confirmの値:"+Confirm);
 			if ("idm1".equals(checkbox)) {
