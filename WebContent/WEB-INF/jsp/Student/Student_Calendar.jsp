@@ -5,8 +5,8 @@
 <head>
 <meta charset='utf-8' />
 <link href='../LOVE_BERRY_WEB/calendar/fullcalendar.min.css' rel='stylesheet' />
+<link href='../LOVE_BERRY_WEB/calendar/modal.css' rel='stylesheet' />
 <link href='../LOVE_BERRY_WEB/calendar/fullcalendar.print.min.css' rel='stylesheet' media='print' />
-<link href='../LOVE_BERRY_WEB/calendar/modal.css' rel='stylesheet'/>
 <script src='../LOVE_BERRY_WEB/calendar/lib/moment.min.js'></script>
 <script src='../LOVE_BERRY_WEB/calendar/lib/jquery.min.js'></script>
 <script src='../LOVE_BERRY_WEB/calendar/fullcalendar.min.js'></script>
@@ -15,9 +15,28 @@
 <script>
 $(document).ready(function(){
 	initializePage(<%= request.getRemoteUser()%>);
+
 })
 </script>
 
+<script type="text/javascript">
+$(function(){
+	$('#btn-modal').on('click', function(){
+		  $('#overlay').fadeIn();
+		  $('#modal').fadeIn();
+		});
+
+		$('#close-btn').on('click', function(){
+		  $('#overlay').fadeOut();
+		  $('#modal').fadeOut();
+		});
+		$('#overlay').on('click', function(){
+		  $('#overlay').fadeOut();
+		  $('#modal').fadeOut();
+		});
+
+	});
+</script>
 <style>
 
   body {
@@ -55,5 +74,11 @@ $(document).ready(function(){
   <div id='calendar'></div>
  <div id ="subjectDetail"></div>
  <a href="ShowTopServlet">トップに戻る</a>
+
+ <button id="btn-modal">モーダルを開く</button>
+ <div id="overlay" class="overlay"></div>
+ 	<div id="modal" class="modal">
+		ここがモーダル
+ 	</div>
 </body>
 </html>
