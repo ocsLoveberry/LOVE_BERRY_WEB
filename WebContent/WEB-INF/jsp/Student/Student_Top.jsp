@@ -28,7 +28,7 @@
 	}
 
 	document.getElementById("time").onclick= function(){
-	location.href= "/LOVE_BERRY_WEB/CalendarDetailServlet";
+	location.href= "/LOVE_BERRY_WEB/ShowStudentCalendar";
 	}
 
 	document.getElementById("out").onclick= function(){

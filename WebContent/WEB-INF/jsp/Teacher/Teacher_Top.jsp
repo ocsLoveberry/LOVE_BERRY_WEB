@@ -36,7 +36,7 @@
 	</table>
 	<script>
 		document.getElementById("time").onclick = function() {
-			location.href = "/LOVE_BERRY_WEB/CreateJikanwariServlet";
+			location.href = "/LOVE_BERRY_WEB/WEB-INF/";
 		}
 
 		document.getElementById("SL").onclick = function() {

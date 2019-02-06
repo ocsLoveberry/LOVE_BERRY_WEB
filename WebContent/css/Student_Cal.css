@@ -1,0 +1,48 @@
+@charset "UTF-8";
+body,p,div,input{margin: 0}
+
+body{
+	background-image: url("img/normal.jpg");
+	background-repeat:no-repeat;
+	background-attachment:fixed;	/*背景画像をスクロールしないように固定*/
+	background-position:center center; /*常に画像が中央に表示される*/
+	background-size:cover;
+}
+
+#header{
+	width:auto;
+	text-align:center;
+	padding:2px;
+	dispaly:flex;
+	background-image:url("img/black.jpg");
+	background-size:cover;
+	background-repeat:no-repeat;
+	color:#FFFFFF;
+}
+
+#LB{
+	font-size:3em;
+ 	background: -webkit-linear-gradient(left, #FFFFFF,#BDBDBD,#000000);
+	-webkit-text-fill-color: transparent;
+	-webkit-background-clip: text;
+	margin:0px 0px 0px 0px;
+}
+
+h4{
+	text-align:right;
+	margin:0px;
+}
+
+#yazi {
+	width: 900px;
+	margin: auto auto;
+}
+
+#back {
+	padding: 50px 50px;
+	background: url(img/home_back.png) left top no-repeat;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	cursor: hand;
+}
