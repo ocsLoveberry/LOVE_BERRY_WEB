@@ -24,6 +24,7 @@
 	</tr>
 	<tr>
 			<td><input type="button" value="科目一覧" id="SL"></td>
+			<td><input type="button" value="学生検索" id="stu_search"></td>
 	</tr>
 
 	<tr><td><input type="submit" value="" id="logout"></td></tr>
@@ -39,6 +40,10 @@
 
 	document.getElementById("stu_sea").onclick= function(){
 	location.href= "/LOVE_BERRY_WEB/ShowSessionListServlet";
+	}
+
+	document.getElementById("stu_search").onclick= function(){
+	location.href= "/LOVE_BERRY_WEB/ShowTeacherStudentSearch";
 	}
 
 	document.getElementById("logout").onclick= function(){
