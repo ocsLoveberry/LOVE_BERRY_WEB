@@ -1,0 +1,67 @@
+@charset "UTF-8";
+
+body, p, div, input {
+	margin: 0
+}
+
+body {
+	background-image: url("img/add_back2.png");
+	background-repeat: no-repeat;
+	background-attachment: fixed; /*背景画像をスクロールしないように固定*/
+	background-position: center center; /*常に画像が中央に表示される*/
+	background-size: cover;
+}
+/*失敗画面*/
+#box {
+	width: 800px;
+	margin:20px auto;
+	padding:20px;
+	background-color: #fff;
+}
+/*成功画面*/
+#box2 {
+	width: 500px;
+	height:150px;
+	margin: auto auto;
+	background-color: #fff;
+}
+
+h1 {
+	font-weight: bold;
+	font-family: "HGS行書体";
+	margin:0px 0px;
+}
+
+h2{
+	margin:0px 0px;
+}
+/*失敗画面*/
+#yazi {
+	width: 800px;
+	margin: auto auto;
+}
+
+/*成功画面*/
+#but{
+	width:500px;
+	margin:auto auto;
+}
+
+a{
+	color: #fff;
+	cursor: pointer;
+}
+
+#form{
+	width:500px;
+	margin:auto auto;
+}
+
+#back {
+	padding: 15px 44px;
+	background: url(img/back_w.png) left top no-repeat;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	cursor: hand;
+}
