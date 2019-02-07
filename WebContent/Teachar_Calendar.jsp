@@ -57,7 +57,7 @@ body {
 	%>
 	ログインIDは<%=username%><br>
 
-	<a href="ShowLogoutServlet">ログアウト</a>
+	<a href="ShowTopServlet">戻る</a>
 	<div id='calendar'></div>
 	<div id="subjectDetail"></div>
 
