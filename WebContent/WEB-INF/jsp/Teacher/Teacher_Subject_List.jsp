@@ -1,7 +1,7 @@
 <%@page import="javaBeans.ClassSubjects"%>
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8" session="false"%>
 <%
 	ArrayList<ClassSubjects> classSubject = (ArrayList<ClassSubjects>) request.getAttribute("classSubject");
 %>
@@ -14,8 +14,17 @@
 <title>科目一覧画面</title>
 </head>
 <body>
+	<header id="title">
+		<%
+			String username = request.getRemoteUser();
+			HttpSession session = request.getSession(false);
+			session.setAttribute("seki_no", username);
+		%>
+		<h4>
+			ログインID:<%=username%></h4>
+		<h1 id="LB">科目一覧</h1>
+	</header>
 	<div id="main">
-		<h2>科目名</h2>
 		<form action="ShowTeacherSubjectDetailServlet" method="post"
 			name="sort_form">
 			<select name="hoge"
