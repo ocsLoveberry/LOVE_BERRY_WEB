@@ -74,10 +74,8 @@ body {
 	  			<div class="row">
 	  				<!-- @TODO:コンボボックスにします！ -->
 	 	 			<label>科目名</label>
-
-	 	 			<input type="text" name="combo_subject_cd" list="input_subject_cd"/>
-						<datalist id="input_subject_cd">
-						</datalist>
+	 	 			<select id="input_subject_cd">
+	 	 			</select>
 	  			</div>
 	  			<div class="row">
 	  				<label>日付：</label>

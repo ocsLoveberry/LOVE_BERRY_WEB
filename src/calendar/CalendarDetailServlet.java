@@ -29,7 +29,7 @@ public class CalendarDetailServlet extends HttpServlet {
 		response.setContentType("text/plan");
 		response.setCharacterEncoding("UTF-8");
 		String seki_no = request.getParameter("seki_no");
-		String tokutei_cd = request.getParameter("subjectID");
+		String tokutei_cd = request.getParameter("tokutei_cd");
 		String start = request.getParameter("start");
 		String end = request.getParameter("end");
 

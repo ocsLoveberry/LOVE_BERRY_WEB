@@ -22,13 +22,14 @@ public class JikanwariData {
 		this.end = end;
 	}
 
-	public JikanwariData(String title, String start,String end,String url) {
+	public JikanwariData(String id, String title, String start,String end) {
 		super();
 		this.title = title;
 		this.start = start;
 		this.end = end;
-		this.url = url;
+		this.id = id;
 	}
+
 	public String getId() {
 		return id;
 	}

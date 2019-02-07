@@ -64,12 +64,13 @@ function initializePage(input_seki_no) {
   			$('#title').val(calEvent.title);
 	  		$('#start').val(calEvent.start.format(default_ymd_format));
 		  	$('#end').val(calEvent.end.format(default_ymd_format));
+		  	console.log("calEvent.id"+calEvent.id);
 		  	$.ajax("./CalendarDetailServlet",{
 		  		type: 'get',
 		  		dataType: 'json',
 		  		data:{
 		  			seki_no : input_seki_no,
-					subjectID : calEvent.title,
+					subjectID : calEvent.id,
 					start : calEvent.start.format(default_ymd_format),
 					end : calEvent.end.format(default_ymd_format)
 				}
@@ -116,6 +117,7 @@ function initializePage(input_seki_no) {
 		 * TODO:(先生)を作る
 		 */
 	},input_seki_no);
+
 	function getToday() {
 		var today = new Date();
 		var year = today.getFullYear();
