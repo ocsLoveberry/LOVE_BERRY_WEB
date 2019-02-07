@@ -1,6 +1,7 @@
 package main.admin;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.sql.SQLIntegrityConstraintViolationException;
 
 import javax.servlet.ServletException;
@@ -58,6 +59,12 @@ public class AddStudentInformationServlet extends HttpServlet {
 		} catch (SQLIntegrityConstraintViolationException e) {
 //			@TODO:学籍番号がかぶったときにエラーを表示させる処理
 			request.setAttribute("error_SQLIntegrityConstraintViolationException", "true");
+		}
+
+		try {
+			insert_OCS_DAO.Insert_Seki_no(seki_no);
+		} catch (SQLException e1) {
+			e1.printStackTrace();
 		}
 
 		if(isInsertOk) {

@@ -32,6 +32,19 @@ public class Insert_OCS_JOHO_TBL_DAO extends DAOBase {
 		return isInsertOk;
 	}
 
+	public void Insert_Seki_no(String seki_no)throws SQLException {
+		String sql = "INSERT INTO FELICA_TBL (SEKI_NO) VALUES('" + seki_no + "')";
+		try {
+			this.open();
+			stmt = con.createStatement();
+			stmt.executeUpdate(sql);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			this.close(stmt);
+		}
+
+	}
 	private void setPstmt(PreparedStatement pstmt, OcsJohoData newStudentInfomation) throws SQLException {
 		/**
 		 * 順番は以下の通り
