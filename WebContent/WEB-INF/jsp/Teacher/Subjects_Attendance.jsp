@@ -24,8 +24,6 @@
 <h1>学生出欠管理システム</h1>
 <h2><%=subjects_name%></h2>
 
-
-
 <table class="attendance_table">
   <tr>
   	<th>学籍番号</th><th>学生氏名</th>

@@ -1,6 +1,7 @@
 package main.parameter;
 
 public class DAOParameters {
+
 	public static final String DRIVER_NAME 		= "org.mariadb.jdbc.Driver";
 	public static final String CONNECT_STRING	= "jdbc:mariadb://10.15.154.9/LOVE_BERRY";
 	public static final String USERID 			= "testuser";

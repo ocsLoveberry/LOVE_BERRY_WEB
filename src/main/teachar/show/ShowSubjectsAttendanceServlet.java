@@ -33,12 +33,13 @@ public class ShowSubjectsAttendanceServlet extends HttpServlet {
 		ArrayList<JugyoTable> jugyo;
 		ArrayList<String> seki_no_List = null;
 		ArrayList<String> name_List = null;
+		String subjects_name = "";
+
 		JugyoTableDAO jugyoTableDao  = new JugyoTableDAO();
 		SearchSubjectsNameDAO searchSubjectsNameDAO = new SearchSubjectsNameDAO();
-		String subjects_name = "";
 		Search_studentDAO search_studentDAO = new Search_studentDAO();
 
-
+		//SELECT * FROM JUGYO_TBL WHERE SUBJECTS_CD = ?のリストを配列でjugyoに格納
 		jugyo = jugyoTableDao.selectWhere(where);
 		//現在の登録されている授業回数取得
 		int jugyo_count = jugyo.size();
@@ -52,7 +53,6 @@ public class ShowSubjectsAttendanceServlet extends HttpServlet {
 			name_List = search_studentDAO.to_name(seki_no_List);
 
 		} catch (DatabaseException | SystemException e) {
-			// TODO 自動生成された catch ブロック
 			e.printStackTrace();
 		}
 		request.setAttribute("subjects_name",subjects_name);
