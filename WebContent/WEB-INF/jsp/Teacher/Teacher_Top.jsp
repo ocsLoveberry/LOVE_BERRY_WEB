@@ -34,6 +34,7 @@
 			<td><input type="submit" value="" id="logout"></td>
 		</tr>
 	</table>
+	<a href="ShowTeacharCalendarServelet">カレンダー（工事中）</a>
 	<script>
 		document.getElementById("time").onclick = function() {
 			location.href = "/LOVE_BERRY_WEB/WEB-INF/";
