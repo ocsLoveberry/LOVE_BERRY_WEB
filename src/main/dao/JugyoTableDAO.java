@@ -7,11 +7,11 @@ import java.util.ArrayList;
 
 import javaBeans.JugyoTable;
 
-public class JugyoTableDAO extends DAOBase implements DAOinterface {
+public class JugyoTableDAO extends DAOBase  {
 
 	private static ResultSet rs;
+	private PreparedStatement pstmt;
 
-	@Override
 	public ArrayList<JugyoTable> selectAll() {
 		ArrayList<JugyoTable> jugyolist;
 		jugyolist = new ArrayList<>();
@@ -33,12 +33,11 @@ public class JugyoTableDAO extends DAOBase implements DAOinterface {
 		return jugyolist;
 	}
 
-	private PreparedStatement pstmt;
 
 	private void setPstmt(PreparedStatement pstmt, String sql, String Subjects_cd) throws SQLException {
 		pstmt.setString(1, Subjects_cd);
 	}
-	@Override
+
 	public ArrayList<JugyoTable> selectWhere(String Subjects_cd) {
 		ArrayList<JugyoTable> jugyolist;
 		jugyolist = new ArrayList<>();
@@ -84,19 +83,6 @@ public class JugyoTableDAO extends DAOBase implements DAOinterface {
 		return jugyolist;
 	}
 
-
-
-
-	@Override
-	public boolean deleteWhere(String where) {
-		return false;
-	}
-
-	@Override
-	public boolean insert() {
-		return false;
-	}
-
 	public static ArrayList<JugyoTable> GetStringList(ResultSet rs) {
 		ArrayList<JugyoTable> jugyolist;
 		jugyolist = new ArrayList<>();
@@ -136,4 +122,31 @@ public class JugyoTableDAO extends DAOBase implements DAOinterface {
 		return jugyolist;
 	}
 
+	public boolean insert(String subjects_cd, String start_date, String start_time_cd, String tokutei_cd) {
+		String sql = "INSERT INTO JUGYO_TBL (SUBJECTS_CD, START_DATE, START_TIME_CD, TOKUTEI_CD) VALUES (?,?,?,?)";
+		ResultSet rs = null;
+		int result = 0;
+		try {
+			this.open();
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, subjects_cd);
+			pstmt.setString(2, start_date);
+			pstmt.setString(3, start_time_cd);
+			pstmt.setString(4, tokutei_cd);
+			result = pstmt.executeUpdate();
+			con.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			this.close(pstmt,rs);
+		}
+		boolean isInsertOk = false;
+		if(result > 0) {
+			isInsertOk = true;
+		}
+		return isInsertOk;
+	}
+
+
 }
+
