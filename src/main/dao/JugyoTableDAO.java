@@ -122,8 +122,13 @@ public class JugyoTableDAO extends DAOBase  {
 		return jugyolist;
 	}
 
-	public boolean insert(String subjects_cd, String start_date, String start_time_cd, String tokutei_cd) {
-		String sql = "INSERT INTO JUGYO_TBL (SUBJECTS_CD, START_DATE, START_TIME_CD, TOKUTEI_CD) VALUES (?,?,?,?)";
+	public boolean insert(String subjects_cd, String start_date, String start_time_cd, String tokutei_cd,String room_cd1,String room_cd2, String room_cd3) {
+		String sql = "INSERT INTO JUGYO_TBL (SUBJECTS_CD, START_DATE, START_TIME_CD, TOKUTEI_CD, ROOM_CD1, ROOM_CD2, ROOM_CD3) VALUES (?,?,?,?,?,?,?)";
+
+//		ArrayList<TimeListTable> TimeListTable = new ArrayList<>();
+//		TimeListTable.add(getTimeList());
+
+//		START_TIME, END_TIME,CARD_START_TIME,CARD_END_TIME
 		ResultSet rs = null;
 		int result = 0;
 		try {
@@ -133,6 +138,9 @@ public class JugyoTableDAO extends DAOBase  {
 			pstmt.setString(2, start_date);
 			pstmt.setString(3, start_time_cd);
 			pstmt.setString(4, tokutei_cd);
+			pstmt.setString(5, room_cd1);
+			pstmt.setString(6, room_cd2);
+			pstmt.setString(7, room_cd3);
 			result = pstmt.executeUpdate();
 			con.close();
 		} catch (SQLException e) {
@@ -147,6 +155,27 @@ public class JugyoTableDAO extends DAOBase  {
 		return isInsertOk;
 	}
 
-
+//	private TimeListTable getTimeList(String start_time_cd) {
+//		String sql = "SELECT * FROM TIME_LIST_TBL WHERE TIME_CD = ?";
+//		ResultSet rs = null;
+//		this.open();
+//		try {
+//			pstmt.setString(1,);
+//			pstmt.executeQuery();
+//
+//			pstmt = con.prepareStatement(sql);
+//
+//			System.out.println(sql);
+//			rs = pstmt.executeQuery();
+//			 = GetStringList(rs);
+//
+//		} catch (SQLException e) {
+//			e.printStackTrace();
+//		} finally {
+//			this.close(stmt, rs);
+//		}
+//		System.out.println("jugyolistの値その２:+" + jugyolist);
+//		return jugyolist;
+//	}
 }
 
