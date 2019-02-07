@@ -5,6 +5,7 @@
 <head>
 <meta charset='utf-8' />
 <link href='../LOVE_BERRY_WEB/calendar/fullcalendar.min.css' rel='stylesheet' />
+<link href='../LOVE_BERRY_WEB/calendar/modal.css' rel='stylesheet' />
 <link href='../LOVE_BERRY_WEB/calendar/fullcalendar.print.min.css' rel='stylesheet' media='print' />
 <link rel="stylesheet" type="text/css" href="/LOVE_BERRY_WEB/css/Student_Cal.css">
 <link href='../LOVE_BERRY_WEB/calendar/modal.css' rel='stylesheet'/>
@@ -16,9 +17,28 @@
 <script>
 $(document).ready(function(){
 	initializePage(<%= request.getRemoteUser()%>);
+
 })
 </script>
 
+<script type="text/javascript">
+$(function(){
+	$('#btn-modal').on('click', function(){
+		  $('#overlay').fadeIn();
+		  $('#modal').fadeIn();
+		});
+
+		$('#close-btn').on('click', function(){
+		  $('#overlay').fadeOut();
+		  $('#modal').fadeOut();
+		});
+		$('#overlay').on('click', function(){
+		  $('#overlay').fadeOut();
+		  $('#modal').fadeOut();
+		});
+
+	});
+</script>
 <style>
 
   body {
@@ -60,8 +80,18 @@ background-color:#fff;
 	<h1 id="LB">Love&Berry</h1>
 	</header>
   <div id='calendar'></div>
- <div id ="subjectDetail"></div>
- <div class="modal" id="modal"></div>
- <div id="yazi"><form action="ShowTopServlet"><input type="submit" value=" " id="back"></form></div>
+ <a href="ShowTopServlet">トップに戻る</a>
+
+ <button id="btn-modal">モーダルを開く</button>
+ <div id="overlay" class="overlay"></div>
+ 	<div id="modal" class="modal">
+ 		<div class="modal_header"></div>
+			<button class="modal-close-btn" id="close-btn">閉じる</button><br>
+ 		<div class="modal_body">
+			<div id="subjectDetail"></div>
+		</div>
+		<div class="modal_footer"></div>
+
+ 	</div>
 </body>
 </html>

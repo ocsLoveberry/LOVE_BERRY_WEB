@@ -58,7 +58,7 @@ public class ShowTeacherStudentResultServlet extends HttpServlet {
 		}
 		System.out.println("studentData.isEmpty():" + studentData.isEmpty());
 		request.setAttribute("studentData", studentData);
-		LoveBerryDispatcher.dispatch(request, response, "/WEB-INF/jsp/Teacher/Teacher_Student_Searcher_Result.jsp");
+		LoveBerryDispatcher.dispatch(request, response, "/WEB-INF/jsp/Teacher/Teacher_Student_Search_Result.jsp");
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)

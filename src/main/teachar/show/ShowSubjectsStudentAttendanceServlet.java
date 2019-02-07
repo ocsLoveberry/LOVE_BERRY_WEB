@@ -62,8 +62,6 @@ public class ShowSubjectsStudentAttendanceServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 
-		//status[],temp_status[]を
-
 		request.setAttribute("status",status);
 		request.setAttribute("temp_status",temp_status);
 		request.setAttribute("subjects_name",subjects_name);

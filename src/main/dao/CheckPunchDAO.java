@@ -26,9 +26,29 @@ public class CheckPunchDAO extends DAOBase{
 				if(rs.getString("STATUS") != null) {
 					status[0] = "confirm";
 					status[1] = rs.getString("STATUS");
+					//1: 出席 2:欠席 3:遅刻 空欄:欠席
+					if(status[1].equals("1")){
+						status[1] = "◯";
+					}else if(status[1].equals("2")) {
+						status[1] = "☓";
+					}else if(status[1].equals("3")) {
+						status[1] = "△";
+					}else {
+						status[1] = "☓";
+					}
 				}else if(rs.getString("TEMP_STATUS") != null){
 					status[0] = "temp";
 					status[1] = rs.getString("TEMP_STATUS");
+					//1: 出席 2:欠席 3:遅刻 空欄:欠席
+					if(status[1].equals("1")){
+						status[1] = "◯";
+					}else if(status[1].equals("2")) {
+						status[1] = "☓";
+					}else if(status[1].equals("3")) {
+						status[1] = "△";
+					}else {
+						status[1] = "☓";
+					}
 				}else {
 					status[0] = "nothing";
 				}

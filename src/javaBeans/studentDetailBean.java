@@ -12,11 +12,10 @@ public class studentDetailBean {
 	private String[] subject2;
 	private String[] subject3;
 	private String studentFelicaID1;
-	private String studentFelicaID2;
 //	private String studentFelicaEntryDate;
 
 	public studentDetailBean(String seki_no, String name, String department, String major, String studentClass,
-			String admissionYear, String message, String studentFelicaID1, String studentFelicaID2) {
+			String admissionYear, String message, String studentFelicaID1) {
 		super();
 		try {
 		this.seki_no = seki_no;
@@ -33,7 +32,6 @@ public class studentDetailBean {
 		this.admissionYear = admissionYear;
 		this.message = message;
 		this.studentFelicaID1 = studentFelicaID1;
-		this.setStudentFelicaID2(studentFelicaID2);
 //		this.studentFelicaEntryDate = studentFelicaEntryDate;
 		}catch(NullPointerException e) {
 //		gakka,senko,classは教員nullなのでここは何もしない
@@ -130,20 +128,4 @@ public class studentDetailBean {
 	public void setStudentFelicaID1(String studentFelicaID1) {
 		this.studentFelicaID1 = studentFelicaID1;
 	}
-
-	public String getStudentFelicaID2() {
-		return studentFelicaID2;
-	}
-
-	public void setStudentFelicaID2(String studentFelicaID2) {
-		this.studentFelicaID2 = studentFelicaID2;
-	}
-
-//	public String getStudentFelicaEntryDate() {
-//		return studentFelicaEntryDate;
-//	}
-//
-//	public void setStudentFelicaEntryDate(String studentFelicaEntryDate) {
-//		this.studentFelicaEntryDate = studentFelicaEntryDate;
-//	}
 }
