@@ -69,7 +69,7 @@
 			%>
 		</tr>
 		<tr>
-			<th>テスト科目1</th>
+			<th><%=studentDetail.getSubject1() %></th>
 			<%
 				for (int i = 1; i < 15; i++) {
 			%>
