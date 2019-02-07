@@ -74,7 +74,8 @@ body {
 	  			<div class="row">
 	  				<!-- @TODO:コンボボックスにします！ -->
 	 	 			<label>科目名</label>
-	 	 			<input type="text" id="input_subject_cd" placeholder="科目名を入力">
+	 	 			<select id="input_subject_cd">
+	 	 			</select>
 	  			</div>
 	  			<div class="row">
 	  				<label>日付：</label>

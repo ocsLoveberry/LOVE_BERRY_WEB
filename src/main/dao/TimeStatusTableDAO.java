@@ -1,3 +1,10 @@
+/**
+ * カレンダーで使うクラス
+ * 出席数を表示するためにtime_status_tblからカウントする
+ *
+ * @author 154139
+ */
+
 package main.dao;
 
 import java.sql.ResultSet;
@@ -23,6 +30,8 @@ public class TimeStatusTableDAO extends DAOBase {
 		} catch (SQLException e) {
 			// TODO 自動生成された catch ブロック
 			e.printStackTrace();
+		} finally {
+			this.close(stmt);
 		}
 
 		return count;
