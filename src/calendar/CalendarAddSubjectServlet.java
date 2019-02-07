@@ -47,7 +47,7 @@ public class CalendarAddSubjectServlet extends HttpServlet {
 		System.out.println(comment);
 
 		JugyoTableDAO jugyoTableDao = new JugyoTableDAO();
-		boolean insertOk = jugyoTableDao.insert(subject_cd,start_date,start_time_cd,tokutei_cd);
+		boolean insertOk = jugyoTableDao.insert(subject_cd,start_date,start_time_cd,tokutei_cd,room_cd1,room_cd2,room_cd3);
 		if(insertOk) {
 			System.out.println("jugyoTblOK");
 		}

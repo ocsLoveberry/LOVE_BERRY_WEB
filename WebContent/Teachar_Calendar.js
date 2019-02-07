@@ -45,7 +45,12 @@ function initializePage(input_seki_no) {
 			'HH:mm'
 		],
 
-		dayClick: function (date) {
+		dayClick: function (date, allDay, isEvent, view) {
+			$("#calendar").fullCalendar("clientEvents", function (e) {
+                if (moment(date).format("YYYY-MM-DD") === moment(e.start).format("YYYY-MM-DD")) {
+                    console.log("clickedDateTitle:"+e.title);
+                }
+            });
 			setAddSubjectForms(date);
 			modalOpen();
 //			$("#form_add_subject").submit(function(e){
@@ -54,45 +59,12 @@ function initializePage(input_seki_no) {
 //				submitを更新させない処理
 //				return false;
 //			})
-			$("#testbtn").click(function(){
+			$("#submit").click(function(){
 				addSubjectToDB();
-				$('#fullcalendar').fullCalendar( 'refetchEvents' );
 			})
 		},
 
-    	eventClick: function getJugyo(calEvent, jsEvent, view) {
-  			$('#title').val(calEvent.title);
-	  		$('#start').val(calEvent.start.format(default_ymd_format));
-		  	$('#end').val(calEvent.end.format(default_ymd_format));
-		  	console.log("calEvent.id"+calEvent.id);
-		  	$.ajax("./CalendarDetailServlet",{
-		  		type: 'get',
-		  		dataType: 'json',
-		  		data:{
-		  			seki_no : input_seki_no,
-					tokutei_cd : calEvent.id,
-					start : calEvent.start.format(default_ymd_format),
-					end : calEvent.end.format(default_ymd_format)
-				}
-			})
-			.done(
-			function(data) {
-				console.log(data);
-				/* ここで科目詳細のデータを生成しています */
-				var result = "科目名："
-							+ data[0].subject_cd
-							+ "<br>"
-							+ "出席日数："
-							+ data[0].count
-							+ "<br>"
-							+ "開始時刻："
-							+ data[0].start
-							+ "<br>"
-							+ "終了時刻："
-							+ data[0].end
-							+ "<br>";
-				$("#subjectDetail").html(result);
-			})
+    	eventClick: function (calEvent, jsEvent, view) {
 		},
 
 		events : 'CalendarView'

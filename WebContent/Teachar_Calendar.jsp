@@ -12,6 +12,8 @@
 <script src='calendar/fullcalendar.min.js'></script>
 <script src='calendar/locale/ja.js'></script>
 <script src="Teachar_Calendar.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
 <script>
 $(document).ready(function(){
 	initializePage(<%=request.getRemoteUser()%>);
@@ -59,8 +61,6 @@ body {
 	<div id='calendar'></div>
 	<div id="subjectDetail"></div>
 
-	<button class="btn" id="btn-modal">ひらけー</button>
-	<div id="testDiv">こ↑こ↓</div>
 	<div class="overlay" id="overlay"></div>
 		<div class="modal" id="modal">
 			<div class="add_subject">
@@ -99,7 +99,7 @@ body {
 							<optgroup label="<---1階教室--->"></optgroup>
 								<option value="101">101教室</option>
 							<optgroup label="<---2階教室--->"></optgroup>
-								<option value="102">102教室</option>
+								<option value="201">201教室</option>
 								<option value="202">202教室</option>
 								<option value="203">203教室</option>
 								<option value="204">204教室</option>
@@ -131,11 +131,11 @@ body {
 	  			 		<label>使用教室２：</label>
 	  			 		<select id="input_room_cd2">
 	  			 			<optgroup label="<---不使用--->"></optgroup>
-								<option value="none" selected="selected">使わない</option>
+								<option value="" selected="selected">使わない</option>
 							<optgroup label="<---1階教室--->"></optgroup>
 								<option value="101">101教室</option>
 							<optgroup label="<---2階教室--->"></optgroup>
-								<option value="102">102教室</option>
+								<option value="201">201教室</option>
 								<option value="202">202教室</option>
 								<option value="203">203教室</option>
 								<option value="204">204教室</option>
@@ -167,9 +167,11 @@ body {
 	  			 		<label>使用教室３：</label>
 	  			 		<select id="input_room_cd3">
 							<optgroup label="<---不使用--->"></optgroup>
-								<option value="none" selected="selected">使わない</option>
+								<option value="" selected="selected">使わない</option>
+							<optgroup label="><---1階教室--->"></optgroup>
+								<option value="101">101教室</option>
 							<optgroup label="<---2階教室--->"></optgroup>
-								<option value="102">102教室</option>
+								<option value="102">201教室</option>
 								<option value="202">202教室</option>
 								<option value="203">203教室</option>
 								<option value="204">204教室</option>
@@ -204,11 +206,9 @@ body {
 	  		<!-- end modar-body -->
 			<hr>
 			<div class="testInput">
-				<input type="text" id="test" placeholder="test">
 			</div>
 		  	<div class="moda-footer" id="modal-footer">
 		  		<input type="submit" value="登録" name="submit" id="submit">
-		  		<button id="testbtn" type="button">登録ボタン</button>
 		  	</div>
 		</form>
 		</div>
