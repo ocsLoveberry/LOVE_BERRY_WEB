@@ -61,6 +61,7 @@ background-color:#fff;
 	</header>
   <div id='calendar'></div>
  <div id ="subjectDetail"></div>
+ <div class="modal" id="modal"></div>
  <div id="yazi"><form action="ShowTopServlet"><input type="submit" value=" " id="back"></form></div>
 </body>
 </html>
