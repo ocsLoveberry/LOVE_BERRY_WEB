@@ -7,6 +7,7 @@
 var default_ymd_format = 'YYYY-MM-DD HH:mm'
 var input_subject_ymd_format = 'YYYY-MM-DD'
 var seki_no;
+var isAddedSubjectList = 0;
 function initializePage(input_seki_no) {
 	seki_no = input_seki_no;
 	$('#calendar').fullCalendar({
@@ -141,11 +142,29 @@ function initializePage(input_seki_no) {
 //	formの初期化用
 	function setAddSubjectForms(date){
 		$("#input_start_date").val(date.format(input_subject_ymd_format))
+
+//		科目名リスト追加済みでないか？
+		if(isAddedSubjectList != 1){
+			$.ajax("./GetCalenderSubjectListServlet",{
+			  		type: 'get',
+			  		dataType: 'json',
+				})
+				.done(
+				function(data) {
+					for(var i = 0; i < data.length; i++){
+						console.log("data[i].subjects_name"+data[i].subjects_name)
+						console.log("data[i].subjects_cd)"+ data[i].subjects_cd);
+						$('#input_subject_cd').append($('<option>').val(data[i].subjects_cd).text(data[i].subjects_name));
+					}
+//					追加済みフラグtrue
+					isAddedSubjectList = 1;
+				})
+		}
 	}
 
 //	submit押された時の処理
 	function addSubjectToDB(){
-		var input_subject_cd = $("#input_subject_cd").val();
+		var input_subject_cd = $('#input_subject_cd').val();
 		var input_start_date = $("#input_start_date").val();
 		var input_start_time_cd = $("#input_start_time_cd").val();
 		var input_room_cd1 = $("#input_room_cd1").val();
