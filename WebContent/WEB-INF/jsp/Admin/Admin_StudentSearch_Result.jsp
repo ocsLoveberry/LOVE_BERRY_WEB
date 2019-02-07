@@ -28,7 +28,7 @@ ShowStudentSearchServlet から遷移してくる
 			<tr class="sub">
 				<th></th>
 				<th>学籍番号</th>
-				<th>名前</th>
+				<th>氏名</th>
 				<th>コメント</th>
 			</tr>
 			<%
