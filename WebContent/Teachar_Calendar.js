@@ -44,21 +44,22 @@ function initializePage(input_seki_no) {
 			'HH:mm'
 		],
 
-		select: function (start, end, allDay,calEvent) {
-			console.log(start);
-			console.log(end);
-			console.log(allDay);
+		dayClick: function (date) {
+			setAddSubjectForms(date);
 			modalOpen();
-			setAddSubjectForms(calEvent);
 //			$("#form_add_subject").submit(function(e){
+//				dbに挿入する処理はーと
 //				addSubjectToDB();
+//				submitを更新させない処理
+//				return false;
 //			})
 			$("#testbtn").click(function(){
 				addSubjectToDB();
+				$('#fullcalendar').fullCalendar( 'refetchEvents' );
 			})
 		},
 
-    	eventClick: function(calEvent, jsEvent, view) {
+    	eventClick: function getJugyo(calEvent, jsEvent, view) {
   			$('#title').val(calEvent.title);
 	  		$('#start').val(calEvent.start.format(default_ymd_format));
 		  	$('#end').val(calEvent.end.format(default_ymd_format));
@@ -138,27 +139,34 @@ function initializePage(input_seki_no) {
 	};
 
 //	formの初期化用
-	function setAddSubjectForms(calEvent){
-		$("#input_start_date").val(calEvent.start.format(input_subject_ymd_format))
+	function setAddSubjectForms(date){
+		$("#input_start_date").val(date.format(input_subject_ymd_format))
 	}
 
 //	submit押された時の処理
 	function addSubjectToDB(){
-		var subject_cd = $("#input_subject_cd").val();
+		var input_subject_cd = $("#input_subject_cd").val();
 		var input_start_date = $("#input_start_date").val();
 		var input_start_time_cd = $("#input_start_time_cd").val();
 		var input_room_cd1 = $("#input_room_cd1").val();
 		var input_room_cd2 = $("#input_room_cd2").val();
 		var input_room_cd3 = $("#input_room_cd3").val();
 		var input_comment = $("#input_comment").val();
-		alert(subject_cd)
+		alert(input_subject_cd)
 	  	$.ajax("./CalendarAddSubjectServlet",{
 	  		type: 'get',
 	  		data:{
-	  			test:"test"
+	  			subject_cd: input_subject_cd,
+	  			start_date: input_start_date,
+	  			start_time_cd: input_start_time_cd,
+	  			room_cd1: input_room_cd1,
+	  			room_cd2: input_room_cd2,
+	  			room_cd3: input_room_cd3,
+	  			comment: input_comment
 			}
 		}).done(function(data){
 			$("#testDiv").html(data);
+			alert(seki_no);
 		})
 	}
 }

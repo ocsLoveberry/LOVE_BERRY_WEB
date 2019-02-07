@@ -60,14 +60,11 @@ function initializePage(input_seki_no) {
 	  			end : calEvent.end.format(default_ymd_format)
 	  		}
 	  	}).done(function(data){
-	  		//ここでモーダルオープンしてくだちい！！
-	  		modalOpen();
-
-
 	  		console.log(data);
 	  		/* ここで科目詳細のデータを生成しています */
 	  		var result = "科目名："+ data[0].subject_cd +"<br>" + "出席日数："+ data[0].count +"<br>" + "開始時刻："+ data[0].start +"<br>" + "終了時刻："+ data[0].end +"<br>"
 	  		$("#subjectDetail").html(result);
+	  		modalOpen();
 	  	})
 
 
@@ -94,6 +91,5 @@ function initializePage(input_seki_no) {
 			$('#overlay').fadeOut();
 			$('#modal').fadeOut();
 		});
-	};
-
+	}
   }
