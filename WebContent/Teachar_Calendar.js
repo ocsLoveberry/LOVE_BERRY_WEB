@@ -70,7 +70,7 @@ function initializePage(input_seki_no) {
 		  		dataType: 'json',
 		  		data:{
 		  			seki_no : input_seki_no,
-					subjectID : calEvent.id,
+					tokutei_cd : calEvent.id,
 					start : calEvent.start.format(default_ymd_format),
 					end : calEvent.end.format(default_ymd_format)
 				}
