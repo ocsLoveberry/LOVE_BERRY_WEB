@@ -33,7 +33,7 @@
   			for(int i=1;i<=jugyo_count;i++){
   				//授業回数分列追加
   				%>
-  				<th><%=i %></th>
+  				<th><a href="ShowSubjectsDetailAttendanceServlet?subjects_cd=<%=jugyo.get(0).getSubjects_cd() %>&jugyo_no=<%=i %>"><%=i %></a></th>
   				<%
   			}
   		%>

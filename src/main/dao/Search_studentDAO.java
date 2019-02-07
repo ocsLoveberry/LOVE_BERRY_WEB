@@ -66,7 +66,7 @@ public class Search_studentDAO extends DAOBase{
 
 	public ArrayList<String> to_name(ArrayList<String> seki_no) throws DatabaseException, SystemException {
 		this.open();
-		ArrayList<String> room_name = new ArrayList<String>();
+		ArrayList<String> name = new ArrayList<String>();
 		try {
 			stmt = con.createStatement();
 			ResultSet rs;
@@ -75,7 +75,7 @@ public class Search_studentDAO extends DAOBase{
 				sql = "select NAME from OCS_JOHO_TBL where SEKI_NO = '" + seki_no.get(i) + "'";
 				rs = stmt.executeQuery(sql);
 				rs.next();
-				room_name.add(rs.getString("NAME"));
+				name.add(rs.getString("NAME"));
 			}
 		} catch (SQLException e) {
 			throw new DatabaseException(ExceptionParameters.DATABASE_CONNECTION_EXCEPTION_MASSAGE, e);
@@ -83,7 +83,36 @@ public class Search_studentDAO extends DAOBase{
 			this.close(stmt);
 		}
 
-		return room_name;
+		return name;
+	}
+
+	public ArrayList<String> comment_get(ArrayList<String> seki_no, String subjects_cd, String start_date, String start_time_cd) throws DatabaseException, SystemException {
+		this.open();
+		ArrayList<String> comment = new ArrayList<String>();
+		try {
+			stmt = con.createStatement();
+			ResultSet rs;
+			String sql;
+			for(int i=0; i<seki_no.size();i++){
+				sql = "select COMMENT from TIME_STATUS_TBL where SEKI_NO = '" + seki_no.get(i) + "' AND SUBJECTS_CD = '" + subjects_cd + "'AND START_DATE = '" + start_date + "'AND START_TIME_CD = '" + start_time_cd + "'";
+				rs = stmt.executeQuery(sql);
+				if(rs.next()) {
+					if(rs.getString("COMMENT") == null) {
+						comment.add("nothing");
+					}else {
+						comment.add(rs.getString("COMMENT"));
+					}
+				}else {
+					comment.add("nothing");
+				}
+			}
+		} catch (SQLException e) {
+			throw new DatabaseException(ExceptionParameters.DATABASE_CONNECTION_EXCEPTION_MASSAGE, e);
+		} finally {
+			this.close(stmt);
+		}
+
+		return comment;
 	}
 }
 
