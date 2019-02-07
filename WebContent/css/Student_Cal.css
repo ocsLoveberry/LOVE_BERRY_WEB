@@ -34,11 +34,12 @@ h4{
 }
 
 #yazi {
-	width: 900px;
+	width: 1500px;
 	margin: auto auto;
 }
 
 #back {
+	text-align:left;
 	padding: 50px 50px;
 	background: url(img/home_back.png) left top no-repeat;
 	border: none;

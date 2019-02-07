@@ -21,7 +21,6 @@
 	<tr><td><input type="submit" value="" id="out"></td></tr>
 
 	</table>
-<a href="ShowStudentCalendar">calendar</a>
 	<script>
 	document.getElementById("punch").onclick= function(){
 	location.href= "/LOVE_BERRY_WEB/ShowStudentPunchSearchServlet";
