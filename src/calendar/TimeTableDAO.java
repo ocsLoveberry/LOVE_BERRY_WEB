@@ -22,16 +22,18 @@ public class TimeTableDAO extends DAOBase {
 		String class_cd = getClassCd(seki_no);
 		String TOKUTEI_CD = null;
 		String SUBJECTS_CD = null;
+		String SUBJECTS_NAME = null;
 		String START_DATE = null;
 		//		TODO:START_TIME_CDをIDにして渡すか検討
 		String START_TIME_CD = null;
 		String END = null;
-		String sql = "SELECT * FROM JIKANWARI_TBL as jikanwari JOIN JUGYO_TBL as jugyo ON jikanwari.TOKUTEI_CD = jugyo.TOKUTEI_CD WHERE jikanwari.CLASS_CD = '" + class_cd + "' ORDER BY jikanwari.START_DATE, jikanwari.START_TIME_CD";
+		String sql = "SELECT * FROM JIKANWARI_TBL as jikanwari JOIN JUGYO_TBL as jugyo ON jikanwari.TOKUTEI_CD = jugyo.TOKUTEI_CD JOIN SUBJECTS_LIST_TBL as subject ON subject.SUBJECTS_CD = jugyo.SUBJECTS_CD WHERE jikanwari.CLASS_CD = '" + class_cd + "' ORDER BY jikanwari.START_DATE, jikanwari.START_TIME_CD";
 		ResultSet rs = this.executeQuery(sql);
 		try {
 			while (rs.next()) {
 				TOKUTEI_CD = rs.getString("jikanwari.TOKUTEI_CD");
 				SUBJECTS_CD = rs.getString("jugyo.SUBJECTS_CD");
+				SUBJECTS_NAME = rs.getString("subject.SUBJECTS_NAME");
 				switch (Integer.parseInt(rs.getString("jikanwari.START_TIME_CD"))) {
 				case 1:
 					//						TODO:このT09:15:00とかT10:45:00をデータベースから取得すべきかどうかを考える
@@ -50,7 +52,7 @@ public class TimeTableDAO extends DAOBase {
 					break;
 				}
 
-				jikanwariData.add(new JikanwariData(TOKUTEI_CD, SUBJECTS_CD, START_DATE, END));
+				jikanwariData.add(new JikanwariData(TOKUTEI_CD, SUBJECTS_NAME, START_DATE, END));
 				//					System.out.println(rs.getString("TOKUTEI_CD"));
 				//					System.out.println(rs.getString("START_DATE"));
 				//					System.out.println(rs.getString("START_TIME_CD"));
