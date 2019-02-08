@@ -18,6 +18,8 @@ public class JugyoTable {
 	private String seki_no;
 	private String tokutei_cd;
 
+	public JugyoTable() {}
+
 	public JugyoTable(String subjects_cd, String start_date, String start_time_cd, String start_time, String end_time,
 			String card_start_time, String card_end_time, String room_cd1, String room_cd2, String room_cd3,
 			String cancel_flag, String message, String comment, String seki_no, String tokutei_cd) {
@@ -122,6 +124,10 @@ public class JugyoTable {
 	}
 
 	public void setRoom_cd1(String room_cd1) {
+		this.room_cd1 = room_cd1;
+	}
+
+	public void room_cd2(String room_cd1) {
 		this.room_cd1 = room_cd1;
 	}
 

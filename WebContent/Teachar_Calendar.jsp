@@ -66,7 +66,7 @@ body {
 			<div class="add_subject">
 			<form id="form_add_subject">
 			<div class="modal-header" id="modal-header">
-				<label>新規科目登録</label>
+				<label id="modal-title"></label>
 	  			<button class="modal-close-btn" id="close-btn" value="x"><i class="fa fa-times" title="とじろー！"></i></button>
 	  			<hr>
 	  		</div>
@@ -171,7 +171,7 @@ body {
 							<optgroup label="><---1階教室--->"></optgroup>
 								<option value="101">101教室</option>
 							<optgroup label="<---2階教室--->"></optgroup>
-								<option value="102">201教室</option>
+								<option value="201">201教室</option>
 								<option value="202">202教室</option>
 								<option value="203">203教室</option>
 								<option value="204">204教室</option>
@@ -208,7 +208,7 @@ body {
 			<div class="testInput">
 			</div>
 		  	<div class="moda-footer" id="modal-footer">
-		  		<input type="submit" value="登録" name="submit" id="submit">
+		  		<input type="submit" value="" name="submit" id="submit">
 		  	</div>
 		</form>
 		</div>

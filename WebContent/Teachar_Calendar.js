@@ -8,6 +8,9 @@ var default_ymd_format = 'YYYY-MM-DD HH:mm'
 var input_subject_ymd_format = 'YYYY-MM-DD'
 var seki_no;
 var isAddedSubjectList = 0;
+var modal_flg = false;
+var overLay_flg = false;
+
 function initializePage(input_seki_no) {
 	seki_no = input_seki_no;
 	$('#calendar').fullCalendar({
@@ -31,7 +34,7 @@ function initializePage(input_seki_no) {
 
 		//MonthView
 		firstDay: 1,
-		defaultDate: '2018-12-01', //getToday(), //下に関数を用意しています
+		defaultDate: '2018-11-01', //getToday(), //下に関数を用意しています
 		eventLimit: true, // allow "more" link when too many events
 		eventDurationEditable: true,
 		timeFormat: 'HH:mm',
@@ -45,14 +48,14 @@ function initializePage(input_seki_no) {
 			'HH:mm'
 		],
 
+//		日付クリック
 		dayClick: function (date, allDay, isEvent, view) {
-			$("#calendar").fullCalendar("clientEvents", function (e) {
-                if (moment(date).format("YYYY-MM-DD") === moment(e.start).format("YYYY-MM-DD")) {
-                    console.log("clickedDateTitle:"+e.title);
-                }
-            });
-			setAddSubjectForms(date);
 			modalOpen();
+//			$('#calendar').css("pointer-events","none");
+			console.log(isEvent);
+//			重複チェック
+
+			setAddSubjectForms(date);
 //			$("#form_add_subject").submit(function(e){
 //				dbに挿入する処理はーと
 //				addSubjectToDB();
@@ -64,7 +67,13 @@ function initializePage(input_seki_no) {
 			})
 		},
 
+//		イベントクリック
     	eventClick: function (calEvent, jsEvent, view) {
+    		modalOpen();
+    		setEditSubjectForms(calEvent)
+    		$("#submit").click(function(){
+				editSubjectToDB();
+			})
 		},
 
 		events : 'CalendarView'
@@ -103,9 +112,10 @@ function initializePage(input_seki_no) {
 	function modalOpen(){
 		$('#overlay').fadeIn();
 		$('#modal').fadeIn();
+//		$('#calendar').css("pointer-events","none");
 		$('#close-btn').on('click', function(){
-			 $('#overlay').fadeOut();
-			 $('#modal').fadeOut();
+			$('#overlay').fadeOut();
+			$('#modal').fadeOut();
 		});
 			$('#overlay').on('click', function(){
 			$('#overlay').fadeOut();
@@ -113,9 +123,71 @@ function initializePage(input_seki_no) {
 		});
 	};
 
-//	formの初期化用
+//	新規科目登録
 	function setAddSubjectForms(date){
-		$("#input_start_date").val(date.format(input_subject_ymd_format))
+		$("#input_start_date").val(date.format(input_subject_ymd_format));
+		$("#modal-title").text("新規科目登録");
+		$("#submit").val("登録");
+//		科目名リスト追加済みでないか？
+		if(isAddedSubjectList != 1){
+			$.ajax("./GetCalenderSubjectListServlet",{
+			  		type: 'get',
+			  		dataType: 'json',
+				})
+				.done(
+				function(data) {
+					for(var i = 0; i < data.length; i++){
+//						console.log("data[i].subjects_name"+data[i].subjects_name)
+//						console.log("data[i].subjects_cd)"+ data[i].subjects_cd);
+						$('#input_subject_cd').append($('<option>').val(data[i].subjects_cd).text(data[i].subjects_name));
+					}
+//					追加済みフラグtrue
+					isAddedSubjectList = 1;
+				})
+		}
+	}
+
+//	科目編集機能
+	function setEditSubjectForms(calEvent){
+		$("#input_start_date").val(calEvent.start.format(input_subject_ymd_format));
+		$("#modal-title").text("科目編集");
+		$("#submit").val("変更");
+//		科目名リスト追加済みでないか？
+		if(isAddedSubjectList != 1){
+			$.ajax("./GetCalenderSubjectListServlet",{
+			  		type: 'get',
+			  		dataType: 'json',
+				})
+				.done(
+				function(data) {
+					for(var i = 0; i < data.length; i++){
+//						console.log("data[i].subjects_name"+data[i].subjects_name)
+//						console.log("data[i].subjects_cd)"+ data[i].subjects_cd);
+						$('#input_subject_cd').append($('<option>').val(data[i].subjects_cd).text(data[i].subjects_name));
+					}
+//					追加済みフラグtrue
+					isAddedSubjectList = 1;
+				})
+			$.ajax("./GetEditCalenderSubjectListServlet",{
+			  		type: 'get',
+			  		dataType: 'json',
+			  		data: {
+			  			tokutei_cd : calEvent.id
+			  		}
+				})
+				.done(
+				function(data) {
+					$("#input_start_time_cd").val(data[0].start_time_cd);
+					$("#input_room_cd1").val(data[0].room_cd1);
+					$("#input_room_cd2").val(data[0].room_cd2);
+					$("#input_room_cd3").val(data[0].room_cd3);
+					$("#input_comment").val(data[0].comment);
+
+					isAddedSubjectList = 1;
+				})
+		}
+
+
 
 //		科目名リスト追加済みでないか？
 		if(isAddedSubjectList != 1){
@@ -126,8 +198,8 @@ function initializePage(input_seki_no) {
 				.done(
 				function(data) {
 					for(var i = 0; i < data.length; i++){
-						console.log("data[i].subjects_name"+data[i].subjects_name)
-						console.log("data[i].subjects_cd)"+ data[i].subjects_cd);
+//						console.log("data[i].subjects_name"+data[i].subjects_name)
+//						console.log("data[i].subjects_cd)"+ data[i].subjects_cd);
 						$('#input_subject_cd').append($('<option>').val(data[i].subjects_cd).text(data[i].subjects_name));
 					}
 //					追加済みフラグtrue
@@ -159,7 +231,35 @@ function initializePage(input_seki_no) {
 			}
 		}).done(function(data){
 			$("#testDiv").html(data);
-			alert(seki_no);
+			alert("科目を登録しました");
 		})
+	}
+
+	function editSubjectToDB(){
+		var input_subject_cd = $('#input_subject_cd').val();
+		var input_start_date = $("#input_start_date").val();
+		var input_start_time_cd = $("#input_start_time_cd").val();
+		var input_room_cd1 = $("#input_room_cd1").val();
+		var input_room_cd2 = $("#input_room_cd2").val();
+		var input_room_cd3 = $("#input_room_cd3").val();
+		var input_comment = $("#input_comment").val();
+		alert(input_subject_cd)
+//		jugyoTBL書き換え
+	  	$.ajax("./CalendarEditSubjectServlet",{
+	  		type: 'get',
+	  		data:{
+	  			subject_cd: input_subject_cd,
+	  			start_date: input_start_date,
+	  			start_time_cd: input_start_time_cd,
+	  			room_cd1: input_room_cd1,
+	  			room_cd2: input_room_cd2,
+	  			room_cd3: input_room_cd3,
+	  			comment: input_comment
+			}
+		}).done(function(data){
+			$("#testDiv").html(data);
+			alert("科目内容を変更しました");
+		})
+
 	}
 }

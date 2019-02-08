@@ -124,7 +124,7 @@ public class JugyoTableDAO extends DAOBase  {
 		return jugyolist;
 	}
 
-	public boolean insert(String subjects_cd, String start_date, String start_time_cd, String tokutei_cd,String room_cd1,String room_cd2, String room_cd3) {
+	public boolean insert(String subjects_cd, String start_date, String start_time_cd, String tokutei_cd,String room_cd1,String room_cd2, String room_cd3,String comment) {
 		String sql = "INSERT INTO JUGYO_TBL ("
 				+ "SUBJECTS_CD, "
 				+ "START_DATE, "
@@ -136,9 +136,10 @@ public class JugyoTableDAO extends DAOBase  {
 				+ "START_TIME, "
 				+ "END_TIME, "
 				+ "CARD_START_TIME, "
-				+ "CARD_END_TIME"
+				+ "CARD_END_TIME,"
+				+ "COMMENT"
 				+ ") VALUES ("
-				+ "?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?"
+				+ "?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?"
 				+ ")";
 		System.out.println("JugyoDetaildao:142:start_time_cd"+start_time_cd);
 		ArrayList<TimeListTable> TimeListTable = new ArrayList<>();
@@ -167,6 +168,7 @@ public class JugyoTableDAO extends DAOBase  {
 			pstmt.setString(9, TimeListTable.get(0).getEnd_time());
 			pstmt.setString(10, TimeListTable.get(0).getCard_start_time());
 			pstmt.setString(11, TimeListTable.get(0).getCard_end_time());
+			pstmt.setString(12, comment);
 			result = pstmt.executeUpdate();
 			con.close();
 		} catch (SQLException e) {
@@ -204,6 +206,60 @@ public class JugyoTableDAO extends DAOBase  {
 		}
 
 		return timeListTable;
+	}
+
+//	引数をbeansでやったほうがオブ指向っぽいじゃん
+	public boolean update(JugyoTable jugyoData) {
+		String sql = "UPDATE JUGYO_TBL SET "
+				+ "SUBJECTS_CD = ? "
+				+ ",START_DATE = ?  "
+				+ ",START_TIME_CD = ? "
+				+ ",TOKUTEI_CD = ? "
+				+ ",ROOM_CD1 = ? "
+				+ ",ROOM_CD2 = ? "
+				+ ",ROOM_CD3 = ? "
+				+ ",START_TIME = ? "
+				+ ",END_TIME = ? "
+				+ ",CARD_START_TIME = ? "
+				+ ",CARD_END_TIME = ? "
+				+ ",COMMENT = ? ";
+		ArrayList<TimeListTable> TimeListTable = new ArrayList<>();
+		TimeListTable.add(getTimeList(jugyoData.getStart_time_cd()));
+		ResultSet rs = null;
+		int result = 0;
+		try {
+			this.open();
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, jugyoData.getSubjects_cd());
+			pstmt.setString(2, jugyoData.getStart_date());
+			pstmt.setString(3, jugyoData.getStart_time_cd());
+			pstmt.setString(4, jugyoData.getTokutei_cd());
+			pstmt.setString(5, jugyoData.getRoom_cd1());
+			if(jugyoData.getRoom_cd2().equals("")) {
+				jugyoData.setRoom_cd2(null);
+			}
+			if(jugyoData.getRoom_cd3().equals("")) {
+				jugyoData.setRoom_cd3(null);
+			}
+			pstmt.setString(6, jugyoData.getRoom_cd2());
+			pstmt.setString(7, jugyoData.getRoom_cd3());
+			pstmt.setString(8, TimeListTable.get(0).getStart_time());
+			pstmt.setString(9, TimeListTable.get(0).getEnd_time());
+			pstmt.setString(10, TimeListTable.get(0).getCard_start_time());
+			pstmt.setString(11, TimeListTable.get(0).getCard_end_time());
+			pstmt.setString(12, jugyoData.getComment());
+			result = pstmt.executeUpdate();
+			con.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			this.close(pstmt,rs);
+		}
+		boolean isUpdateOk = false;
+		if(result > 0) {
+			isUpdateOk = true;
+		}
+		return isUpdateOk;
 	}
 }
 
