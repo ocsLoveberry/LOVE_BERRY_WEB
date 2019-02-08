@@ -21,7 +21,7 @@ ShowStudentSearchServlet から遷移してくる
 <body>
 	<br>
 <% ArrayList<OcsJohoData> studentData = (ArrayList<OcsJohoData>)request.getAttribute("studentData");
-	if(studentData != null || studentData.size() != 0 ) {
+	if(!studentData.isEmpty()) {
 	%>
 	<form action="ShowStudentDetailServlet" method="post">
 		<table>

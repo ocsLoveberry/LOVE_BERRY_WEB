@@ -56,8 +56,7 @@
 			<td class="room"><input type="hidden" name="room_cd2()">
 				<%
 					if (viewJugyo.getRoom_cd2() != null) {
-				%> <%=viewJugyo.getRoom_cd2()%>
-				<!-- nullじゃなければ --> <%
+				%> <%=viewJugyo.getRoom_cd2()%> <!-- nullじゃなければ --> <%
  	} else {
  			System.out.println("");
  			//nullなら空白
@@ -65,19 +64,21 @@
  %></td>
 			<td class="room"><input type="hidden" name="room_cd3()">
 				<%
-					System.out.println("getRoom_cd3() の値は" + viewJugyo.getRoom_cd3());
-						String room3 = viewJugyo.getRoom_cd3();
-						System.out.println("room3の値は" + room3);
-						if (viewJugyo.getRoom_cd3() != null) {
-				%> <%=viewJugyo.getRoom_cd3()%>
-				<!-- nullじゃなければ --> <%
+					if (viewJugyo.getRoom_cd3() != null) {
+				%> <%=viewJugyo.getRoom_cd3()%> <!-- nullじゃなければ --> <%
  	} else {
  			System.out.println("");
  			//nullなら空白
  		}
  %></td>
-			<td id="coment"><input type="hidden" name="comment()"><%=viewJugyo.getComment()%>
-			</td>
+			<td id="coment"><input type="hidden" name="comment()"> <%
+ 	if (viewJugyo.getComment() != null) {
+ %> <%=viewJugyo.getComment()%> <!-- nullじゃなければ --> <%
+ 	} else {
+ 			System.out.println("");
+ 			//nullなら空白
+ 		}
+ %></td>
 		</tr>
 		<%
 			i++;
