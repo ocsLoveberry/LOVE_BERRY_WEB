@@ -32,7 +32,7 @@
 				type="submit" value="検索">
 		</form>
 		<!-- 検索結果表示枠 -->
-		<iframe name="resultStudent" width="900px" height="700px" id="frame"
+		<iframe name="resultStudent" width="900px" height="600px" id="frame"
 			id="frame"> </iframe>
 		<div id="yazi">
 			<form action="ShowTopServlet">

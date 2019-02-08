@@ -45,7 +45,7 @@
 			</select>
 		</form>
 
-		<iframe name="subjectDetail" width="900px" height="700px" id="frame"></iframe>
+		<iframe name="subjectDetail" width="900px" height="600px" id="frame"></iframe>
 		<br>
 		<div id="yazi">
 			<form action="ShowTopServlet">

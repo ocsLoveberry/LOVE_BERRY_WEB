@@ -17,7 +17,7 @@
 	<br>
 	<%
 		ArrayList<OcsJohoData> studentData = (ArrayList<OcsJohoData>) request.getAttribute("studentData");
-		if (studentData != null || studentData.size() != 0) {
+		if (!studentData.isEmpty()) {
 	%>
 	<form action="ShowTeacherStudentDetailServlet" method="post">
 		<table>

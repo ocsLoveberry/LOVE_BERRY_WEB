@@ -31,7 +31,7 @@
 			method="post">
 			<div id="form">
 			<h1>打刻検索</h1>
-				<h2>日付：<input type="date" name="formEntryDate" class="sea"> 教室：<select
+				<h2>日付：<input type="date" name="formEntryDate" class="sea"></h2><h2> 教室：<select
 					name="formClassroom" class="sea">
 					<optgroup label="<---全教室--->"></optgroup>
 					<option value="all">全教室</option>

@@ -72,11 +72,11 @@ public class JugyoTableDAO extends DAOBase  {
 		try {
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, tokutei_cd);
-			System.out.println("発行されているクエリの表示"+sql);
+		//	System.out.println("発行されているクエリの表示"+sql);
 			rs = pstmt.executeQuery();
-			System.out.println("rsに何が入っているかを表示する: "+rs);
+		//	System.out.println("rsに何が入っているかを表示する: "+rs);
 			jugyolist = GetStringList(rs);
-		System.out.println("getStringListからデータを格納できているかどうか :"+jugyolist);
+		//	System.out.println("getStringListからデータを格納できているかどうか :"+jugyolist);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {

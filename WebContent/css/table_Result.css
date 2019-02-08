@@ -22,10 +22,10 @@
 }
 
 /*Teacher_Sub_List*/
-
-#con{
-	width:4em;
+#con {
+	width: 4em;
 }
+
 #jgy {
 	width: 16em;
 }
@@ -42,6 +42,15 @@
 	width: 3em;
 }
 
-#coment{
-	width:8em;
+#coment {
+	width: 8em;
+}
+
+tbody {
+	border: 1px solid #fff;
+}
+
+table.tbl tr, td {
+	padding:2px;
+	border: 1px solid #fff;
 }

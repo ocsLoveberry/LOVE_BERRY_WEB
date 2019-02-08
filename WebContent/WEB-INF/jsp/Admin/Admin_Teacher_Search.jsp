@@ -21,7 +21,7 @@
 		<input type="submit" value="検索">
 	<br>
 </form>
-	<iframe name="resultTeachers" width="900px" height="700px" id="frame">
+	<iframe name="resultTeachers" width="900px" height="600px" id="frame">
 	</iframe>
 	<br>
 <form action="ShowTopServlet"><input type="submit" value=" " id="back"></form>

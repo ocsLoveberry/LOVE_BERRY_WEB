@@ -29,6 +29,10 @@ h4 {
 	color: white;;
 }
 
+h2{
+	display: inline;
+}
+
 .LB {
 	font-size: 3em;
 	background: -webkit-linear-gradient(left, #FFFFFF, #BDBDBD, #000000);

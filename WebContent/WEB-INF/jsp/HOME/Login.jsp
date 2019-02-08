@@ -8,7 +8,8 @@
 <style>
 	/* 背景*/
 body{
-	margin:0;
+	max-width:5000px;
+	margin:auto auto;
 	height:100%;
 	background-color:#ccc;
 }
