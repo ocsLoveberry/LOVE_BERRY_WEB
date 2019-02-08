@@ -1,4 +1,5 @@
 /**
+ * 生徒用のみ
  * 出席日とその科目の単位数
  *
  */
@@ -16,6 +17,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.google.gson.Gson;
 
+import javaBeans.JugyoTable;
+import main.dao.JugyoTableDAO;
 import main.dao.TimeStatusTableDAO;
 
 
@@ -32,12 +35,18 @@ public class CalendarDetailServlet extends HttpServlet {
 		String tokutei_cd = request.getParameter("tokutei_cd");
 		String start = request.getParameter("start");
 		String end = request.getParameter("end");
-
 		String subject_cd = cutSubjectCd(tokutei_cd);
+
+		JugyoTableDAO jugyoTableDao = new JugyoTableDAO();
+		ArrayList<JugyoTable> JugyoList = jugyoTableDao.Jugyo_Detail(tokutei_cd);
+		String room_cd1 = JugyoList.get(0).getRoom_cd1();
+		String room_cd2 = JugyoList.get(0).getRoom_cd2();
+		String room_cd3 = JugyoList.get(0).getRoom_cd3();
+
 		TimeStatusTableDAO tdao = new TimeStatusTableDAO();
 		int count = tdao.selectCount(seki_no,subject_cd);
 		ArrayList<SubjectJsonData> testJsonList = new ArrayList<>();
-		testJsonList.add(new SubjectJsonData(subject_cd,start,end,count));
+		testJsonList.add(new SubjectJsonData(subject_cd,start,end,count,room_cd1,room_cd2,room_cd3));
 //		return jsonファイルとしてリターン！！
 		response.getWriter().println(new Gson().toJson(testJsonList));
 	}
