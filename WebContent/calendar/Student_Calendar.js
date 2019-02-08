@@ -31,7 +31,6 @@ function initializePage(input_seki_no) {
       //Sizing
 
       //MonthView
-      firstDay: 1,
       defaultDate: '2018-12-01', //getToday(), //下に関数を用意しています
       eventLimit: true, // allow "more" link when too many events
       eventDurationEditable: false,
