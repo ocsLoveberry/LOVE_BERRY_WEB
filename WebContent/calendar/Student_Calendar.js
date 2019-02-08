@@ -65,15 +65,18 @@ function initializePage(input_seki_no) {
 	  					+"<br>"
 	  					+"教室名1:"
 	  					+ data[0].room_cd1
-	  					+"<br>"
-	  					+"教室名2:"
+	  					+"<br>";
+	  		if(data[0].room_cd2 !== undefined){
+	  			result += "教室名2:"
 	  					+ data[0].room_cd2
 	  					+"<br>"
+	  		}
+	  		if(data[0].room_cd3 !== undefined){
 	  					+"教室名3:"
 	  					+ data[0].room_cd3
 	  					+"<br>"
-	  					+"<br>"
-	  					+ "出席日数："
+	  		}
+	  		result +=	"出席日数："
 	  					+ data[0].count
 	  					+"<br>"
 	  					+ "開始時刻："
