@@ -1,68 +1,77 @@
 @charset "UTF-8";
-body,p,div,input{margin: 0}
-
-body{
+/* body,p,div,input{margin: 0} */
+body {
+	max-width: 1920px;
+	width: auto;
+	margin: auto auto;
 	background-image: url("img/nikaido.png");
-	background-repeat:no-repeat;
-	background-attachment:fixed;	/*背景画像をスクロールしないように固定*/
-	background-position:center center; /*常に画像が中央に表示される*/
-	background-size:cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed; /*背景画像をスクロールしないように固定*/
+	background-position: center center; /*常に画像が中央に表示される*/
+	background-size: cover;
 }
 
-#title{
-	width:auto;
-	padding:2px;
-	text-align:center;
-	dispaly:flex;
-	background-image:url("img/tea_header.jpg");
-	background-repeat:no-repeat;
-	background-size:cover;
+#title {
+	max-width: 5000px;
+	width: auto;
+	padding: 2px;
+	text-align: center;
+	dispaly: flex;
+	background-image: url("img/tea_header.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
-h4{
-	margin:0px 0px 0px 0px;
-	text-align:right;
-	color:white;;
+h4 {
+	margin: 0px 0px 0px 0px;
+	text-align: right;
+	color: white;;
 }
 
-.LB{
-	font-size:3em;
+.LB {
+	font-size: 3em;
 	font-family: 'Homemade Apple', cursive;
 	text-decoration: none;
-	color:#FFFFFF;
-	margin:0px 0px 0px 0px;
+	color: #FFFFFF;
+	text-align: center;
+	margin:0px 0px;
 }
-.menu{
+
+.menu {
 	margin: auto auto;
 }
 
-input[type="button"]{
-	width:300px;
-	padding:50px;
-	margin:40px ;
-	font-size:20px;
-	background-color:transparent;
-	color:#FFF;
-	font-size:30px;
-	border-radius:10px;
-	font-weight:bold;
-	outline:0;
+form {
+	display: inline-flex;
+	left: 10px;
 }
 
-input[type="button"]:hover{
+input[type="button"] {
+	width: 300px;
+	padding: 50px;
+	margin: 40px;
+	font-size: 20px;
+	background-color: transparent;
+	color: #FFF;
+	font-size: 30px;
+	border-radius: 10px;
+	font-weight: bold;
+	outline: 0;
+}
+
+input[type="button"]:hover {
 	background-color: rgba(255, 255, 255, .2);
 }
 
-#id{
-	windth:100px;
-	padding:20px;
-	font-size:14px;
+#id {
+	windth: 100px;
+	padding: 20px;
+	font-size: 14px;
 }
 
-#logout{
-	padding: 80px 120px;
-	 background: url(img/logout2.png) left top no-repeat;
-	 border:none;
-	outline:none;
+#logout {
+	padding:60px 60px;
+	background: url(img/logout.png) left top no-repeat;
+	border: none;
+	outline: none;
 }
-

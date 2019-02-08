@@ -19,6 +19,7 @@
 			ログインID:<%=username%>
 		</h4>
 		<h1 class="LB">LOVE_BERRY 教員ページだゾ</h1>
+
 	</header>
 	<table class="menu">
 		<tr>

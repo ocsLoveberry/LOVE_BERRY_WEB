@@ -21,7 +21,7 @@
 <input type="submit" value="検索">
 </form>
 <!-- 検索結果表示枠 -->
-<iframe name="resultStudent" width="900px" height="700px" id="frame">
+<iframe name="resultStudent" width="900px" height="600px" id="frame">
 </iframe>
 <form action="ShowTopServlet"><input type="submit" value=" " id="back"></form>
 </div>

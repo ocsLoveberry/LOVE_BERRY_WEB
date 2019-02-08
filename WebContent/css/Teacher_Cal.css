@@ -1,1 +1,51 @@
 @charset "UTF-8";
+
+body,p,div,input{margin: 0}
+
+body{
+	background-image: url("img/nikaido.png");
+	background-repeat:no-repeat;
+	background-attachment:fixed;	/*背景画像をスクロールしないように固定*/
+	background-position:center center; /*常に画像が中央に表示される*/
+	background-size:cover;
+}
+
+#hd{
+	width:auto;
+	text-align:center;
+	padding:2px;
+	dispaly:flex;
+	background-image:url("img/tea_header.jpg");
+	background-size:cover;
+	background-repeat:no-repeat;
+	color:#FFFFFF;
+}
+
+#LB {
+	font-size: 3em;
+	font-family: 'Homemade Apple', cursive;
+	text-decoration: none;
+	color: #FFFFFF;
+	text-align: center;
+	margin:0px 0px;
+}
+
+h4 {
+	margin: 5px 0px 0px 0px;
+	text-align: right;
+	color: white;;
+}
+#yazi{
+	width:800px;
+	margin:auto auto	;
+}
+
+#back {
+	margin:0px 750px 0px 0px;
+	padding: 50px 50px;
+	background: url(img/home_back.png) left top no-repeat;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	cursor: hand;
+}
