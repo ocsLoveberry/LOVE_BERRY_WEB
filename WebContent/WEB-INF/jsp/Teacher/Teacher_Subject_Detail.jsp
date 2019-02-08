@@ -15,12 +15,9 @@
 	href="/LOVE_BERRY_WEB/css/table_Result.css">
 <title>科目詳細画面</title>
 </head>
-<h1>科目詳細画面(Teacher_Subject_List.jsp)</h1>
+<h1>科目詳細</h1>
 <body>
-	（デバッグ）セッションID:<%=session.getId()%><br>
-	<h1><%=jugyo.get(0).getSubjects_cd()%></h1>
-	<br>
-	<table>
+	<table class="tbl">
 		<tr class="sub">
 			<td>回数</td>
 			<td>授業名（デバッグ）</td>
