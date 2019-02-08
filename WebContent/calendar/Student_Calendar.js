@@ -31,7 +31,6 @@ function initializePage(input_seki_no) {
       //Sizing
 
       //MonthView
-      firstDay: 1,
       defaultDate: '2018-12-01', //getToday(), //下に関数を用意しています
       eventLimit: true, // allow "more" link when too many events
       eventDurationEditable: false,
@@ -62,7 +61,31 @@ function initializePage(input_seki_no) {
 	  	}).done(function(data){
 	  		console.log(data);
 	  		/* ここで科目詳細のデータを生成しています */
-	  		var result = "科目名："+ calEvent.title +"<br>" + "出席日数："+ data[0].count +"<br>" + "開始時刻："+ data[0].start +"<br>" + "終了時刻："+ data[0].end +"<br>"
+	  		var result = "科目名："+ calEvent.title
+	  					+"<br>"
+	  					+"教室名1:"
+	  					+ data[0].room_cd1
+	  					+"<br>";
+	  		if(data[0].room_cd2 !== undefined){
+	  			result += "教室名2:"
+	  					+ data[0].room_cd2
+	  					+"<br>"
+	  		}
+	  		if(data[0].room_cd3 !== undefined){
+	  					+"教室名3:"
+	  					+ data[0].room_cd3
+	  					+"<br>"
+	  		}
+	  		result +=	"出席日数："
+	  					+ data[0].count
+	  					+"<br>"
+	  					+ "開始時刻："
+	  					+ data[0].start
+	  					+"<br>"
+	  					+ "終了時刻："
+	  					+ data[0].end
+	  					+"<br>"
+
 	  		$("#subjectDetail").html(result);
 	  		modalOpen();
 	  	})

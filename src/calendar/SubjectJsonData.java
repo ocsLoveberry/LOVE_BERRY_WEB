@@ -2,10 +2,14 @@ package calendar;
 
 public class SubjectJsonData {
 
-	String subject_cd;
-	String start;
-	String end;
-	int count;
+	private String subject_cd;
+	private String start;
+	private String end;
+	private int count;
+	private String room_cd1;
+	private String room_cd2;
+	private String room_cd3;
+
 
 	public SubjectJsonData(int count, String subject_cd) {
 		super();
@@ -19,6 +23,16 @@ public class SubjectJsonData {
 		this.start = start;
 		this.end = end;
 		this.count = count;
+	}
+
+	public SubjectJsonData(String subject_cd, String start, String end, int count, String room_cd1, String room_cd2,String room_cd3) {
+		this.subject_cd = subject_cd;
+		this.start = start;
+		this.end = end;
+		this.count = count;
+		this.room_cd1 = room_cd1;
+		this.room_cd2 = room_cd2;
+		this.room_cd3 = room_cd3;
 	}
 
 	public String getSubject_cd() {
@@ -46,6 +60,27 @@ public class SubjectJsonData {
 		this.count = count;
 	}
 
+	public String getRoom_cd1() {
+		return room_cd1;
+	}
 
+	public void setRoom_cd1(String room_cd1) {
+		this.room_cd1 = room_cd1;
+	}
 
+	public String getRoom_cd2() {
+		return room_cd2;
+	}
+
+	public void setRoom_cd2(String room_cd2) {
+		this.room_cd2 = room_cd2;
+	}
+
+	public String getRoom_cd3() {
+		return room_cd3;
+	}
+
+	public void setRoom_cd3(String room_cd3) {
+		this.room_cd3 = room_cd3;
+	}
 }
