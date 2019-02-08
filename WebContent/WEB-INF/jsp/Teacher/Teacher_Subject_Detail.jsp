@@ -45,18 +45,39 @@
 			</td>
 			<td id="time"><input type="hidden" name="start_time_cd"><%=viewJugyo.getStart_time_cd()%>時限
 			</td>
-			<td class="room"><input type="hidden" name="room_cd1()"><%=viewJugyo.getRoom_cd1()%>
-			</td>
-			<td class="room"><input type="hidden" name="room_cd2()"><%=viewJugyo.getRoom_cd2()%>
-			</td>
-			<td class="room"><input type="hidden" name="room_cd2()"><%=viewJugyo.getRoom_cd3()%>
-			</td>
+			<td class="room"><input type="hidden" name="room_cd1()">
+				<%
+					if (viewJugyo.getRoom_cd1() != null) {
+				%> <%=viewJugyo.getRoom_cd1()%> <%
+ 	} else {
+ 			System.out.println("");
+ 		}
+ %></td>
+			<td class="room"><input type="hidden" name="room_cd2()">
+				<%
+					if (viewJugyo.getRoom_cd2() != null) {
+				%> <%=viewJugyo.getRoom_cd2()%>
+				<!-- nullじゃなければ --> <%
+ 	} else {
+ 			System.out.println("");
+ 			//nullなら空白
+ 		}
+ %></td>
+			<td class="room"><input type="hidden" name="room_cd3()">
+				<%
+					System.out.println("getRoom_cd3() の値は" + viewJugyo.getRoom_cd3());
+						String room3 = viewJugyo.getRoom_cd3();
+						System.out.println("room3の値は" + room3);
+						if (viewJugyo.getRoom_cd3() != null) {
+				%> <%=viewJugyo.getRoom_cd3()%>
+				<!-- nullじゃなければ --> <%
+ 	} else {
+ 			System.out.println("");
+ 			//nullなら空白
+ 		}
+ %></td>
 			<td id="coment"><input type="hidden" name="comment()"><%=viewJugyo.getComment()%>
 			</td>
-			<td><a
-				href="ShowTeacherSubjectInformationChangeServlet?subject_cd=<%=viewJugyo.getSubjects_cd()%>
-				&start_date= <%=viewJugyo.getStart_date()%>&start_time_cd=<%=viewJugyo.getStart_time_cd()%>
-				&tokutei_cd=<%=viewJugyo.getTokutei_cd()%>">編集する</a></td>
 		</tr>
 		<%
 			i++;
