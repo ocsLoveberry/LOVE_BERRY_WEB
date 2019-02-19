@@ -87,7 +87,7 @@ input[type="submit"]:active {						/*ボタンが押されたときの設定*/
 	<div class="sub"><h2>ロ  グ  イ  ン</h2></div>
 	<!-- j_security_check -->
 	<form action="j_security_check" method="post">
-		ログインID :<input type="text" name="j_username"><br>
+		ログインID : <input type="text" name="j_username"><br>
 		パスワード：<input type="password" name="j_password"><br>
 		<input type="submit" value="ログイン">
 		<input type="reset" value="リセット">
